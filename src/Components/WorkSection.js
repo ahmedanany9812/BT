@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useLayoutEffect } from "react";
 import { useSelector } from "react-redux";
 import { loaded } from "../LoaderSlice";
+import { NavLink } from "react-router-dom";
 import { CustomTheme } from "../Utilities/Theme";
 gsap.registerPlugin(ScrollTrigger);
 const WorkSection = () => {
@@ -127,6 +128,7 @@ const WorkSection = () => {
               Bt Portfolio
             </Box>
           </Stack>
+<NavLink to="BT">jhjhhhhhhhh</NavLink>
           <Stack direction={"row"} spacing="20px">
             <Box
               component={"p"}
