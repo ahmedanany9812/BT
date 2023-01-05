@@ -25,7 +25,6 @@ const WorkSection = () => {
           fontWeight={500}
           fontSize="70px"
           color={"whitesmoke"}
-          className="work"
         >
           Work
         </Box>

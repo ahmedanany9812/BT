@@ -2,14 +2,10 @@ import { Box, Container, Stack } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
-import Header from "../Components/Header";
 import { RxDot } from "react-icons/rx";
 import { BsGithub } from "react-icons/bs";
 import { CgExternal } from "react-icons/cg";
 import { BiNavigation } from "react-icons/bi";
-import Menu from "../Components/Menu";
-import { useSelector } from "react-redux";
-import { menu } from "../NavSlice";
 function Project() {
   const font = CustomTheme.fonts;
   const { project } = useParams();
@@ -22,11 +18,8 @@ function Project() {
     return Projects[index - 1].nam;
   };
   const navigate = useNavigate();
-  const menuOpened = useSelector(menu);
   return (
     <Box position={"relative"}>
-      {menuOpened && <Menu />}
-      <Header />
       <Container>
         <Box marginTop={{ xs: "12rem", sm: "15rem" }} marginBottom="3rem">
           <Stack

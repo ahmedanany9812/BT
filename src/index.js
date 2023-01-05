@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/" element={<Home />} index />
+      <Route element={<Home />} index />
       <Route path="/:project" element={<Project />} />
     </Route>
   )

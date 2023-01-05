@@ -1,7 +1,13 @@
 import { Box, Container, Stack } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { CloseMenuList } from "../NavSlice";
 import { CustomTheme } from "../Utilities/Theme";
 const Menu = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const fonts = CustomTheme.fonts;
+  const dispatch = useDispatch();
   return (
     <Box
       position={"fixed"}
@@ -24,7 +30,18 @@ const Menu = () => {
           paddingBottom={"3rem"}
         >
           <Stack direction={"column"}>
-            <Stack direction={"row"} alignItems="center">
+            <Stack
+              direction={"row"}
+              alignItems="center"
+              component={"div"}
+              onClick={async () => {
+                if (pathname === "/") {
+                  return null;
+                }
+                await navigate("/", { replace: true });
+                dispatch(CloseMenuList());
+              }}
+            >
               <Box
                 component={"p"}
                 fontFamily={fonts.font5}
