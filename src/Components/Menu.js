@@ -1,245 +1,133 @@
-import { Box, Button, Container, Stack } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { Box, Container, Stack } from "@mui/material";
 import { CustomTheme } from "../Utilities/Theme";
-import { CloseMenuList } from "../NavSlice";
-import gsap from "gsap";
-import SplitType from "split-type";
 const Menu = () => {
-  const font = CustomTheme.fonts;
-  const dispatch = useDispatch();
-  const closemenu = () => {
-    const tag1 = document.getElementsByClassName("tag1");
-    const tag2 = document.getElementsByClassName("tag2");
-    const socialist = document.getElementsByClassName("socialist");
-    const tag1Chars = new SplitType(tag1, {
-      types: "chars, words",
-    });
-    const tag2Chars = new SplitType(tag2, {
-      types: "chars, words",
-    });
-    const num1 = document.getElementsByClassName("num1");
-    const num2 = document.getElementsByClassName("num2");
-    const country = document.getElementsByClassName("country");
-    const region = document.getElementsByClassName("region");
-    const contacta = document.getElementsByClassName("contacta");
-    const Box1 = document.getElementsByClassName("overlay");
-    const close = document.getElementsByClassName("closebtn");
-    const tl = gsap.timeline();
-    tl.to([num1, num2, country, region, contacta], {
-      yPercent: -100,
-      opacity: 0,
-    })
-      .to(
-        socialist[0].children,
-        {
-          yPercent: -100,
-          opacity: 0,
-        },
-        "<"
-      )
-      .to(
-        tag1Chars.chars,
-        {
-          yPercent: -100,
-          opacity: 0,
-        },
-        "<"
-      )
-      .to(
-        tag2Chars.chars,
-        {
-          yPercent: -100,
-          opacity: 0,
-        },
-        "<"
-      )
-      .to(
-        close,
-        {
-          opacity: 0,
-        },
-        "<"
-      )
-      .to(Box1, {
-        xPercent: 100,
-        duration: 1,
-        onStart: () => dispatch(CloseMenuList()),
-      });
-  };
+  const fonts = CustomTheme.fonts;
   return (
     <Box
+      position={"fixed"}
+      top="0"
+      left={"0"}
+      bottom={0}
       sx={{
-        position: "fixed",
-        left: 0,
-        top: 0,
-        width: "100%",
         height: "100vh",
-        backgroundColor: "white",
-        zIndex: 1000000000,
-        overflow: "hidden",
-        transform: "translate(100%,0)",
+        width: "100vw",
+        backgroundColor: "black",
+        zIndex: 1,
       }}
-      className="overlay"
     >
-      <Stack
-        justifyContent={"flex-end"}
-        position="fixed"
-        sx={{ top: 0, right: 0 }}
-        direction="row"
-        spacing={"8px"}
-        alignItems="center"
-        component="div"
-        zIndex={10}
-        width="100%"
-        className="navi"
-      >
-        <Box
-          component={Button}
-          onClick={closemenu}
-          sx={{
-            ":hover": {
-              backgroundColor: "transparent",
-            },
-            color: "black",
-          }}
+      <Container sx={{ width: "100%", height: "100%" }}>
+        <Stack
+          direction={"column"}
+          width="100%"
+          height={"100%"}
+          paddingTop="12rem"
+          paddingBottom={"3rem"}
         >
-          <Box
-            component={"p"}
-            fontFamily={font.font5}
-            fontWeight={400}
-            fontSize="20px"
-            className="closebtn"
-            sx={{ opacity: 0 }}
-          >
-            close
-          </Box>
-        </Box>
-      </Stack>
-      <Stack alignItems={"center"} justifyContent="center" height={"100%"}>
-        <Container>
-          <Stack
-            width={"100%"}
-            height="100"
-            direction={"row"}
-            alignItems="center"
-            justifyContent={"space-between"}
-          >
-            <Stack direction={"column"}>
-              <Stack direction={"row"} spacing="10px" alignItems={"center"}>
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={400}
-                  fontSize="70px"
-                  color={"black"}
-                  minWidth="140px"
-                  className="num1"
-                >
-                  01
-                </Box>
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={500}
-                  fontSize="70px"
-                  color={"black"}
-                  className="tag1"
-                >
-                  Home
-                </Box>
-              </Stack>
-              <Stack direction={"row"} spacing="10px" alignItems={"center"}>
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={400}
-                  fontSize="70px"
-                  color={"black"}
-                  minWidth="140px"
-                  className="num2"
-                >
-                  02
-                </Box>
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={500}
-                  fontSize="70px"
-                  color={"black"}
-                  className="tag2"
-                >
-                  Resume
-                </Box>
-              </Stack>
+          <Stack direction={"column"}>
+            <Stack direction={"row"} alignItems="center">
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="60px"
+                color={"white"}
+                minWidth="120px"
+              >
+                00
+              </Box>
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="60px"
+                color={"white"}
+              >
+                Home
+              </Box>
             </Stack>
-            <Stack direction={"column"} spacing="3rem">
-              <Stack direction={"column"} spacing="10px">
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={600}
-                  fontSize="20px"
-                  color={"black"}
-                  className="country"
-                >
-                  EGYPT
-                </Box>
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={400}
-                  fontSize="17px"
-                  color={"black"}
-                  className="region"
-                >
-                  El-Garbia -Tanta
-                </Box>
-              </Stack>
-              <Stack direction={"column"} spacing="22px">
-                <Box
-                  component={"p"}
-                  fontFamily={font.font5}
-                  fontWeight={600}
-                  fontSize="20px"
-                  color={"black"}
-                  className="contacta"
-                >
-                  Contact
-                </Box>
-                <Stack spacing={"1rem"} className="socialist">
-                  <Box
-                    component={"p"}
-                    fontFamily={font.font5}
-                    fontWeight={400}
-                    fontSize="18px"
-                    color={"black"}
-                  >
-                    +(20) 120 3951 753
-                  </Box>
-                  <Box
-                    component={"p"}
-                    fontFamily={font.font5}
-                    fontWeight={400}
-                    fontSize="18px"
-                    color={"black"}
-                  >
-                    Linked in
-                  </Box>
-                  <Box
-                    component={"p"}
-                    fontFamily={font.font5}
-                    fontWeight={400}
-                    fontSize="18px"
-                    color={"black"}
-                  >
-                    Github
-                  </Box>
-                </Stack>
-              </Stack>
+            <Stack direction={"row"} alignItems="center">
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="60px"
+                color={"white"}
+                minWidth="120px"
+              >
+                01
+              </Box>
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="60px"
+                color={"white"}
+              >
+                Resume
+              </Box>
             </Stack>
           </Stack>
-        </Container>
-      </Stack>
+          <Stack
+            direction={"row"}
+            marginTop="auto"
+            alignItems={"flex-end"}
+            justifyContent="space-between"
+          >
+            <Stack direction={"column"} spacing="11px">
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="22px"
+                color={"white"}
+              >
+                Github
+              </Box>
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="22px"
+                color={"white"}
+              >
+                Linked In
+              </Box>
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="22px"
+                color={"white"}
+              >
+                Discord
+                <Box component={"span"} fontWeight={300} sx={{ opacity: 0.5 }}>
+                  BigTunaytr#1519
+                </Box>
+              </Box>
+            </Stack>
+            <Stack direction={"row"} alignItems="center" spacing={"33px"}>
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="22px"
+                color={"white"}
+              >
+                +(20) 1203 951 753
+              </Box>
+              <Box
+                component={"p"}
+                fontFamily={fonts.font5}
+                fontWeight={500}
+                fontSize="22px"
+                color={"white"}
+              >
+                Email Me
+              </Box>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Container>
     </Box>
   );
 };

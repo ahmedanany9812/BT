@@ -1,191 +1,192 @@
 import { Box, Container, Stack } from "@mui/material";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
-import SmoothScroll from "../Components/scroll";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
 import Header from "../Components/Header";
-import { useEffect, useState } from "react";
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import { RxDot } from "react-icons/rx";
+import { BsGithub } from "react-icons/bs";
+import { CgExternal } from "react-icons/cg";
+import { BiNavigation } from "react-icons/bi";
+import Menu from "../Components/Menu";
+import { useSelector } from "react-redux";
+import { menu } from "../NavSlice";
 function Project() {
   const font = CustomTheme.fonts;
   const { project } = useParams();
-  const [CurrentProject, SetCurrentProject] = useState(
-    Projects.find((pro) => pro.nam === project)
-  );
-  const [NextProject, setNextProject] = useState(null);
-  useEffect(() => {
-    setNextProject((prev) => {
-      return CurrentProject.id === 3
-        ? Projects.find((pro) => pro.id === 1)
-        : Projects.find((pro) => pro.id === CurrentProject.id + 1);
-    });
-  }, [CurrentProject.id]);
+  const CurrentProject = Projects.find((pro) => pro.nam === project);
+  const nextProject = () => {
+    if (CurrentProject.id === 3) {
+      return Projects[0].nam;
+    }
+    let index = CurrentProject.id + 1;
+    return Projects[index - 1].nam;
+  };
+  const navigate = useNavigate();
+  const menuOpened = useSelector(menu);
   return (
     <Box position={"relative"}>
+      {menuOpened && <Menu />}
       <Header />
-      <SmoothScroll>
-        <Container>
-          <Box marginTop={"15rem"} marginBottom="3rem">
-            <Stack
-              direction={"row"}
-              alignItems="flex-start"
-              justifyContent={"center"}
+      <Container>
+        <Box marginTop={{ xs: "12rem", sm: "15rem" }} marginBottom="3rem">
+          <Stack
+            direction={"row"}
+            alignItems="flex-start"
+            justifyContent={"center"}
+          >
+            <Box
+              component={"p"}
+              fontSize={{ xs: "50px", sm: "64px" }}
+              fontFamily={font.font5}
+              fontWeight={400}
             >
-              <Box
-                component={"p"}
-                fontSize="64px"
-                fontFamily={font.font5}
-                fontWeight={500}
-              >
-                {CurrentProject.tag}
-              </Box>
-              <Box
-                component={"p"}
-                fontSize="12px"
-                fontFamily={font.body}
-                sx={{ opacity: 0.5 }}
-              >
-                {CurrentProject.date}
-              </Box>
-            </Stack>
-            <Stack
-              alignItems={"center"}
-              justifyContent={"center"}
-              marginTop="7rem"
+              {CurrentProject.tag}
+            </Box>
+            <Box
+              component={"p"}
+              fontSize={{ xs: "11px", sm: "12px" }}
+              fontFamily={font.body}
+              sx={{ opacity: 0.5 }}
             >
-              <Box
-                component={"img"}
-                className="image"
-                width="100%"
-                src={require(`../Utilities/Images/Projects/${CurrentProject.img}`)}
-              />
-            </Stack>
-            <Stack
-              direction={"row"}
-              alignItems="flex-start"
-              justifyContent={"space-between"}
-              marginY="11rem"
+              {CurrentProject.date}
+            </Box>
+          </Stack>
+          <Stack
+            alignItems={"center"}
+            justifyContent={"center"}
+            marginTop="7rem"
+          >
+            <Box
+              component={"img"}
+              className="image"
+              width={{ xs: "90%", md: "100%" }}
+              src={require(`../Utilities/Images/Projects/${CurrentProject.img}`)}
+            />
+          </Stack>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            alignItems="flex-start"
+            justifyContent={"space-between"}
+            marginY={{ xs: "9rem", sm: "11rem" }}
+            spacing={{ xs: "40px", sm: 0 }}
+          >
+            <Box
+              component={"p"}
+              fontSize={{ xs: "18px", sm: "20px" }}
+              fontFamily={font.font5}
+              fontWeight="400"
             >
-              <Box
-                component={"p"}
-                fontSize="20px"
-                fontFamily={font.font5}
-                fontWeight="600"
-              >
-                {CurrentProject.title}
-              </Box>
-              <Box
-                component={"p"}
-                fontSize="20px"
-                fontFamily={font.font5}
-                width={"50%"}
-                fontWeight="300"
-                sx={{ opacity: 0.8 }}
-              >
-                {CurrentProject.desc}
-              </Box>
-            </Stack>
-            <Stack direction={"column"} spacing="10px" marginY="7rem">
-              <Box
-                component={"p"}
-                fontSize="20px"
-                fontFamily={font.font5}
-                fontWeight="600"
-              >
-                Built in
-              </Box>
-              <Box component={"ul"} margin="0">
-                {CurrentProject.skills.map((skill, i) => {
-                  return (
+              {CurrentProject.title}
+            </Box>
+            <Box
+              component={"p"}
+              fontSize={{ xs: "16px", sm: "18px" }}
+              fontFamily={font.font5}
+              width={{ xs: "80%", sm: "50%" }}
+              fontWeight="300"
+              sx={{ opacity: 0.8 }}
+            >
+              {CurrentProject.desc}
+            </Box>
+          </Stack>
+          <Stack direction={"column"} spacing="10px" marginY="7rem">
+            <Box
+              component={"p"}
+              fontSize={{ xs: "17px", sm: "20px" }}
+              fontFamily={font.font5}
+              fontWeight="400"
+            >
+              Built in
+            </Box>
+            <Box component={"ul"} sx={{ margin: 0, listStyleType: "none" }}>
+              {CurrentProject.skills.map((skill, i) => {
+                return (
+                  <Stack
+                    component={"li"}
+                    direction={"row"}
+                    alignItems="center"
+                    marginY="12px"
+                    spacing={"10px"}
+                    key={i}
+                  >
+                    <RxDot />
                     <Box
-                      component={"li"}
-                      key={i}
-                      marginY="12px"
-                      fontSize="16px"
+                      fontSize="17px"
                       fontFamily={font.font5}
                       fontWeight="300"
                       sx={{ opacity: 0.8 }}
                     >
                       {skill}
                     </Box>
-                  );
-                })}
-              </Box>
-            </Stack>
-            <Stack direction={"column"} spacing="20px">
+                  </Stack>
+                );
+              })}
+            </Box>
+          </Stack>
+          <Stack direction={"column"} spacing="20px">
+            <Stack direction={"row"} alignItems="center" spacing={"5px"}>
+              <BsGithub size={"16px"} />
               <Box
                 component={"a"}
                 href={CurrentProject.github}
-                fontSize="17px"
+                fontSize="15px"
                 fontFamily={font.font5}
                 target="_blank"
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
                 }}
+                fontWeight={400}
               >
-                View Github Repo
+                Github Repo
               </Box>
+            </Stack>
+            <Stack direction={"row"} alignItems="center" spacing={"5px"}>
+              <CgExternal size={"20px"} />
               <Box
                 component={"a"}
                 href={CurrentProject.link}
-                fontSize="17px"
+                fontSize="15px"
                 fontFamily={font.font5}
                 target="_blank"
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
                 }}
+                fontWeight={400}
               >
-                Visit Website
+                Website
               </Box>
             </Stack>
-            {NextProject && (
-              <Stack
-                direction={"column"}
-                alignItems="center"
-                marginTop={"15rem"}
+          </Stack>
+          <Stack
+            direction={"column"}
+            alignItems="center"
+            justifyContent={"center"}
+            marginTop={{ xs: "8rem", sm: "11rem" }}
+          >
+            <Stack direction={"row"} alignItems="center" spacing={"5px"}>
+              <Box
+                component={"p"}
+                fontSize={{ xs: "50px", sm: "64px" }}
+                fontFamily={font.font5}
+                target="_blank"
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+                fontWeight={300}
+                onClick={() => {
+                  navigate(`/${nextProject()}`, { replace: true });
+                }}
               >
-                <Box
-                  component={"p"}
-                  fontSize="18px"
-                  fontFamily={font.font5}
-                  fontWeight="300"
-                >
-                  Next Project
-                </Box>
-                <Box
-                  component={"p"}
-                  fontSize="40px"
-                  fontFamily={font.font5}
-                  fontWeight="400"
-                  marginY={"2rem"}
-                >
-                  {NextProject.tag}
-                </Box>
-                <Stack alignItems={"center"} justifyContent={"center"}>
-                  <Box
-                    component={"img"}
-                    onClick={() => {
-                      SetCurrentProject((prev) => {
-                        return Projects.find(
-                          (pro) => pro.id === NextProject.id
-                        );
-                      });
-                    }}
-                    className="image"
-                    width="40%"
-                    src={require(`../Utilities/Images/Projects/${NextProject.img}`)}
-                  />
-                </Stack>
-              </Stack>
-            )}
-          </Box>
-        </Container>
-      </SmoothScroll>
+                Next project
+              </Box>
+              <BiNavigation size={"27px"} />
+            </Stack>
+          </Stack>
+        </Box>
+      </Container>
     </Box>
   );
 }

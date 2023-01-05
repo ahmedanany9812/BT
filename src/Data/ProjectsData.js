@@ -10,6 +10,7 @@ export const Projects = [
     date: "December 2022",
     skills: ["React", "GSAP", "React Router", "Framer Motion", "Material Ui"],
     github: "https://github.com/BigTunaIsYeiling/bt",
+    link: "https://bt-ot5l.onrender.com",
   },
   {
     id: 2,
