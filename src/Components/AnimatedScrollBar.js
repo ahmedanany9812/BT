@@ -1,23 +1,37 @@
 import { Box } from "@mui/material";
-import GetBarHeight from "../hooks/GetBarHeight";
+import { useEffect } from "react";
 const AnimatedScrollBar = () => {
-  const Percent = GetBarHeight();
+  useEffect(() => {
+    const updatePercent = () => {
+      var winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      var height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("scrollPoint").style.top = scrolled + "%";
+    };
+    window.addEventListener("scroll", updatePercent);
+    return () => {
+      window.removeEventListener("scroll", updatePercent);
+    };
+  }, []);
   return (
     <Box
       sx={{
         position: "fixed",
-        top: "40%",
+        top: "35%",
         right: "3%",
         width: "2px",
         height: "180px",
         borderRadius: "5%",
-        backgroundColor: "#e4ebec",
+        backgroundColor: "#dfd9d9",
       }}
     >
       <Box
         position={"absolute"}
         sx={{
-          top: `${Percent}%`,
+          top: 0,
           width: "8px",
           height: "10px",
           backgroundColor: "black",
@@ -25,7 +39,7 @@ const AnimatedScrollBar = () => {
           right: "50%",
           transform: "translateX(50%)",
         }}
-        className="scrollPoint"
+        id="scrollPoint"
       />
     </Box>
   );

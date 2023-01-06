@@ -3,7 +3,7 @@ import { CustomTheme } from "../Utilities/Theme";
 const FooterSection = () => {
   const font = CustomTheme.fonts;
   return (
-    <Box height={"100vh"} id="box3" component={"section"}>
+    <Box height={"100vh"} id="box3" className="panel">
       <Stack
         direction={"column"}
         alignItems="flex-start"

@@ -9,8 +9,7 @@ const WorkSection = () => {
       height={"100vh"}
       id="box2"
       sx={{ border: "1px solid transparecrnt" }}
-      className="homepanel"
-      component={"section"}
+      className="panel"
     >
       <Stack
         direction={"column"}

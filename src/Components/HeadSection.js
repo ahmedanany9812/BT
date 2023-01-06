@@ -8,8 +8,7 @@ const HeadSection = () => {
       height={"100vh"}
       sx={{ border: "1px solid transparent" }}
       position="relative"
-      className="headconta"
-      component={"section"}
+      className="panel"
     >
       <Stack direction="column" position={"relative"} marginTop="11rem">
         <Box
