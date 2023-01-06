@@ -34,7 +34,7 @@ const AnimatedScrollBar = () => {
           top: 0,
           width: "8px",
           height: "10px",
-          backgroundColor: "black",
+          backgroundColor: "#434242",
           borderRadius: "5px 5px 1px 1px",
           right: "50%",
           transform: "translateX(50%)",

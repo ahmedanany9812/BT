@@ -24,13 +24,12 @@ const Header = () => {
         fontFamily={font.font5}
         fontWeight={700}
         fontSize="40px"
-        color={menuOpened ? "white" : "black"}
+        id="logo"
       >
         BT.
       </Box>
       <Box
         component={Button}
-        id="menu"
         sx={{
           ":hover": {
             backgroundColor: "transparent",
@@ -46,7 +45,7 @@ const Header = () => {
           fontFamily={font.font5}
           fontWeight={400}
           fontSize="20px"
-          color={menuOpened ? "white" : "black"}
+          id="menu"
         >
           menu
         </Box>

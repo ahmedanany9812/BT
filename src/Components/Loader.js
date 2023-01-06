@@ -1,12 +1,15 @@
 import { Box } from "@mui/material";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import SplitType from "split-type";
 import { CustomTheme } from "../Utilities/Theme";
+import { LoadingFinishd } from "../LoaderSlice";
 const Loader = () => {
   const { fonts } = CustomTheme;
   const tl = gsap.timeline();
   const container = useRef(null);
+  const dispatch = useDispatch();
   useEffect(() => {
     const text1 = new SplitType(container.current.children[1], {
       types: "words, chars",
@@ -34,6 +37,9 @@ const Loader = () => {
         xPercent: -100,
         duration: 0.8,
         ease: "circ.out",
+        onStart: () => {
+          dispatch(LoadingFinishd());
+        },
       });
   });
   return (

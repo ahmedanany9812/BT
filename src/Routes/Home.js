@@ -48,7 +48,7 @@ function Home() {
         gsap.to(window, {
           scrollTo: { y: section, autoKill: false },
           onComplete: scrolling.enable,
-          duration: 1,
+          duration: 1.4,
         });
       }
     }
