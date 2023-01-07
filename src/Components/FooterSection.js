@@ -35,7 +35,7 @@ const FooterSection = () => {
       ScrollTrigger.create({
         animation: tl,
         trigger: container.current,
-        start: "50% bottom",
+        start: "90% bottom",
         end: "bottom bottom",
         scrub: 1,
       });
