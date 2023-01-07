@@ -65,6 +65,18 @@ function Home() {
     }, HomeContainer);
     return () => crx.revert();
   });
+  useEffect(() => {
+    const crx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: HomeContainer.current,
+        start: "25% 50%",
+        end: "26% top",
+        onEnter: () => (document.body.style.backgroundColor = "black"),
+        onLeaveBack: () => (document.body.style.backgroundColor = "#fdfdfd"),
+      });
+    }, HomeContainer);
+    return () => crx.revert();
+  });
   return (
     <Box position={"relative"} ref={HomeContainer}>
       <AnimatedScrollBar />
