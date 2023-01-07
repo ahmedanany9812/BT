@@ -119,7 +119,11 @@ const HeadSection = () => {
       className="panel"
       ref={container}
     >
-      <Stack direction="column" position={"relative"} marginTop="11rem">
+      <Stack
+        direction="column"
+        position={"relative"}
+        marginTop={{ xs: "6rem", sm: "11rem" }}
+      >
         <Box
           component={"p"}
           fontFamily={font.font5}
