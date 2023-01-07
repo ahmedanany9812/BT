@@ -43,7 +43,7 @@ const WorkSection = () => {
       sx={{ border: "1px solid transparecrnt" }}
       className="panel"
       ref={container}
-      marginY={{ xs: "6rem", sm: "5rem" }}
+      marginY={{ xs: "1rem", sm: "5rem" }}
     >
       <Stack
         direction={"column"}
