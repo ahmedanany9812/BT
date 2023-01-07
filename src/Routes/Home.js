@@ -73,8 +73,9 @@ function Home() {
       tl.to(point, {
         backgroundColor: "white",
       }).to(body, {
-        backgroundColor: "black",
-        delay: 0.4,
+        backgroundColor: "rgb(0,0,0)",
+        ease: "circ.out",
+        duration: 20.5,
       });
       ScrollTrigger.create({
         trigger: HomeContainer.current,

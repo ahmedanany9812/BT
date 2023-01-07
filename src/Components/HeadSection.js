@@ -17,7 +17,7 @@ const HeadSection = () => {
   const conta = useRef();
   useLayoutEffect(() => {
     const bigtext = new SplitType(text1.current, { types: "words, chars" });
-    const smalltext = new SplitType(text2.current, { types: "words, chars" });
+    const smalltext = new SplitType(text2.current, { types: "chars, words" });
     const crx = gsap.context(() => {
       const tl = gsap.timeline();
       tl.to(bigtext.words, {
@@ -25,30 +25,16 @@ const HeadSection = () => {
         opacity: 0,
         stagger: {
           from: "random",
-          amount: 0.5,
+          amount: 1,
         },
-        delay: 0.7,
-      }).to(
-        smalltext.words,
-        {
-          yPercent: 100,
-          opacity: 0,
-          stagger: {
-            from: "random",
-            amount: 0.5,
-          },
-          delay: 0.7,
+        scrollTrigger: {
+          trigger: container.current,
+          start: "5% top",
+          end: "bottom top",
+          scrub: 2,
         },
-        "<"
-      );
-      ScrollTrigger.create({
-        animation: tl,
-        trigger: container.current,
-        start: "15% top",
-        end: "80% top",
-        scrub: true,
       });
-    }, container);
+    });
     return () => crx.revert();
   });
   return (
