@@ -26,7 +26,7 @@ const Menu = () => {
           direction={"column"}
           width="100%"
           height={"100%"}
-          paddingTop="12rem"
+          paddingTop={{ xs: "8rem", sm: "12rem" }}
           paddingBottom={"3rem"}
         >
           <Stack direction={"column"}>
@@ -46,9 +46,9 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="60px"
+                fontSize={{ xs: "42px", sm: "60px" }}
                 color={"white"}
-                minWidth="120px"
+                minWidth={{ xs: "85px", sm: "120px" }}
               >
                 00
               </Box>
@@ -56,7 +56,7 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="60px"
+                fontSize={{ xs: "42px", sm: "60px" }}
                 color={"white"}
               >
                 Home
@@ -67,9 +67,9 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="60px"
+                fontSize={{ xs: "42px", sm: "60px" }}
                 color={"white"}
-                minWidth="120px"
+                minWidth={{ xs: "85px", sm: "120px" }}
               >
                 01
               </Box>
@@ -77,7 +77,7 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="60px"
+                fontSize={{ xs: "42px", sm: "60px" }}
                 color={"white"}
               >
                 Resume
@@ -95,7 +95,7 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="22px"
+                fontSize={{ xs: "14px", sm: "22px" }}
                 color={"white"}
               >
                 Github
@@ -104,7 +104,7 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="22px"
+                fontSize={{ xs: "14px", sm: "22px" }}
                 color={"white"}
               >
                 Linked In
@@ -113,7 +113,7 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="22px"
+                fontSize={{ xs: "14px", sm: "22px" }}
                 color={"white"}
               >
                 Discord
@@ -122,13 +122,14 @@ const Menu = () => {
                 </Box>
               </Box>
             </Stack>
-            <Stack direction={"row"} alignItems="center" spacing={"33px"}>
+            <Stack direction={{xs:"column",sm:"row"}} alignItems={{xs:"flex-end",sm:"center"}} spacing={{xs:"11px",sm:"33px"}}>
               <Box
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="22px"
+                fontSize={{ xs: "13px", sm: "22px" }}
                 color={"white"}
+                sx={{whiteSpace:"nowrap"}}
               >
                 +(20) 1203 951 753
               </Box>
@@ -136,7 +137,7 @@ const Menu = () => {
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
-                fontSize="22px"
+                fontSize={{ xs: "14px", sm: "22px" }}
                 color={"white"}
               >
                 Email Me

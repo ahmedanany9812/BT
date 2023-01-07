@@ -14,7 +14,7 @@ const Header = () => {
         top: 0,
         right: 0,
         zIndex: 10,
-        padding: { xs: "10px 30px", sm: "20px 50px" },
+        padding: { xs: "30px 30px", sm: "30px 50px" },
       }}
       direction="row"
       spacing={"8px"}
