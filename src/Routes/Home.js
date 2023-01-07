@@ -10,7 +10,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 function Home() {
-  const HomeContainer = useRef(null);
+  const HomeContainer = useRef();
   useEffect(() => {
     const sections = document.querySelectorAll(".panel");
     const scrolling = {
@@ -66,13 +66,24 @@ function Home() {
     return () => crx.revert();
   });
   useEffect(() => {
+    const point = document.querySelector("#scrollPoint");
     const crx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.to(point, {
+        backgroundColor: "white",
+      }).to(
+        document.body,
+        {
+          backgroundColor: "black",
+        },
+        "<"
+      );
       ScrollTrigger.create({
         trigger: HomeContainer.current,
-        start: "25% 50%",
-        end: "26% top",
-        onEnter: () => (document.body.style.backgroundColor = "black"),
-        onLeaveBack: () => (document.body.style.backgroundColor = "#fdfdfd"),
+        animation: tl,
+        start: "36% 50%",
+        end: "38% top",
+        scrub: true,
       });
     }, HomeContainer);
     return () => crx.revert();
