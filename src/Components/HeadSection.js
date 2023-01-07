@@ -124,21 +124,21 @@ const HeadSection = () => {
           component={"p"}
           fontFamily={font.font5}
           fontWeight={400}
-          fontSize="70px"
+          fontSize={{ xs: "49px", sm: "70px" }}
           maxWidth={"80%"}
-          lineHeight={"80px"}
+          lineHeight={{ xs: "56px", md: "80px" }}
           ref={text1}
         >
           Hey,It's Ahmed.
           <br />I Am a fullstack JS Developer since 2022.
         </Box>
         <Stack direction={"row"} ref={conta}>
-          <BsArrow90DegDown size={"20px"} />
+          <BsArrow90DegDown size={"16px"} />
           <Box
             component={"p"}
             fontFamily={font.font5}
             fontWeight={400}
-            fontSize="22px"
+            fontSize={{ xs: "16px", sm: "22px" }}
             ref={text2}
           >
             Just{" "}

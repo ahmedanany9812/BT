@@ -84,7 +84,7 @@ const FooterSection = () => {
           component={"p"}
           fontFamily={font.font5}
           fontWeight={500}
-          fontSize="50px"
+          fontSize={{ xs: "30px", sm: "50px" }}
           color={"white"}
           className="emailfoot"
         >
@@ -97,7 +97,7 @@ const FooterSection = () => {
           component={"p"}
           fontFamily={font.font5}
           fontWeight={500}
-          fontSize="50px"
+          fontSize={{ xs: "30px", sm: "50px" }}
           color={"white"}
           marginTop={"8rem"}
           className="contafoot"

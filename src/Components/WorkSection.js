@@ -43,7 +43,7 @@ const WorkSection = () => {
       sx={{ border: "1px solid transparecrnt" }}
       className="panel"
       ref={container}
-      marginY={"5rem"}
+      marginY={{ xs: "6rem", sm: "5rem" }}
     >
       <Stack
         direction={"column"}
@@ -56,7 +56,7 @@ const WorkSection = () => {
           component={"p"}
           fontFamily={font.font5}
           fontWeight={500}
-          fontSize="70px"
+          fontSize={{ xs: "50px", sm: "70px" }}
           color={"whitesmoke"}
           className="work"
         >
@@ -73,7 +73,7 @@ const WorkSection = () => {
               component={"p"}
               fontFamily={font.font5}
               fontWeight={500}
-              fontSize="50px"
+              fontSize={{ xs: "30px", sm: "50px" }}
               color={"white"}
             >
               04
@@ -82,7 +82,7 @@ const WorkSection = () => {
               component={"p"}
               fontFamily={font.font5}
               fontWeight={500}
-              fontSize="50px"
+              fontSize={{ xs: "30px", sm: "50px" }}
               color={"white"}
               sx={{ opacity: 0.5 }}
             >

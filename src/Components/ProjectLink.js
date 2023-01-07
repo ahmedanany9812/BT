@@ -20,7 +20,7 @@ const ProjectLink = ({ nam, id, tag }) => {
         component={"p"}
         fontFamily={font.font5}
         fontWeight={500}
-        fontSize="50px"
+        fontSize={{ xs: "30px", sm: "50px" }}
         color={"white"}
       >
         0{id}
@@ -29,7 +29,7 @@ const ProjectLink = ({ nam, id, tag }) => {
         component={"p"}
         fontFamily={font.font5}
         fontWeight={500}
-        fontSize="50px"
+        fontSize={{ xs: "30px", sm: "50px" }}
         color={"white"}
       >
         {tag}
