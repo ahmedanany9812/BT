@@ -44,34 +44,6 @@ const FooterSection = () => {
     }, container);
     return () => crx.revert();
   });
-  useLayoutEffect(() => {
-    const projects = document.querySelector(".projects");
-    const crx = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.fromTo(
-        projects.children,
-        {
-          yPercent: 0,
-          opacity: 1,
-        },
-        {
-          yPercent: -100,
-          stagger: {
-            amount: 0.4,
-          },
-          opacity: 0,
-        }
-      );
-      ScrollTrigger.create({
-        trigger: container.current,
-        animation: tl,
-        start: "5% bottom",
-        end: "40% 90%",
-        scrub: 1,
-      });
-    });
-    return () => crx.revert();
-  });
   return (
     <Box height={"100vh"} id="box3" className="panel" ref={container}>
       <Stack
