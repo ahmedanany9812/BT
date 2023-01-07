@@ -67,22 +67,20 @@ function Home() {
   });
   useEffect(() => {
     const point = document.querySelector("#scrollPoint");
+    const body = document.body;
     const crx = gsap.context(() => {
       const tl = gsap.timeline();
       tl.to(point, {
         backgroundColor: "white",
-      }).to(
-        document.body,
-        {
-          backgroundColor: "black",
-        },
-        "<"
-      );
+      }).to(body, {
+        backgroundColor: "black",
+        delay: 0.4,
+      });
       ScrollTrigger.create({
         trigger: HomeContainer.current,
         animation: tl,
-        start: "36% 50%",
-        end: "38% top",
+        start: "40% 50%",
+        end: "42% 50%",
         scrub: true,
       });
     }, HomeContainer);
