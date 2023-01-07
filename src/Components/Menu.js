@@ -27,7 +27,7 @@ const Menu = () => {
           width="100%"
           height={"100%"}
           paddingTop={{ xs: "8rem", sm: "12rem" }}
-          paddingBottom={"3rem"}
+          paddingBottom={{ xs: "6rem", sm: "3rem" }}
         >
           <Stack direction={"column"}>
             <Stack
@@ -122,14 +122,18 @@ const Menu = () => {
                 </Box>
               </Box>
             </Stack>
-            <Stack direction={{xs:"column",sm:"row"}} alignItems={{xs:"flex-end",sm:"center"}} spacing={{xs:"11px",sm:"33px"}}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              alignItems={{ xs: "flex-end", sm: "center" }}
+              spacing={{ xs: "11px", sm: "33px" }}
+            >
               <Box
                 component={"p"}
                 fontFamily={fonts.font5}
                 fontWeight={500}
                 fontSize={{ xs: "13px", sm: "22px" }}
                 color={"white"}
-                sx={{whiteSpace:"nowrap"}}
+                sx={{ whiteSpace: "nowrap" }}
               >
                 +(20) 1203 951 753
               </Box>
