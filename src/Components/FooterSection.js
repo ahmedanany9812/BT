@@ -8,6 +8,40 @@ gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
   const font = CustomTheme.fonts;
   const container = useRef();
+  useLayoutEffect(() => {
+    const text1 = new SplitType(document.querySelector(".emailfoot"), {
+      types: "chars, words",
+    });
+    const text2 = new SplitType(document.querySelector(".contafoot"), {
+      types: "chars, words",
+    });
+    const crx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.from(text1.chars, {
+        stagger: {
+          from: "random",
+          amount: 0.8,
+        },
+        yPercent: 100,
+        autoAlpha: 0,
+      }).from(text2.chars, {
+        stagger: {
+          from: "random",
+          amount: 0.8,
+        },
+        yPercent: 100,
+        autoAlpha: 0,
+      });
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: container.current,
+        start: "50% bottom",
+        end: "bottom bottom",
+        scrub: true,
+      });
+    }, container);
+    return () => crx.revert();
+  });
   return (
     <Box height={"100vh"} id="box3" className="panel" ref={container}>
       <Stack
@@ -21,7 +55,7 @@ const FooterSection = () => {
           fontFamily={font.font5}
           fontWeight={500}
           fontSize={{ xs: "30px", sm: "50px" }}
-          color={"white"}
+          color={"black"}
           className="emailfoot"
         >
           Feel free to say Hi! - <br />
@@ -34,7 +68,7 @@ const FooterSection = () => {
           fontFamily={font.font5}
           fontWeight={500}
           fontSize={{ xs: "30px", sm: "50px" }}
-          color={"white"}
+          color={"black"}
           marginTop={"8rem"}
           className="contafoot"
         >

@@ -3,13 +3,10 @@ import { CustomTheme } from "../Utilities/Theme";
 import { BsArrow90DegDown } from "react-icons/bs";
 import { useLayoutEffect, useRef } from "react";
 import SplitType from "split-type";
-import { useSelector } from "react-redux";
-import { loaded } from "../LoaderSlice";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 const HeadSection = () => {
-  const completed = useSelector(loaded);
   const font = CustomTheme.fonts;
   const container = useRef();
   const text1 = useRef();
@@ -25,13 +22,26 @@ const HeadSection = () => {
         opacity: 0,
         stagger: {
           from: "random",
-          amount: 1,
+          amount: 0.8,
         },
         scrollTrigger: {
           trigger: container.current,
           start: "5% top",
           end: "bottom top",
-          scrub: 2,
+          scrub: 1,
+        },
+      }).to(smalltext.words, {
+        yPercent: 100,
+        opacity: 0,
+        stagger: {
+          from: "random",
+          amount: 0.8,
+        },
+        scrollTrigger: {
+          trigger: container.current,
+          start: "5% top",
+          end: "bottom top",
+          scrub: 1,
         },
       });
     });

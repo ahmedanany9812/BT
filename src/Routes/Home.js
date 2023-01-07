@@ -67,15 +67,10 @@ function Home() {
   });
   useEffect(() => {
     const point = document.querySelector("#scrollPoint");
-    const body = document.body;
     const crx = gsap.context(() => {
       const tl = gsap.timeline();
       tl.to(point, {
         backgroundColor: "white",
-      }).to(body, {
-        backgroundColor: "rgb(0,0,0)",
-        ease: "circ.out",
-        duration: 20.5,
       });
       ScrollTrigger.create({
         trigger: HomeContainer.current,

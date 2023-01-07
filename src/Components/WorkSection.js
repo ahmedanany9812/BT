@@ -8,6 +8,30 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 const WorkSection = () => {
   const font = CustomTheme.fonts;
   const container = useRef(null);
+  useLayoutEffect(() => {
+    const projects = document.querySelector(".projects").children;
+    const crx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.from(".work", {
+        yPercent: 100,
+        autoAlpha: 0,
+      }).from(projects, {
+        yPercent: 100,
+        autoAlpha: 0,
+        stagger: {
+          amount: 0.8,
+        },
+      });
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: container.current,
+        start: "50% bottom",
+        end: "bottom bottom",
+        scrub: true,
+      });
+    }, container);
+    return () => crx.revert();
+  });
   return (
     <Box
       height={"100vh"}
@@ -29,7 +53,7 @@ const WorkSection = () => {
           fontFamily={font.font5}
           fontWeight={500}
           fontSize={{ xs: "50px", sm: "70px" }}
-          color={"whitesmoke"}
+          color={"blacksmoke"}
           className="work"
         >
           Work
@@ -46,7 +70,7 @@ const WorkSection = () => {
               fontFamily={font.font5}
               fontWeight={500}
               fontSize={{ xs: "30px", sm: "50px" }}
-              color={"white"}
+              color={"black"}
             >
               04
             </Box>
@@ -55,7 +79,7 @@ const WorkSection = () => {
               fontFamily={font.font5}
               fontWeight={500}
               fontSize={{ xs: "30px", sm: "50px" }}
-              color={"white"}
+              color={"black"}
               sx={{ opacity: 0.5 }}
             >
               RoadMath
