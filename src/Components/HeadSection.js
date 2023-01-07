@@ -31,10 +31,10 @@ const HeadSection = () => {
         <Box
           component={"p"}
           fontFamily={font.font5}
-          fontWeight={400}
-          fontSize={{ xs: "46px", sm: "70px" }}
-          maxWidth={{ xs: "90%", sm: "80%" }}
-          lineHeight={{ xs: "56px", md: "80px" }}
+          fontWeight={{ xs: 500, sm: 400 }}
+          fontSize={{ xs: "40px", sm: "70px" }}
+          maxWidth={{ xs: "95%", sm: "80%" }}
+          lineHeight={{ xs: "51px", md: "80px" }}
           ref={text1}
         >
           Hey,It's Ahmed.
