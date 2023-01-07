@@ -8,34 +8,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 const WorkSection = () => {
   const font = CustomTheme.fonts;
   const container = useRef(null);
-  useLayoutEffect(() => {
-    const crx = gsap.context(() => {
-      const projects = document.querySelector(".projects");
-      const tl = gsap.timeline();
-      tl.from(projects.children, {
-        yPercent: 100,
-        opacity: 0,
-        stagger: {
-          amount: 1,
-        },
-      }).from(
-        ".work",
-        {
-          yPercent: 100,
-          opacity: 0,
-        },
-        "<"
-      );
-      ScrollTrigger.create({
-        trigger: container.current,
-        start: "50% bottom",
-        end: "bottom bottom",
-        scrub: true,
-        animation: tl,
-      });
-    }, container);
-    return () => crx.revert();
-  });
   return (
     <Box
       height={"100vh"}

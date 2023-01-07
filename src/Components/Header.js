@@ -10,14 +10,17 @@ const Header = () => {
     <Stack
       justifyContent={"space-between"}
       position="fixed"
-      sx={{ top: 0, right: 0, zIndex: 10 }}
+      sx={{
+        top: 0,
+        right: 0,
+        zIndex: 10,
+        padding: { xs: "10px 30px", sm: "20px 50px" },
+      }}
       direction="row"
       spacing={"8px"}
       alignItems="center"
       component="div"
       width="100%"
-      className="navi"
-      id="navi"
     >
       <Box
         component={"p"}

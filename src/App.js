@@ -17,7 +17,6 @@ function App() {
   }, [menuOpened]);
   return (
     <Box position={"relative"} overflow="hidden">
-      <Loader />
       <TopScroll />
       <Header />
       {menuOpened && <Menu />}

@@ -23,11 +23,6 @@ body {
   width: 0px;
   display: none;
 }
-.navi {
-  &.darkin {
-    color: white;
-  }
-}
 .scrollPoint {
   transition: 0.2s ease-out;
 }
@@ -36,19 +31,3 @@ body {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 500px) {
-  .navi {
-    padding: 30px 30px;
-    &.scrollednav {
-      padding: 10px 20px;
-    }
-  }
-}
-@media only screen and (min-width: 500px) {
-  .navi {
-    padding: 50px 50px;
-    &.scrollednav {
-      padding: 20px 50px;
-    }
-  }
-}

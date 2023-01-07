@@ -8,42 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
   const font = CustomTheme.fonts;
   const container = useRef();
-  useLayoutEffect(() => {
-    const foot1 = document.querySelector(".emailfoot");
-    const foot2 = document.querySelector(".contafoot");
-    const tag1 = new SplitType(foot1, { types: "chars, words" });
-    const tag2 = new SplitType(foot2, { types: "chars, words" });
-    const crx = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.from(tag1.chars, {
-        yPercent: 100,
-        opacity: 0,
-        stagger: {
-          amount: 1.7,
-          from: "random",
-        },
-      }).from(
-        tag2.chars,
-        {
-          yPercent: 100,
-          opacity: 0,
-          stagger: {
-            amount: 1.7,
-            from: "random",
-          },
-        },
-        "<"
-      );
-      ScrollTrigger.create({
-        trigger: container.current,
-        start: "top 80%",
-        end: "80% bottom",
-        scrub: true,
-        animation: tl,
-      });
-    }, container);
-    return () => crx.revert();
-  });
   return (
     <Box height={"100vh"} id="box3" className="panel" ref={container}>
       <Stack

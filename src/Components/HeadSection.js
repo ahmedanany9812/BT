@@ -15,102 +15,6 @@ const HeadSection = () => {
   const text1 = useRef();
   const text2 = useRef();
   const conta = useRef();
-  useLayoutEffect(() => {
-    const crx = gsap.context(() => {
-      if (completed) {
-        gsap.from([text1.current, conta.current], {
-          autoAlpha: 0,
-          stagger: {
-            each: 0.5,
-          },
-          delay: 0.2,
-        });
-      }
-    }, container);
-    return () => crx.revert();
-  });
-  useLayoutEffect(() => {
-    const Head = new SplitType(text1.current, { types: "words" });
-    const caption = new SplitType(text2.current, { types: "words" });
-    const ctx = gsap.context(() => {
-      gsap
-        .timeline()
-        .to(Head.words, {
-          yPercent: -100,
-          opacity: 0,
-          stagger: {
-            from: "random",
-            amount: 0.5,
-          },
-          scrollTrigger: {
-            trigger: container.current,
-            start: "10% 5%",
-            end: "bottom top",
-            scrub: true,
-          },
-        })
-        .to(
-          caption.words,
-          {
-            yPercent: -100,
-            opacity: 0,
-            stagger: {
-              from: "random",
-              amount: 0.5,
-            },
-            scrollTrigger: {
-              trigger: container.current,
-              start: "10% 5%",
-              end: "bottom top",
-              scrub: true,
-            },
-          },
-          "<"
-        );
-    }, container);
-    return () => ctx.revert();
-  });
-  useLayoutEffect(() => {
-    const crx = gsap.context(() => {
-      const navbar = document.getElementById("navi");
-      const logo = document.getElementById("logo");
-      const menu = document.getElementById("menu");
-      const scrollPoint = document.getElementById("scrollPoint");
-      const tl = gsap.timeline();
-      tl.to(document.body, {
-        backgroundColor: "black",
-      })
-        .to(
-          navbar,
-          {
-            padding: "20px 50px",
-          },
-          "<"
-        )
-        .to(
-          [logo, menu],
-          {
-            color: "white",
-          },
-          "<"
-        )
-        .to(
-          scrollPoint,
-          {
-            backgroundColor: "white",
-          },
-          "<"
-        );
-      ScrollTrigger.create({
-        trigger: container.current,
-        start: "88% 50%",
-        end: "bottom 35%",
-        scrub: true,
-        animation: tl,
-      });
-    }, container);
-    return () => crx.revert();
-  });
   return (
     <Box
       height={"100vh"}
@@ -122,14 +26,14 @@ const HeadSection = () => {
       <Stack
         direction="column"
         position={"relative"}
-        marginTop={{ xs: "6rem", sm: "11rem" }}
+        marginTop={{ xs: "9rem", sm: "11rem" }}
       >
         <Box
           component={"p"}
           fontFamily={font.font5}
           fontWeight={400}
-          fontSize={{ xs: "49px", sm: "70px" }}
-          maxWidth={"80%"}
+          fontSize={{ xs: "46px", sm: "70px" }}
+          maxWidth={{ xs: "90%", sm: "80%" }}
           lineHeight={{ xs: "56px", md: "80px" }}
           ref={text1}
         >
