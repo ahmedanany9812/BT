@@ -17,27 +17,27 @@ const FooterSection = () => {
     });
     const crx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.from(text1.chars, {
+      tl.from(text1.words, {
         stagger: {
           from: "random",
           amount: 0.8,
         },
         yPercent: 100,
         autoAlpha: 0,
-      }).from(text2.chars, {
+      }).from(text2.words, {
         stagger: {
           from: "random",
           amount: 0.8,
         },
         yPercent: 100,
         autoAlpha: 0,
-      });
+      },"<");
       ScrollTrigger.create({
         animation: tl,
         trigger: container.current,
         start: "50% bottom",
         end: "bottom bottom",
-        scrub: true,
+        scrub: 1,
       });
     }, container);
     return () => crx.revert();
