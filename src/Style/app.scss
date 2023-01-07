@@ -24,10 +24,6 @@ body {
   display: none;
 }
 .navi {
-  padding: 50px 50px;
-  &.scrollednav {
-    padding: 20px 50px;
-  }
   &.darkin {
     color: white;
   }
@@ -38,4 +34,21 @@ body {
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 500px) {
+  .navi {
+    padding: 30px 30px;
+    &.scrollednav {
+      padding: 10px 20px;
+    }
+  }
+}
+@media only screen and (min-width: 500px) {
+  .navi {
+    padding: 50px 50px;
+    &.scrollednav {
+      padding: 20px 50px;
+    }
+  }
 }
