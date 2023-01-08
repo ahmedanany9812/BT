@@ -21,16 +21,14 @@ const ProjectLink = ({ nam, id, tag }) => {
         fontFamily={font.font5}
         fontWeight={500}
         fontSize={{ xs: "30px", sm: "50px" }}
-        color={"black"}
       >
-        0{id}
+        0{id - 1}
       </Box>
       <Box
         component={"p"}
         fontFamily={font.font5}
         fontWeight={500}
         fontSize={{ xs: "30px", sm: "50px" }}
-        color={"black"}
       >
         {tag}
       </Box>

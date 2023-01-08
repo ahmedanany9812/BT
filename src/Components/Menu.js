@@ -17,7 +17,7 @@ const Menu = () => {
       sx={{
         height: "100vh",
         width: "100vw",
-        backgroundColor: "black",
+        backgroundColor: "#2a2a2a",
         zIndex: 1,
       }}
     >

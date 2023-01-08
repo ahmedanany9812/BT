@@ -26,6 +26,7 @@ const AnimatedScrollBar = () => {
         height: "180px",
         borderRadius: "5%",
         backgroundColor: "#dfd9d9",
+        // display: { xs: "none", sm: "block" },
       }}
     >
       <Box
@@ -34,7 +35,7 @@ const AnimatedScrollBar = () => {
           top: 0,
           width: "8px",
           height: "10px",
-          backgroundColor: "#434242",
+          backgroundColor: "whitesmoke",
           borderRadius: "5px 5px 1px 1px",
           right: "50%",
           transform: "translateX(50%)",

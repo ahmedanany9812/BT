@@ -49,8 +49,9 @@ const Header = () => {
           fontWeight={400}
           fontSize="20px"
           id="menu"
+          color={"white"}
         >
-          menu
+          {menuOpened?"Close":"Menu"}
         </Box>
       </Box>
     </Stack>

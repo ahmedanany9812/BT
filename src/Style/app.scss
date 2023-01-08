@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(253, 253, 253);
-  color: black;
+  background-color: #1a1a1a;
+  color: white;
   header {
     a {
       text-decoration: none;
@@ -17,7 +17,6 @@ body {
     }
   }
 }
-
 /* width */
 ::-webkit-scrollbar {
   width: 0px;

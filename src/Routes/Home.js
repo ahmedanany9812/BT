@@ -65,23 +65,6 @@ function Home() {
     }, HomeContainer);
     return () => crx.revert();
   });
-  useEffect(() => {
-    const point = document.querySelector("#scrollPoint");
-    const crx = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.to(point, {
-        backgroundColor: "white",
-      });
-      ScrollTrigger.create({
-        trigger: HomeContainer.current,
-        animation: tl,
-        start: "40% 50%",
-        end: "42% 50%",
-        scrub: true,
-      });
-    }, HomeContainer);
-    return () => crx.revert();
-  });
   return (
     <Box position={"relative"} ref={HomeContainer}>
       <AnimatedScrollBar />
