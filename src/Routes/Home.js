@@ -3,7 +3,6 @@ import WorkSection from "../Components/WorkSection";
 import { Container } from "@mui/system";
 import FooterSection from "../Components/FooterSection";
 import HeadSection from "../Components/HeadSection";
-import AnimatedScrollBar from "../Components/AnimatedScrollBar";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -67,7 +66,6 @@ function Home() {
   });
   return (
     <Box position={"relative"} ref={HomeContainer}>
-      <AnimatedScrollBar />
       <Container>
         <HeadSection />
         <WorkSection />
