@@ -28,7 +28,7 @@ function Home() {
             alignItems: { xs: "flex-start", md: "flex-end" },
           }}
           paddingBottom={{ xs: "0", md: "2rem" }}
-          paddingTop={{ xs: "5rem", md: "0" }}
+          paddingTop={{ xs: "4rem", md: "0" }}
         >
           <Stack
             direction={{ xs: "column", md: "row" }}
