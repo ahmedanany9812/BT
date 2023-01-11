@@ -1,14 +1,14 @@
 [
   {
     "route": "work",
-    "tag": "Work"
+    "tag": "WORK"
   },
   {
     "route": "about",
-    "tag": "About"
+    "tag": "ABOUT"
   },
   {
     "route": "contact",
-    "tag": "Contact"
+    "tag": "CONTACT"
   }
 ]
