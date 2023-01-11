@@ -4,7 +4,12 @@ import RoutesLink from "../Data/RoutesLink.json";
 function Home() {
   const { fonts } = CustomTheme;
   return (
-    <Box position={"relative"} padding="1rem" height={"100vh"}>
+    <Box
+      position={"relative"}
+      padding="1rem"
+      height={"100vh"}
+      overflow={{ xs: "hidden", md: "auto" }}
+    >
       <Container maxWidth="xl" sx={{ height: "100%" }}>
         <Box
           letterSpacing="5px"
