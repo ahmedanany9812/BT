@@ -1,13 +1,15 @@
 import { Box, Container, Stack } from "@mui/material";
 import { CustomTheme } from "../Utilities/Theme";
 import { Projects } from "../Data/ProjectsData";
+import { useNavigate } from "react-router-dom";
 const Work = () => {
   const { fonts } = CustomTheme;
+  const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "1rem", md: "3rem" }}
+        padding={{ xs: "0rem", md: "2rem" }}
         overflow={{ xs: "scroll", md: "hidden" }}
       >
         <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
@@ -17,6 +19,7 @@ const Work = () => {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
+            onClick={() => navigate("/")}
           >
             HOME
           </Box>
@@ -67,7 +70,12 @@ const Work = () => {
           <Stack direction={"column"} marginLeft={{ xs: "0px", md: "12%" }}>
             {Projects.map((pro, i) => {
               return (
-                <Stack direction={"column"} key={i}>
+                <Stack
+                  direction={"column"}
+                  key={i}
+                  component="div"
+                  onClick={() => navigate(`${pro.nam}`)}
+                >
                   <Box
                     component={"p"}
                     fontWeight={300}

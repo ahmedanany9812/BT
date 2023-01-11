@@ -1,12 +1,14 @@
 import { Box, Container, Stack } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { CustomTheme } from "../Utilities/Theme";
 const Contact = () => {
   const { fonts } = CustomTheme;
+  const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "1rem", md: "3rem" }}
+        padding={{ xs: "0rem", md: "2rem" }}
         overflow="scroll"
       >
         <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
@@ -16,6 +18,7 @@ const Contact = () => {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
+            onClick={() => navigate("/")}
           >
             HOME
           </Box>
@@ -41,7 +44,7 @@ const Contact = () => {
                 letterSpacing="0.5px"
               >
                 If you got something up your mind i can help you with feel free
-                to say hi {" "}
+                to say hi{" "}
                 <Box component={"span"} position="relative" overflow={"hidden"}>
                   ahmedenany9812@gmail.com{" "}
                   <Box

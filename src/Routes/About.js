@@ -1,12 +1,14 @@
 import { Box, Container, Stack } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { CustomTheme } from "../Utilities/Theme";
 const About = () => {
   const { fonts } = CustomTheme;
+  const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "1rem", md: "3rem" }}
+        padding={{ xs: "0rem", md: "2rem" }}
         overflow="scroll"
       >
         <Box component={"header"} height={{ xs: "17%", md: "10%" }}>
@@ -16,6 +18,7 @@ const About = () => {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
+            onClick={() => navigate("/")}
           >
             HOME
           </Box>
@@ -86,8 +89,34 @@ const About = () => {
                 lineHeight={"1.9em"}
                 letterSpacing="0.5px"
               >
-                Dude! fell free to check my RESUME if You’d like to chew the fat
-                catch me on CONTACTS
+                Dude! fell free to check my{" "}
+                <Box position={"relative"} component="span">
+                  <Box
+                    position={"absolute"}
+                    sx={{
+                      top: "100%",
+                      backgroundColor: "white",
+                      height: "1px",
+                      width: "100%",
+                      left: 0,
+                    }}
+                  />
+                  RESUME
+                </Box>{" "}
+                if You’d like to chew the fat catch me on{ " "}
+                <Box position={"relative"} component="span" onClick={()=>navigate("/contact")}>
+                  <Box
+                    position={"absolute"}
+                    sx={{
+                      top: "100%",
+                      backgroundColor: "white",
+                      height: "1px",
+                      width: "100%",
+                      left: 0,
+                    }}
+                  />
+                  CONTACTS
+                </Box>{" "}
               </Box>
             </Stack>
           </Stack>

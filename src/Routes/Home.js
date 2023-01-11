@@ -1,13 +1,15 @@
 import { Box, Container, Stack } from "@mui/material";
 import { CustomTheme } from "../Utilities/Theme";
 import RoutesLink from "../Data/RoutesLink.json";
+import { useNavigate } from "react-router-dom";
 function Home() {
   const { fonts } = CustomTheme;
+  const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "1rem", md: "3rem" }}
+        padding={{ xs: "0rem", md: "2rem" }}
         overflow={{ xs: "scroll", md: "hidden" }}
       >
         <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
@@ -15,10 +17,10 @@ function Home() {
             component={"p"}
             letterSpacing="5px"
             fontSize={"15px"}
-            fontFamily={fonts.body}
+            fontFamily={fonts.hom}
             fontWeight={300}
           >
-            BT.
+            HOME
           </Box>
         </Box>
         <Stack
@@ -107,6 +109,7 @@ function Home() {
                   key={i}
                   lineHeight="0.95em"
                   letterSpacing={{ xs: "-1px", md: "-5px" }}
+                  onClick={() => navigate(`${ro.route}`)}
                 >
                   {ro.tag}
                 </Box>
