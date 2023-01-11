@@ -128,7 +128,7 @@ function Home() {
           spacing="20px"
           alignItems={"center"}
           display={{ xs: "flex", md: "none" }}
-          sx={{ position: "absolute" }}
+          sx={{ position: "absolute",bottom:"5%" }}
         >
           <Box
             component={"p"}
