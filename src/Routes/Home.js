@@ -24,8 +24,8 @@ function Home() {
         <Box
           height={"85vh"}
           sx={{
-            display: "flex",
-            alignItems: { xs: "flex-start", md: "flex-end" },
+            display: { xs: "block", md: "flex" },
+            alignItems: "flex-end",
           }}
           paddingBottom={{ xs: "0", md: "2rem" }}
           paddingTop={{ xs: "4rem", md: "0" }}
@@ -128,7 +128,7 @@ function Home() {
           spacing="20px"
           alignItems={"center"}
           display={{ xs: "flex", md: "none" }}
-          sx={{ position: "absolute",bottom:"5%" }}
+          sx={{ position: "absolute", bottom: "5%" }}
         >
           <Box
             component={"p"}
