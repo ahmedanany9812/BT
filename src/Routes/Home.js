@@ -19,6 +19,7 @@ function Home() {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
+            paddingY="2rem"
           >
             HOME
           </Box>

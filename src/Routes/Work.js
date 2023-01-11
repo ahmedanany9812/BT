@@ -20,6 +20,7 @@ const Work = () => {
             fontFamily={fonts.hom}
             fontWeight={300}
             onClick={() => navigate("/")}
+            paddingY="2rem"
           >
             HOME
           </Box>

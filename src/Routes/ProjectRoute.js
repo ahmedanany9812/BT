@@ -25,6 +25,7 @@ function Project() {
             fontFamily={fonts.hom}
             fontWeight={300}
             onClick={() => navigate("/")}
+            paddingY="2rem"
           >
             HOME
           </Box>
@@ -53,6 +54,7 @@ function Project() {
           width={"100%"}
           justifyContent="center"
           marginTop={"8rem"}
+          paddingBottom={"1rem"}
         >
           <Box
             component={"p"}
