@@ -16,7 +16,7 @@ function Home() {
           component={"p"}
           fontWeight={300}
           fontFamily={fonts.body}
-          fontSize="18px"
+          fontSize="15px"
           padding={{ xs: "0", md: "2rem" }}
         >
           BT.
@@ -111,9 +111,10 @@ function Home() {
                     component={"p"}
                     fontWeight={300}
                     fontFamily={fonts.font5}
-                    fontSize="12vw"
+                    fontSize={{ xs: "15vw", md: "12vw" }}
                     key={i}
                     lineHeight="0.95em"
+                    letterSpacing={{ xs: "-1px", md: "-5px" }}
                   >
                     {ro.tag}
                   </Box>
@@ -122,6 +123,41 @@ function Home() {
             </Stack>
           </Stack>
         </Box>
+        <Stack
+          direction={"row"}
+          spacing="20px"
+          alignItems={"center"}
+          display={{ xs: "flex", md: "none" }}
+          sx={{ position: "absolute" }}
+        >
+          <Box
+            component={"p"}
+            fontWeight={200}
+            fontFamily={fonts.body}
+            fontSize="14px"
+            letterSpacing={"2px"}
+          >
+            TW
+          </Box>
+          <Box
+            component={"p"}
+            fontWeight={200}
+            fontFamily={fonts.body}
+            fontSize="14px"
+            letterSpacing={"2px"}
+          >
+            FB
+          </Box>
+          <Box
+            component={"p"}
+            fontWeight={200}
+            fontFamily={fonts.body}
+            fontSize="14px"
+            letterSpacing={"2px"}
+          >
+            LI
+          </Box>
+        </Stack>
       </Container>
     </Box>
   );
