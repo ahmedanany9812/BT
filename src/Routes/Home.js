@@ -19,7 +19,7 @@ function Home() {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
-            paddingY="2rem"
+            paddingY="1rem"
           >
             HOME
           </Box>
@@ -110,7 +110,7 @@ function Home() {
                   key={i}
                   lineHeight="0.95em"
                   letterSpacing={{ xs: "-1px", md: "-5px" }}
-                  onClick={() => navigate(`${ro.route}`)}
+                  onClick={() => navigate(`${ro.route}`, { replace: true })}
                 >
                   {ro.tag}
                 </Box>

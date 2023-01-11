@@ -18,8 +18,8 @@ const About = () => {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
-            onClick={() => navigate("/")}
-            paddingY="2rem"
+            onClick={() => navigate("/", { replace: true })}
+            paddingY="1rem"
           >
             HOME
           </Box>
@@ -27,9 +27,10 @@ const About = () => {
         <Stack
           direction="column"
           alignItems="flex-start"
-          maxWidth={{ xs: "98%", md: "70%" }}
+          maxWidth={{ xs: "98%", md: "55%" }}
           spacing="2rem"
           marginLeft={{ xs: 0, md: "4rem" }}
+          marginTop={{ xs: "2rem", md: "6rem" }}
         >
           <Box
             component={"p"}
@@ -107,7 +108,7 @@ const About = () => {
               <Box
                 position={"relative"}
                 component="span"
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/contact", { replace: true })}
               >
                 <Box
                   position={"absolute"}

@@ -19,8 +19,8 @@ const Work = () => {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
-            onClick={() => navigate("/")}
-            paddingY="2rem"
+            onClick={() => navigate("/", { replace: true })}
+            paddingY="1rem"
           >
             HOME
           </Box>
@@ -75,7 +75,7 @@ const Work = () => {
                   direction={"column"}
                   key={i}
                   component="div"
-                  onClick={() => navigate(`${pro.nam}`)}
+                  onClick={() => navigate(`${pro.nam}`, { replace: true })}
                 >
                   <Box
                     component={"p"}

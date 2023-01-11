@@ -24,8 +24,8 @@ function Project() {
             fontSize={"15px"}
             fontFamily={fonts.hom}
             fontWeight={300}
-            onClick={() => navigate("/")}
-            paddingY="2rem"
+            onClick={() => navigate("/", { replace: true })}
+            paddingY="1rem"
           >
             HOME
           </Box>
