@@ -10,7 +10,7 @@ function Home() {
         padding={{ xs: "1rem", md: "3rem" }}
         overflow={{ xs: "scroll", md: "hidden" }}
       >
-        <Box component={"header"} height="20%">
+        <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
           <Box
             component={"p"}
             letterSpacing="5px"
@@ -118,7 +118,7 @@ function Home() {
             spacing="20px"
             alignItems={"center"}
             display={{ xs: "flex", md: "none" }}
-            marginTop="5rem"
+            marginTop="4rem"
           >
             <Box
               component={"p"}
