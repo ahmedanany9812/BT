@@ -1,0 +1,14 @@
+[
+  {
+    "route": "work",
+    "tag": "Work"
+  },
+  {
+    "route": "about",
+    "tag": "About"
+  },
+  {
+    "route": "contact",
+    "tag": "Contact"
+  }
+]

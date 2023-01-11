@@ -10,6 +10,8 @@ export const CustomTheme = {
     font3: " Oswald, sans-serif",
     font4: "Passion One, cursive",
     font5: "Unbounded, cursive",
+    font6: "IBM Plex Mono, monospace",
+    hom: "Montserrat, sans-serif",
   },
   breakpoints: {
     xs: 500,

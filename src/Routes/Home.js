@@ -1,75 +1,127 @@
-import { Box } from "@mui/material";
-import WorkSection from "../Components/WorkSection";
-import { Container } from "@mui/system";
-import FooterSection from "../Components/FooterSection";
-import HeadSection from "../Components/HeadSection";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import { Box, Container, Stack } from "@mui/material";
+import { CustomTheme } from "../Utilities/Theme";
+import RoutesLink from "../Data/RoutesLink.json";
 function Home() {
-  const HomeContainer = useRef();
-  useEffect(() => {
-    const sections = document.querySelectorAll(".panel");
-    const scrolling = {
-      enabled: true,
-      events: "scroll,wheel,touchmove,pointermove".split(","),
-      prevent: (e) => e.preventDefault(),
-      disable() {
-        if (scrolling.enabled) {
-          scrolling.enabled = false;
-          window.addEventListener("scroll", gsap.ticker.tick, {
-            passive: true,
-          });
-          scrolling.events.forEach((e, i) =>
-            (i ? document : window).addEventListener(e, scrolling.prevent, {
-              passive: false,
-            })
-          );
-        }
-      },
-      enable() {
-        if (!scrolling.enabled) {
-          scrolling.enabled = true;
-          window.removeEventListener("scroll", gsap.ticker.tick);
-          scrolling.events.forEach((e, i) =>
-            (i ? document : window).removeEventListener(e, scrolling.prevent)
-          );
-        }
-      },
-    };
-
-    function goToSection(section) {
-      if (scrolling.enabled) {
-        // skip if a scroll tween is in progress
-        scrolling.disable();
-        gsap.to(window, {
-          scrollTo: { y: section, autoKill: false },
-          onComplete: scrolling.enable,
-          duration: 1.4,
-        });
-      }
-    }
-    const crx = gsap.context(() => {
-      sections.forEach((section, i) => {
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top bottom-=1",
-          end: "bottom top+=1",
-          onEnter: () => goToSection(section),
-          onEnterBack: () => goToSection(section),
-        });
-      });
-    }, HomeContainer);
-    return () => crx.revert();
-  });
+  const { fonts } = CustomTheme;
   return (
-    <Box position={"relative"} ref={HomeContainer}>
-      <Container>
-        <HeadSection />
-        <WorkSection />
-        <FooterSection />
+    <Box
+      position={"relative"}
+      padding="1rem"
+      maxHeight={"100vh"}
+      overflow="hidden"
+    >
+      <Container maxWidth="xl">
+        <Box
+          letterSpacing="5px"
+          component={"p"}
+          fontWeight={300}
+          fontFamily={fonts.body}
+          fontSize="18px"
+          padding={{ xs: "0", md: "2rem" }}
+        >
+          BT.
+        </Box>
+        <Box
+          height={"85vh"}
+          sx={{
+            display: "flex",
+            alignItems: { xs: "flex-start", md: "flex-end" },
+          }}
+          paddingBottom={{ xs: "0", md: "2rem" }}
+          paddingTop={{ xs: "5rem", md: "0" }}
+        >
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            alignItems={{ xs: "flex-start", md: "flex-end" }}
+            justifyContent={"center"}
+          >
+            <Stack
+              direction={"column"}
+              spacing="20px"
+              maxWidth={{ xs: "100%", md: "25%" }}
+              marginBottom={"20px"}
+            >
+              <Box
+                component={"p"}
+                fontWeight={500}
+                fontFamily={fonts.hom}
+                fontSize="15px"
+                letterSpacing="2px"
+              >
+                AHMED ANANY
+              </Box>
+              <Box
+                component={"p"}
+                fontWeight={300}
+                fontFamily={fonts.hom}
+                fontSize="15px"
+                lineHeight={"1.9em"}
+              >
+                A junior fullstack JS developer since 2022 and Data Science
+                Student
+              </Box>
+              <Box
+                component={"p"}
+                fontWeight={300}
+                fontFamily={fonts.hom}
+                fontSize="15px"
+                lineHeight={"1.9em"}
+              >
+                Working As freelancer and Looking for a new apportunity
+              </Box>
+              <Stack
+                direction={"row"}
+                spacing="20px"
+                alignItems={"center"}
+                display={{ xs: "none", md: "flex" }}
+              >
+                <Box
+                  component={"p"}
+                  fontWeight={200}
+                  fontFamily={fonts.body}
+                  fontSize="14px"
+                  letterSpacing={"2px"}
+                >
+                  TW
+                </Box>
+                <Box
+                  component={"p"}
+                  fontWeight={200}
+                  fontFamily={fonts.body}
+                  fontSize="14px"
+                  letterSpacing={"2px"}
+                >
+                  FB
+                </Box>
+                <Box
+                  component={"p"}
+                  fontWeight={200}
+                  fontFamily={fonts.body}
+                  fontSize="14px"
+                  letterSpacing={"2px"}
+                >
+                  LI
+                </Box>
+              </Stack>
+            </Stack>
+            <Stack direction={"column"} marginLeft={{ xs: "0px", md: "6%" }}>
+              {RoutesLink.map((ro, i) => {
+                return (
+                  <Box
+                    component={"p"}
+                    fontWeight={300}
+                    fontFamily={fonts.font5}
+                    fontSize="12vw"
+                    key={i}
+                    lineHeight="0.95em"
+                  >
+                    {ro.tag}
+                  </Box>
+                );
+              })}
+            </Stack>
+          </Stack>
+        </Box>
       </Container>
     </Box>
   );
