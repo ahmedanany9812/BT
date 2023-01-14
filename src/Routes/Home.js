@@ -9,7 +9,8 @@ function Home() {
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "0rem", md: "2rem" }}
+        paddingX={{ xs: "0rem", md: "2rem" }}
+        paddingY="0.5rem"
         overflow={{ xs: "scroll", md: "hidden" }}
       >
         <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
@@ -25,7 +26,6 @@ function Home() {
           </Box>
         </Box>
         <Stack
-          height={"80%"}
           direction={{ xs: "column", md: "row" }}
           alignItems={{ xs: "flex-start", md: "flex-end" }}
           paddingBottom={{ xs: "0", md: "2rem" }}
@@ -34,7 +34,7 @@ function Home() {
             direction={"column"}
             spacing="20px"
             maxWidth={{ xs: "100%", md: "25%" }}
-            marginBottom={"20px"}
+            marginBottom={{ xs: "20px", md: "0" }}
           >
             <Box
               component={"p"}

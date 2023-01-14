@@ -16,8 +16,8 @@ function Project() {
   const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
-      <Box padding={{ xs: "0rem", md: "2rem" }} overflow="scroll">
-        <Box component={"header"} paddingY="10px">
+      <Box paddingX={{ xs: "0rem", md: "2rem" }} overflow="scroll" paddingY="0.5rem">
+        <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
           <Box
             component={"p"}
             letterSpacing="5px"
@@ -30,7 +30,7 @@ function Project() {
             HOME
           </Box>
         </Box>
-        <Box height={"85vh"} sx={{ bgcolor: "whitesmoke" }} position="relative">
+        <Box height={"88vh"} sx={{ bgcolor: "whitesmoke" }} position="relative">
           <Box
             component={"p"}
             fontWeight={300}

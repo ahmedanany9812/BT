@@ -8,7 +8,8 @@ const About = () => {
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "0rem", md: "2rem" }}
+        paddingX={{ xs: "0rem", md: "2rem" }}
+        paddingY="0.5rem"
         overflow="scroll"
       >
         <Box component={"header"} height={{ xs: "17%", md: "10%" }}>

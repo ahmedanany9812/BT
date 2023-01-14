@@ -9,7 +9,8 @@ const Work = () => {
     <Container maxWidth="xl">
       <Box
         height={"100vh"}
-        padding={{ xs: "0rem", md: "2rem" }}
+        paddingX={{ xs: "0rem", md: "2rem" }}
+        paddingY="0.5rem"
         overflow={{ xs: "scroll", md: "hidden" }}
       >
         <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
@@ -26,7 +27,6 @@ const Work = () => {
           </Box>
         </Box>
         <Stack
-          height={"80%"}
           direction={{ xs: "column", md: "row" }}
           alignItems={{ xs: "flex-start", md: "flex-end" }}
           paddingBottom={{ xs: "0", md: "2rem" }}
@@ -35,6 +35,7 @@ const Work = () => {
             direction={"column"}
             maxWidth={{ xs: "100%", md: "30%" }}
             spacing={"20px"}
+            marginBottom={{ xs: "20px", md: "0" }}
           >
             <Box
               component={"p"}
@@ -91,7 +92,7 @@ const Work = () => {
                     fontWeight={300}
                     fontFamily={fonts.font5}
                     fontSize={{ xs: "2vw", md: "1vw" }}
-                    letterSpacing={{ xs: "-1px", md: "0px" }}
+                    letterSpacing={{ xs: "0", md: "0px" }}
                     sx={{ color: "whitesmoke", opacity: 0.7 }}
                   >
                     ------- {pro.date}
