@@ -13,7 +13,7 @@ const Work = () => {
         paddingY="0.5rem"
         overflow={{ xs: "scroll", md: "hidden" }}
       >
-        <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
+        <Box component={"header"} marginBottom={{ xs: "5rem", md: "4rem" }}>
           <Box
             component={"p"}
             letterSpacing="5px"
@@ -92,10 +92,12 @@ const Work = () => {
                     fontWeight={300}
                     fontFamily={fonts.font5}
                     fontSize={{ xs: "2vw", md: "1vw" }}
-                    letterSpacing={{ xs: "0", md: "0px" }}
                     sx={{ color: "whitesmoke", opacity: 0.7 }}
                   >
-                    ------- {pro.date}
+                    <Box component={"span"} letterSpacing={"-2px"}>
+                      -------
+                    </Box>{" "}
+                    {pro.date}
                   </Box>
                 </Stack>
               );
@@ -117,10 +119,12 @@ const Work = () => {
                 fontWeight={300}
                 fontFamily={fonts.font5}
                 fontSize={{ xs: "2vw", md: "1vw" }}
-                letterSpacing={{ xs: "-1px", md: "0px" }}
                 sx={{ color: "whitesmoke", opacity: 0.7 }}
               >
-                ------- SOON
+                <Box component={"span"} letterSpacing={"-2px"}>
+                  -------
+                </Box>{" "}
+                SOON
               </Box>
             </Stack>
           </Stack>
