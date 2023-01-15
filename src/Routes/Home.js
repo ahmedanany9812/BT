@@ -8,7 +8,7 @@ function Home() {
   return (
     <Container maxWidth="xl">
       <Box
-        height={"100vh"}
+        maxHeight={"100vh"}
         paddingX={{ xs: "0rem", md: "2rem" }}
         paddingY="0.5rem"
         overflow={{ xs: "scroll", md: "hidden" }}
