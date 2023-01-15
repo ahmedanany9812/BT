@@ -6,12 +6,7 @@ const About = () => {
   const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
-      <Box
-        maxHeight={"100vh"}
-        paddingX={{ xs: "0rem", md: "2rem" }}
-        paddingY="0.5rem"
-        overflow="scroll"
-      >
+      <Box paddingX={{ xs: "0rem", md: "2rem" }} paddingY="0.5rem">
         <Box component={"header"} marginBottom={{ xs: "3.5rem", md: "4rem" }}>
           <Box
             component={"p"}
@@ -25,13 +20,8 @@ const About = () => {
             HOME
           </Box>
         </Box>
-        <Stack
-          direction="column"
-          alignItems="flex-start"
-          maxWidth={{ xs: "98%", md: "55%" }}
-          spacing="2rem"
+        <Box
           marginLeft={{ xs: 0, md: "4rem" }}
-          marginTop={{ xs: "2rem", md: "6rem" }}
         >
           <Box
             component={"p"}
@@ -59,6 +49,7 @@ const About = () => {
               fontSize="14px"
               lineHeight={"1.9em"}
               letterSpacing="0.5px"
+              marginTop={"2rem"}
             >
               I’ve been starting web design with the common skills like HTML
               ,CSS And it was pretty good as a start about 2 years ago Then i’ve
@@ -126,7 +117,7 @@ const About = () => {
               </Box>{" "}
             </Box>
           </Stack>
-        </Stack>
+        </Box>
       </Box>
     </Container>
   );
