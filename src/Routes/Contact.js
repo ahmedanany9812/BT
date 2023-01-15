@@ -35,7 +35,7 @@ const Contact = () => {
             component={"p"}
             fontWeight={300}
             fontFamily={fonts.font5}
-            fontSize={{ xs: "11vw", md: "11vw" }}
+            fontSize={{ xs: "11vw", md: "10vw" }}
             letterSpacing={{ xs: "-1px", md: "-5px" }}
           >
             HEY!
@@ -56,11 +56,12 @@ const Contact = () => {
                 <Box
                   position={"absolute"}
                   sx={{
-                    top: "100%",
+                    bottom: 0,
                     backgroundColor: "white",
                     height: "1px",
                     width: "100%",
                     left: 0,
+                    right: 0,
                   }}
                 />
               </Box>

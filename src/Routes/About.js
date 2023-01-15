@@ -25,7 +25,7 @@ const About = () => {
             component={"p"}
             fontWeight={300}
             fontFamily={fonts.font5}
-            fontSize={{ xs: "11vw", md: "11vw" }}
+            fontSize={{ xs: "11vw", md: "10vw" }}
             letterSpacing={{ xs: "-1px", md: "-5px" }}
           >
             HOLA!
@@ -36,7 +36,7 @@ const About = () => {
             fontFamily={fonts.font5}
             fontSize={{ xs: "7vw", md: "3vw" }}
             letterSpacing={{ xs: "-1px", md: "-2px" }}
-            marginTop={"2rem"}
+            marginTop={"1rem"}
           >
             It’s Ahmed , A self Taught fullstack js developer and problem solver
           </Box>
@@ -86,11 +86,12 @@ const About = () => {
                 <Box
                   position={"absolute"}
                   sx={{
-                    top: "100%",
+                    bottom: 0,
                     backgroundColor: "white",
                     height: "1px",
                     width: "100%",
                     left: 0,
+                    right:0
                   }}
                 />
                 RESUME
