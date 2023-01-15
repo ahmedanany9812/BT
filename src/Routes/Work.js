@@ -64,6 +64,7 @@ const Work = () => {
               fontSize="14px"
               lineHeight={"1.9em"}
               letterSpacing="0.5px"
+              display={{ xs: "none", md: "block" }}
             >
               I’m learning and gaining new skills every day Keeping up with the
               extreme envolving of the digital design
