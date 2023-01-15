@@ -20,9 +20,7 @@ const About = () => {
             HOME
           </Box>
         </Box>
-        <Box
-          marginLeft={{ xs: 0, md: "4rem" }}
-        >
+        <Box marginLeft={{ xs: 0, md: "4rem" }}>
           <Box
             component={"p"}
             fontWeight={300}
@@ -38,6 +36,7 @@ const About = () => {
             fontFamily={fonts.font5}
             fontSize={{ xs: "7vw", md: "3vw" }}
             letterSpacing={{ xs: "-1px", md: "-2px" }}
+            marginTop={"2rem"}
           >
             It’s Ahmed , A self Taught fullstack js developer and problem solver
           </Box>
