@@ -12,7 +12,7 @@ const Contact = () => {
         paddingY="0.5rem"
         overflow="scroll"
       >
-        <Box component={"header"} marginBottom={{ xs: "5rem", md: "4rem" }}>
+        <Box component={"header"} marginBottom={{ xs: "3.5rem", md: "4rem" }}>
           <Box
             component={"p"}
             letterSpacing="5px"
