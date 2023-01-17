@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
-import UseWindowSize from "../Utilities/USeWindowSize";
 function Project() {
   const Contain = useRef();
   const { fonts } = CustomTheme;
@@ -17,40 +16,23 @@ function Project() {
     return Projects[index - 1].nam;
   };
   const navigate = useNavigate();
-  const size = UseWindowSize();
-  useEffect(() => {
-    const App = document.getElementById("App");
-    App.style.position = "fixed";
-  });
-  useEffect(() => {
-    document.body.style.height = `${
-      Contain.current.getBoundingClientRect().height
-    }px`;
-  }, [size.height]);
-  const skewConfig = {
-    ease: 0.1,
-    current: 0,
-    previous: 0,
-    rounded: 0,
-  };
-  const SkewScrolling = () => {
-    skewConfig.current = window.scrollY;
-    skewConfig.previous +=
-      (skewConfig.current - skewConfig.previous) * skewConfig.ease;
-    skewConfig.rounded = Math.round(skewConfig.previous * 100) / 100;
+  let currentPos = window.pageYOffset;
+  const update = () => {
+    const newPos = window.pageYOffset;
+    const diff = newPos - currentPos;
+    const speed = diff * 0.1;
 
-    const diff = skewConfig.current - skewConfig.rounded;
-    const accel = diff / size.width;
-    const velocity = +accel;
-    const skew = velocity * 7.5;
-    Contain.current.style.transform = `translateY(-${skewConfig.rounded}px) skewY(${skew}deg)`;
-    requestAnimationFrame(() => SkewScrolling());
+    Contain.current.style.transform = `skewY(${speed}deg)`;
+
+    currentPos = newPos;
+
+    requestAnimationFrame(update);
   };
   useEffect(() => {
-    requestAnimationFrame(() => SkewScrolling());
+    requestAnimationFrame(() => update());
   });
   return (
-    <Box ref={Contain}>
+    <Box ref={Contain} className="conta">
       <Container maxWidth="xl">
         <Box paddingX={{ xs: "0rem", md: "2rem" }} paddingY="0.5rem">
           <Box component={"header"} height={{ xs: "17%", md: "20%" }}>

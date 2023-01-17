@@ -13,9 +13,14 @@ body {
   background-color: #1b1818;
   color: whitesmoke;
   height: 100%;
+  width: 100%;
 }
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
   display: none;
+}
+.conta {
+  transition: transform 0.25s;
+  will-change: transform;
 }
