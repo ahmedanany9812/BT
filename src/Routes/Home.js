@@ -13,7 +13,7 @@ function Home() {
         paddingY="0.5rem"
         overflow={{ xs: "scroll", md: "hidden" }}
       >
-        <Box component={"header"} marginBottom={{ xs: "3.5rem", md: "4rem" }}>
+        <Box component={"header"} marginBottom="4rem">
           <Box
             component={"p"}
             letterSpacing="5px"
@@ -118,41 +118,6 @@ function Home() {
                 );
               })}
             </Stack>
-          </Stack>
-          <Stack
-            direction={"row"}
-            spacing="20px"
-            alignItems={"center"}
-            display={{ xs: "flex", md: "none" }}
-            marginTop="4rem"
-          >
-            <Box
-              component={"p"}
-              fontWeight={200}
-              fontFamily={fonts.body}
-              fontSize="14px"
-              letterSpacing={"2px"}
-            >
-              TW
-            </Box>
-            <Box
-              component={"p"}
-              fontWeight={200}
-              fontFamily={fonts.body}
-              fontSize="14px"
-              letterSpacing={"2px"}
-            >
-              FB
-            </Box>
-            <Box
-              component={"p"}
-              fontWeight={200}
-              fontFamily={fonts.body}
-              fontSize="14px"
-              letterSpacing={"2px"}
-            >
-              LI
-            </Box>
           </Stack>
         </Box>
       </Box>
