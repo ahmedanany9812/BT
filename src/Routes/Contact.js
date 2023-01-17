@@ -1,9 +1,16 @@
 import { Box, Container, Stack } from "@mui/material";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CustomTheme } from "../Utilities/Theme";
 const Contact = () => {
   const { fonts } = CustomTheme;
   const navigate = useNavigate();
+  const setBodyHeight = () => {
+    document.body.style.height = `100%`;
+  };
+  useEffect(() => {
+    setBodyHeight();
+  });
   return (
     <Container maxWidth="xl">
       <Box

@@ -40,7 +40,6 @@ function Project() {
   useEffect(() => {
     setBodyHeight();
   });
-
   return (
     <Box ref={Contain} className="conta">
       <SmoothScroll>
