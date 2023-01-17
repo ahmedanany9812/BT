@@ -2,7 +2,6 @@ import { Box, Container, Stack } from "@mui/material";
 import { useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
-import SmoothScroll from "../Utilities/ScrollSmoother";
 import { CustomTheme } from "../Utilities/Theme";
 function Project() {
   const Contain = useRef();
@@ -21,7 +20,7 @@ function Project() {
   const update = () => {
     const newPos = window.pageYOffset;
     const diff = newPos - currentPos;
-    const speed = diff * 0.1;
+    const speed = diff * 0.08;
 
     Contain.current.style.transform = `skewY(${speed}deg)`;
 
@@ -32,17 +31,8 @@ function Project() {
   useEffect(() => {
     requestAnimationFrame(() => update());
   });
-  const setBodyHeight = () => {
-    document.body.style.height = `${
-      Contain.current.getBoundingClientRect().height
-    }px`;
-  };
-  useEffect(() => {
-    setBodyHeight();
-  });
   return (
     <Box ref={Contain} className="conta">
-      <SmoothScroll>
         <Container maxWidth="xl">
           <Box paddingX={{ xs: "0rem", md: "2rem" }} paddingY="0.5rem">
             <Box component={"header"} height={{ xs: "17%", md: "20%" }}>
@@ -226,7 +216,6 @@ function Project() {
             </Stack>
           </Box>
         </Container>
-      </SmoothScroll>
     </Box>
   );
 }
