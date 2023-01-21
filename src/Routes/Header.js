@@ -18,6 +18,7 @@ const Header = () => {
         fontSize={"13px"}
         fontFamily={fonts.font5}
         display={{ xs: "none", md: "block" }}
+        sx={{opacity:0.7}}
       >
         TWITTER
       </Box>
@@ -25,6 +26,7 @@ const Header = () => {
         fontSize={"13px"}
         fontFamily={fonts.font5}
         display={{ xs: "none", md: "block" }}
+        sx={{opacity:0.7}}
       >
         AVALIBLE FOR HIRE
       </Box>
@@ -47,6 +49,7 @@ const Header = () => {
           fontSize={"13px"}
           fontFamily={fonts.font5}
           display={{ md: "none", xs: "block" }}
+          sx={{opacity:0.7}}
         >
           TWITTER
         </Box>
@@ -54,6 +57,7 @@ const Header = () => {
           fontSize={"13px"}
           fontFamily={fonts.font5}
           display={{ md: "none", xs: "block" }}
+          sx={{opacity:0.7}}
         >
           AVALIBLE FOR HIRE
         </Box>
