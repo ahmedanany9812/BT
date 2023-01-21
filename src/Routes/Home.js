@@ -13,21 +13,21 @@ function Home() {
           <Stack
             direction={"row"}
             alignItems="center"
-            spacing={{xs:"5px",sm:"22px"}}
-            lineHeight={{ xs: "100px", sm: "170px" }}
+            spacing={{ xs: "5px", sm: "22px" }}
+            lineHeight={{ xs: "70px", sm: "170px" }}
           >
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
               fontWeight={700}
-              letterSpacing={{ sm: "-8px", xs: "-5px" }}
+              letterSpacing={{ sm: "-8px", xs: "-3px" }}
             >
               FULL
             </Box>
             <Box
               sx={{
                 backgroundColor: "#434242",
-                height: { xs: "15px", sm: "30px" },
+                height: { xs: "9px", sm: "30px" },
                 width: "200px",
               }}
             />
@@ -35,7 +35,7 @@ function Home() {
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
               fontWeight={500}
-              letterSpacing={{ sm: "-8px", xs: "-5px" }}
+              letterSpacing={{ sm: "-8px", xs: "-3px" }}
             >
               STACK
             </Box>
@@ -45,8 +45,8 @@ function Home() {
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
               fontWeight={700}
-              letterSpacing={{ sm: "-10px", xs: "-5px" }}
-              lineHeight={{ xs: "100px", sm: "170px" }}
+              letterSpacing={{ sm: "-10px", xs: "-3px" }}
+              lineHeight={{ xs: "70px", sm: "170px" }}
             >
               JS
             </Box>
@@ -55,8 +55,8 @@ function Home() {
                 fontSize={"11.5vw"}
                 fontFamily={fonts.font5}
                 fontWeight={700}
-                letterSpacing={{ sm: "-10px", xs: "-5px" }}
-                lineHeight={{ xs: "100px", sm: "170px" }}
+                letterSpacing={{ sm: "-10px", xs: "-3px" }}
+                lineHeight={{ xs: "70px", sm: "170px" }}
               >
                 DEVELOPER
               </Box>
