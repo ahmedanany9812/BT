@@ -19,7 +19,7 @@ function Home() {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={700}
+              fontWeight={{ xs: 900, sm: 700 }}
               letterSpacing={{ sm: "-8px", xs: "-3px" }}
             >
               FULL
@@ -34,7 +34,7 @@ function Home() {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={500}
+              fontWeight={{ xs: 800, sm: 700 }}
               letterSpacing={{ sm: "-8px", xs: "-3px" }}
             >
               STACK
@@ -44,7 +44,7 @@ function Home() {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={700}
+              fontWeight={{ xs: 800, sm: 700 }}
               letterSpacing={{ sm: "-10px", xs: "-3px" }}
               lineHeight={{ xs: "70px", sm: "170px" }}
             >
@@ -54,7 +54,7 @@ function Home() {
               <Box
                 fontSize={"11.5vw"}
                 fontFamily={fonts.font5}
-                fontWeight={700}
+                fontWeight={{ xs: 800, sm: 700 }}
                 letterSpacing={{ sm: "-10px", xs: "-3px" }}
                 lineHeight={{ xs: "70px", sm: "170px" }}
               >
@@ -71,7 +71,7 @@ function Home() {
           <Box
             component={Lottie}
             animationData={scrolldown}
-            style={{ width: "160px" }}
+            style={{ width: "135px" }}
             display={{ xs: "block", md: "none" }}
           />
         </Box>
