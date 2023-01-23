@@ -12,20 +12,10 @@ const WorkLink = ({ id, tag, cate }) => {
       sx={{ position: "relative" }}
     >
       <Box
-        height={"2px"}
-        sx={{
-          backgroundColor: "whitesmoke",
-          width: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-      />
-      <Box
         fontFamily={fonts.font5}
         fontSize="8vw"
         fontWeight={500}
-        minWidth={{ xs: "65px", sm: "230px" }}
+        minWidth={{ xs: "60px", sm: "230px" }}
       >
         0{id - 1}
       </Box>

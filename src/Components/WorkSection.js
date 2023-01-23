@@ -19,26 +19,6 @@ const WorkSection = () => {
           sx={{ position: "relative" }}
         >
           <Box
-            height={"2px"}
-            sx={{
-              backgroundColor: "whitesmoke",
-              width: "100%",
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
-          />
-          <Box
-            height={"2px"}
-            sx={{
-              backgroundColor: "whitesmoke",
-              width: "100%",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-            }}
-          />
-          <Box
             fontFamily={fonts.font5}
             fontSize="8vw"
             fontWeight={500}

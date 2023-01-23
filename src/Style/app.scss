@@ -12,7 +12,7 @@
 }
 body {
   background-color: black;
-  color: #f5f5f5;
+  color: #dbdbdb;
   height: 100%;
   width: 100%;
 }
@@ -23,14 +23,12 @@ body {
 }
 
 #App {
-  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-
 .Scroll{
   will-change: transform;
 }
