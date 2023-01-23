@@ -5,7 +5,7 @@ import TopScroll from "./Utilities/TopScroll";
 function App() {
   return (
     <Box position={"relative"} id="App">
-      <TopScroll />
+      {/* <TopScroll /> */}
       <Container maxWidth="xl">
         <Outlet />
       </Container>

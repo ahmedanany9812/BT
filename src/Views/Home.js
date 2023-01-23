@@ -30,6 +30,9 @@ function Home() {
     if (Size.width > 800) {
       ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px) skewY(${skew}deg)`;
     }
+    if (Size.width <= 800) {
+      ScrollContainer.current.style.transform = `translate3d(0,-${SkewConfigs.rounded}px,0)`;
+    }
 
     requestAnimationFrame(() => SkewScrolling());
   };
