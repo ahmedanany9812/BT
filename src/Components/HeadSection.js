@@ -25,7 +25,7 @@ const HeadSection = () => {
           </Box>
           <Box
             sx={{
-              backgroundColor: "#ffffff",
+              backgroundColor: "#a7a7a7",
               height: { xs: "9px", sm: "30px" },
               width: "200px",
             }}

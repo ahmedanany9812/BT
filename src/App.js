@@ -7,19 +7,19 @@ import UseWindowSize from "./Utilities/WindowSize";
 function App() {
   const Size = UseWindowSize();
   const AppContainer = useRef();
-  useEffect(() => {
-    if (Size.width > 800) {
-      AppContainer.current.style.position = "fixed";
-    } else {
-      AppContainer.current.style.position = "relative";
-    }
-  });
+  // useEffect(() => {
+  //   if (Size.width > 800) {
+  //     AppContainer.current.style.position = "fixed";
+  //   } else {
+  //     AppContainer.current.style.position = "relative";
+  //   }
+  // });
   return (
     <Box position={"relative"} id="App" ref={AppContainer}>
-      <TopScroll />
-      <Container maxWidth="xl">
+      {/* <TopScroll />
+      <Container maxWidth="xl"> */}
         <Outlet />
-      </Container>
+      {/* </Container> */}
     </Box>
   );
 }
