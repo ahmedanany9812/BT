@@ -40,7 +40,7 @@ function Home() {
     requestAnimationFrame(() => SkewScrolling());
   });
   return (
-    <Box ref={ScrollContainer}>
+    <Box ref={ScrollContainer} className="Scroll">
       <HeadSection />
       <WorkSection />
     </Box>
