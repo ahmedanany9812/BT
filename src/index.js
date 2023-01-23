@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import Home from "./Routes/Home";
-import About from "./Routes/About";
-import Contact from "./Routes/Contact";
-import Work from "./Routes/Work";
-import Project from "./Routes/ProjectRoute";
+import Home from "./Views/Home";
+import About from "./Views/About";
+import Contact from "./Views/Contact";
+import Work from "./Views/Work";
+import Project from "./Views/ProjectRoute";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
   {
