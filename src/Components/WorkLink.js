@@ -25,7 +25,7 @@ const WorkLink = ({ id, tag, cate }) => {
         fontFamily={fonts.font5}
         fontSize="8vw"
         fontWeight={500}
-        minWidth={{ xs: "80px", sm: "230px" }}
+        minWidth={{ xs: "65px", sm: "230px" }}
       >
         0{id - 1}
       </Box>

@@ -42,7 +42,7 @@ const WorkSection = () => {
             fontFamily={fonts.font5}
             fontSize="8vw"
             fontWeight={500}
-            minWidth={{ xs: "80px", sm: "230px" }}
+            minWidth={{ xs: "65px", sm: "230px" }}
           >
             03
           </Box>
