@@ -26,11 +26,7 @@ function Home() {
     const acce = Diff / Size.width;
     const Velocity = +acce;
     const skew = Velocity * 7.5;
-
-    if (Size.width > 800) {
-      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px) skewY(${skew}deg)`;
-    } else {
-    }
+    ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px) skewY(${skew}deg)`;
     requestAnimationFrame(() => SkewScrolling());
   };
   useEffect(() => {
