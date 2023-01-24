@@ -30,13 +30,13 @@ const WorkSection = () => {
             fontSize={{ xs: "2vw", sm: "1vw" }}
             fontWeight={500}
           >
-            03
+            003
           </Box>
           <Stack direction={"column"}>
             <Box
               fontFamily={fonts.font5}
               fontSize="9.5vw"
-              fontWeight={700}
+              fontWeight={300}
               letterSpacing={{ xs: "-3px", sm: "-10px" }}
             >
               ROADMATH

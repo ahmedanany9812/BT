@@ -15,13 +15,13 @@ const WorkLink = ({ id, tag, cate, dat }) => {
         fontSize={{ xs: "2vw", sm: "1vw" }}
         fontWeight={500}
       >
-        0{id - 1}
+        00{id - 1}
       </Box>
       <Stack direction={"column"}>
         <Box
           fontFamily={fonts.font5}
           fontSize="10.3vw"
-          fontWeight={700}
+          fontWeight={300}
           letterSpacing={{ xs: "-3px", sm: "-10px" }}
         >
           {tag}

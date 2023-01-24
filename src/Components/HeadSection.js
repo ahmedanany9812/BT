@@ -18,7 +18,7 @@ const HeadSection = () => {
           <Box
             fontSize={"11.5vw"}
             fontFamily={fonts.font5}
-            fontWeight={{ xs: 900, sm: 700 }}
+            fontWeight={300}
             letterSpacing={{ sm: "-8px", xs: "-3px" }}
           >
             FULL
@@ -33,7 +33,7 @@ const HeadSection = () => {
           <Box
             fontSize={"11.5vw"}
             fontFamily={fonts.font5}
-            fontWeight={{ xs: 800, sm: 700 }}
+            fontWeight={300}
             letterSpacing={{ sm: "-8px", xs: "-3px" }}
           >
             STACK
@@ -43,7 +43,7 @@ const HeadSection = () => {
           <Box
             fontSize={"11.5vw"}
             fontFamily={fonts.font5}
-            fontWeight={{ xs: 800, sm: 700 }}
+            fontWeight={300}
             letterSpacing={{ sm: "-10px", xs: "-3px" }}
             lineHeight={{ xs: "70px", sm: "170px" }}
           >
@@ -53,7 +53,7 @@ const HeadSection = () => {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={{ xs: 800, sm: 700 }}
+              fontWeight={300}
               letterSpacing={{ sm: "-10px", xs: "-3px" }}
               lineHeight={{ xs: "70px", sm: "170px" }}
             >
@@ -77,7 +77,7 @@ const HeadSection = () => {
       <Box
         fontSize={"14px"}
         fontFamily={fonts.font5}
-        fontWeight={400}
+        fontWeight={300}
         sx={{
           position: "absolute",
           bottom: { xs: 80, md: 90 },
