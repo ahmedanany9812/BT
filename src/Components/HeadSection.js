@@ -80,7 +80,7 @@ const HeadSection = () => {
         fontWeight={300}
         sx={{
           position: "absolute",
-          bottom: { xs: 80, md: 90 },
+          bottom: { xs: 75, md: 90 },
         }}
       >
         Selected Projects
