@@ -1,6 +1,5 @@
 import { Box, Stack } from "@mui/material";
 import { CustomTheme } from "../Utilities/Theme";
-import { FaDotCircle } from "react-icons/fa";
 import { Projects } from "../Data/ProjectsData";
 import WorkLink from "./WorkLink";
 const WorkSection = () => {
@@ -28,9 +27,8 @@ const WorkSection = () => {
         >
           <Box
             fontFamily={fonts.font5}
-            fontSize="8vw"
+            fontSize={{ xs: "2vw", sm: "1vw" }}
             fontWeight={500}
-            minWidth={{ xs: "65px", sm: "230px" }}
           >
             03
           </Box>
@@ -43,22 +41,6 @@ const WorkSection = () => {
             >
               ROADMATH
             </Box>
-            <Stack
-              direction={"row"}
-              alignItems="center"
-              spacing={"8px"}
-              fontSize={{ xs: "12px", md: "17px" }}
-            >
-              <FaDotCircle />
-              <Box
-                fontFamily={fonts.font5}
-                fontSize={{ xs: "11px", sm: "14px" }}
-                fontWeight={400}
-                color="#ff732e"
-              >
-                Web Fullstack Application/(Soon)
-              </Box>
-            </Stack>
           </Stack>
         </Stack>
       </Stack>

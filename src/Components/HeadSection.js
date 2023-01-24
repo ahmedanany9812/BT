@@ -25,7 +25,7 @@ const HeadSection = () => {
           </Box>
           <Box
             sx={{
-              backgroundColor: "#a7a7a7",
+              backgroundColor: "#e2e0e0",
               height: { xs: "9px", sm: "30px" },
               width: "200px",
             }}
@@ -80,7 +80,7 @@ const HeadSection = () => {
         fontWeight={400}
         sx={{
           position: "absolute",
-          bottom: { xs: 30, md: 90 },
+          bottom: { xs: 80, md: 90 },
         }}
       >
         Selected Projects
