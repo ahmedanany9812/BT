@@ -6,16 +6,24 @@ import WorkLink from "./WorkLink";
 const WorkSection = () => {
   const { fonts } = CustomTheme;
   return (
-    <Box marginTop={{ xs: "3rem", md: "9rem" }}>
+    <Box>
       <Stack direction={"column"}>
         {Projects.map((pro, i) => {
-          return <WorkLink key={i} cate={pro.cate} tag={pro.tag} id={pro.id} />;
+          return (
+            <WorkLink
+              key={i}
+              cate={pro.cate}
+              tag={pro.tag}
+              id={pro.id}
+              dat={pro.date}
+            />
+          );
         })}
         <Stack
           direction={"row"}
           alignItems="center"
           spacing={"20px"}
-          paddingY="5rem"
+          paddingY={{ xs: "2rem", sm: "5rem" }}
           sx={{ position: "relative" }}
         >
           <Box
@@ -27,7 +35,12 @@ const WorkSection = () => {
             03
           </Box>
           <Stack direction={"column"}>
-            <Box fontFamily={fonts.font5} fontSize="9.5vw" fontWeight={700}>
+            <Box
+              fontFamily={fonts.font5}
+              fontSize="9.5vw"
+              fontWeight={700}
+              letterSpacing={{ xs: "-3px", sm: "-10px" }}
+            >
               ROADMATH
             </Box>
             <Stack
@@ -43,7 +56,7 @@ const WorkSection = () => {
                 fontWeight={400}
                 color="#ff732e"
               >
-                FULLSTACK APPLICATION
+                Web Fullstack Application/(Soon)
               </Box>
             </Stack>
           </Stack>

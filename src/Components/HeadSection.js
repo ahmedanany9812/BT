@@ -6,7 +6,7 @@ import { CustomTheme } from "../Utilities/Theme";
 const HeadSection = () => {
   const { fonts } = CustomTheme;
   return (
-    <Box minHeight={"100vh"}>
+    <Box minHeight={"100vh"} position="relative">
       <Header />
       <Box width="100%" marginTop={{ xs: "4rem", sm: "5rem" }}>
         <Stack
@@ -73,6 +73,17 @@ const HeadSection = () => {
           style={{ width: "135px" }}
           display={{ xs: "block", md: "none" }}
         />
+      </Box>
+      <Box
+        fontSize={"14px"}
+        fontFamily={fonts.font5}
+        fontWeight={400}
+        sx={{
+          position: "absolute",
+          bottom: { xs: 30, md: 90 },
+        }}
+      >
+        Selected Projects
       </Box>
     </Box>
   );
