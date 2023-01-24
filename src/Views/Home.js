@@ -3,6 +3,7 @@ import WorkSection from "../Components/WorkSection";
 import { useEffect, useRef } from "react";
 import UseWindowSize from "../Utilities/WindowSize";
 import HeadSection from "../Components/HeadSection";
+import Footer from "../Components/Footer";
 function Home() {
   const ScrollContainer = useRef();
   const Size = UseWindowSize();
@@ -40,6 +41,7 @@ function Home() {
     <Box ref={ScrollContainer} className="Scroll">
       <HeadSection />
       <WorkSection />
+      <Footer />
     </Box>
   );
 }
