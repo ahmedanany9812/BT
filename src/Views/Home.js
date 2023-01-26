@@ -1,16 +1,20 @@
 import { Box } from "@mui/material";
 import WorkSection from "../Components/WorkSection";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import UseWindowSize from "../Utilities/WindowSize";
 import HeadSection from "../Components/HeadSection";
 import Footer from "../Components/Footer";
 function Home() {
   const ScrollContainer = useRef();
   const Size = UseWindowSize();
+  const [innerHeight, setInnerHeight] = useState(0);
   useEffect(() => {
     document.body.style.height = `${
       ScrollContainer.current.getBoundingClientRect().height
     }px`;
+    setInnerHeight(
+      () => ScrollContainer.current.getBoundingClientRect().height
+    );
   }, [Size.height]);
   const SkewConfigs = {
     ease: 0.1,
@@ -41,7 +45,7 @@ function Home() {
     <Box ref={ScrollContainer} className="Scroll">
       <HeadSection />
       <WorkSection />
-      <Footer />
+      <Footer innerHeight={innerHeight} />
     </Box>
   );
 }

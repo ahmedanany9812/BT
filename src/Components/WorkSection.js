@@ -41,16 +41,6 @@ const WorkSection = () => {
             >
               ROADMATH
             </Box>
-            <Box
-              fontFamily={fonts.font5}
-              fontSize="13px"
-              fontWeight={300}
-              sx={{ opacity: 0.6 }}
-            >
-              Web Fullstack Application/
-              <br />
-              Soon
-            </Box>
           </Stack>
         </Stack>
       </Stack>

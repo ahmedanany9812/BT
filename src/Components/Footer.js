@@ -1,10 +1,17 @@
 import { Box } from "@mui/material";
 import { CustomTheme } from "../Utilities/Theme";
 import FootLine from "./FootLine";
-const Footer = () => {
+const Footer = ({ innerHeight }) => {
   const { fonts } = CustomTheme;
+  const GetScrollPadd = () => {
+    if (innerHeight > 2000) {
+      return "0";
+    } else {
+      return "2rem";
+    }
+  };
   return (
-    <Box marginTop={"8rem"} paddingBottom="2rem">
+    <Box marginTop={"8rem"} paddingBottom={GetScrollPadd}>
       <Box
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
