@@ -34,7 +34,7 @@ function Home() {
     if (Size.width > 800) {
       ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px) skewY(${skew}deg)`;
     } else {
-      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px) skewY(${skew}deg)`;
+      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px)`;
     }
     requestAnimationFrame(() => SkewScrolling());
   };
