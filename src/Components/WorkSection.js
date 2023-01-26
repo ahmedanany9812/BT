@@ -22,7 +22,7 @@ const WorkSection = () => {
           direction={"row"}
           alignItems="center"
           spacing={"20px"}
-          paddingY={{ xs: "2rem", sm: "5rem" }}
+          paddingY={{ xs: "1rem", sm: "5rem" }}
           sx={{ position: "relative" }}
         >
           <Box

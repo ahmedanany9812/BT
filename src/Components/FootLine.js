@@ -9,13 +9,17 @@ const FootLine = () => {
         justifyContent={"space-between"}
         direction="row"
       >
-        <Box fontSize={"15px"} fontFamily={fonts.font5} fontWeight={300}>
+        <Box
+          fontSize={{ xs: "13px", sm: "15px" }}
+          fontFamily={fonts.font5}
+          fontWeight={300}
+        >
           Based in{" "}
           <Box component={"span"} sx={{ opacity: 0.6 }}>
             EGYPT
           </Box>
         </Box>
-        <Box fontSize={"15px"} fontFamily={fonts.font5} fontWeight={300}>
+        <Box fontSize={{ xs: "13px", sm: "15px" }} fontFamily={fonts.font5} fontWeight={300}>
           <Box component={"span"} sx={{ opacity: 0.6 }}>
             ©
           </Box>
