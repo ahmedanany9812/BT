@@ -30,7 +30,7 @@ const Header = () => {
       >
         AVALIBLE FOR HIRE
       </Box>
-      <Stack direction={"column"}>
+      <Stack direction={"column"} alignItems="flex-end">
         <Stack direction={"row"} spacing="6px" alignItems={"center"}>
           <Box fontSize={"13px"} fontFamily={fonts.font5}>
             ABOUTME
