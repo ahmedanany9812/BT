@@ -58,7 +58,7 @@ function Project() {
           component={"p"}
           fontWeight={300}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "18vw", md: "12vw" }}
+          fontSize={{ xs: "16vw", md: "12vw" }}
           letterSpacing={{ xs: "-1px", md: "-5px" }}
           color="black"
           sx={{
