@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import WorkSection from "../Components/WorkSection";
+import WorkSection from "../Components/HomeComponents/WorkSection";
 import { useEffect, useRef, useState } from "react";
 import UseWindowSize from "../Utilities/WindowSize";
-import HeadSection from "../Components/HeadSection";
-import Footer from "../Components/Footer";
+import HeadSection from "../Components/HomeComponents/HeadSection";
+import Footer from "../Components/HomeComponents/Footer";
 function Home() {
   const ScrollContainer = useRef();
   const Size = UseWindowSize();

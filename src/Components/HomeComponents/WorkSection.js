@@ -1,6 +1,6 @@
 import { Box, Stack } from "@mui/material";
-import { CustomTheme } from "../Utilities/Theme";
-import { Projects } from "../Data/ProjectsData";
+import { CustomTheme } from "../../Utilities/Theme";
+import { Projects } from "../../Data/ProjectsData";
 import WorkLink from "./WorkLink";
 const WorkSection = () => {
   const { fonts } = CustomTheme;

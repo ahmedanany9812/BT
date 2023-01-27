@@ -1,17 +1,10 @@
 import { Box } from "@mui/material";
-import { CustomTheme } from "../Utilities/Theme";
-import FootLine from "./FootLine";
+import { CustomTheme } from "../../Utilities/Theme";
+import FootLine from "../Global/FootLine";
 const Footer = ({ innerHeight }) => {
   const { fonts } = CustomTheme;
-  const GetScrollPadd = () => {
-    if (innerHeight > 2000) {
-      return "0";
-    } else {
-      return "2rem";
-    }
-  };
   return (
-    <Box marginTop={"8rem"} paddingBottom={GetScrollPadd}>
+    <Box marginTop={"8rem"}>
       <Box
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
@@ -38,7 +31,7 @@ const Footer = ({ innerHeight }) => {
           Resume
         </Box>
       </Box>
-      <FootLine />
+      <FootLine innerHeight={innerHeight} />
     </Box>
   );
 };

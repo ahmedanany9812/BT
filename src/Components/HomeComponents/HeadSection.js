@@ -1,8 +1,8 @@
 import { Box, Stack } from "@mui/material";
-import Header from "./Header";
+import Header from "../Global/Header";
 import Lottie from "lottie-react";
-import scrolldown from "../Utilities/scroll_down.json";
-import { CustomTheme } from "../Utilities/Theme";
+import scrolldown from "../../Utilities/scroll_down.json";
+import { CustomTheme } from "../../Utilities/Theme";
 const HeadSection = () => {
   const { fonts } = CustomTheme;
   return (

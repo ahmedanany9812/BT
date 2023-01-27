@@ -1,10 +1,12 @@
-import { Box,Stack } from "@mui/material";
-// import { useEffect, useRef } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Box, Stack } from "@mui/material";
+import { useEffect, useRef } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
-import Header from "../Components/Header";
+import useWindowSize from "../Utilities/WindowSize";
+import Header from "../Components/Global/Header";
 function Project() {
+  const location = useLocation();
   const { fonts } = CustomTheme;
   const { project } = useParams();
   const CurrentProject = Projects.find((pro) => pro.nam === project);
@@ -16,17 +18,49 @@ function Project() {
     return Projects[index - 1].nam;
   };
   const navigate = useNavigate();
+  const ScrollContainer = useRef();
+  const Size = useWindowSize();
+  useEffect(() => {
+    document.body.style.height = `${
+      ScrollContainer.current.getBoundingClientRect().height
+    }px`;
+  }, [Size.height, location]);
+  const SkewConfigs = {
+    ease: 0.1,
+    current: 0,
+    previous: 0,
+    rounded: 0,
+  };
+  const SkewScrolling = () => {
+    SkewConfigs.current = window.scrollY;
+    SkewConfigs.previous +=
+      (SkewConfigs.current - SkewConfigs.previous) * SkewConfigs.ease;
+    SkewConfigs.rounded = Math.round(SkewConfigs.previous * 100) / 100;
+    const Diff = SkewConfigs.current - SkewConfigs.rounded;
+    const acce = Diff / Size.width;
+    const Velocity = +acce;
+    const skew = Velocity * 7.5;
+    if (Size.width > 800) {
+      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px) skewY(${skew}deg)`;
+    } else {
+      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px)`;
+    }
+    requestAnimationFrame(() => SkewScrolling());
+  };
+  useEffect(() => {
+    requestAnimationFrame(() => SkewScrolling());
+  }, []);
   return (
-    <Box>
+    <Box ref={ScrollContainer} className="Scroll">
       <Header />
-      <Box height={"88vh"} sx={{ bgcolor: "black" }} position="relative">
+      <Box height={"88vh"} sx={{ bgcolor: "#ff732e" }} position="relative">
         <Box
           component={"p"}
           fontWeight={300}
           fontFamily={fonts.font5}
           fontSize={{ xs: "11vw", md: "12vw" }}
           letterSpacing={{ xs: "-1px", md: "-5px" }}
-          color="whitesmoke"
+          color="black"
           sx={{
             position: "absolute",
             top: "60%",
