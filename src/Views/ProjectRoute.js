@@ -53,12 +53,12 @@ function Project() {
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
-      <Box height={"88vh"} sx={{ bgcolor: "#ff732e" }} position="relative">
+      <Box height={{xs:"75vh",sm:"88vh"}} sx={{ bgcolor: "#ff732e" }} position="relative">
         <Box
           component={"p"}
           fontWeight={300}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "11vw", md: "12vw" }}
+          fontSize={{ xs: "18vw", md: "12vw" }}
           letterSpacing={{ xs: "-1px", md: "-5px" }}
           color="black"
           sx={{
