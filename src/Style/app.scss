@@ -30,6 +30,12 @@ body {
   width: 100%;
   overflow: hidden;
 }
-.Scroll{
+.Scroll {
   will-change: transform;
+}
+// .projectHead {
+//   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+// }
+.projectTag {
+  display: inline-block;
 }

@@ -5,6 +5,7 @@ import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
 import useWindowSize from "../Utilities/WindowSize";
 import Header from "../Components/Global/Header";
+import gsap from "gsap";
 function Project() {
   const location = useLocation();
   const { fonts } = CustomTheme;
@@ -50,6 +51,25 @@ function Project() {
   useEffect(() => {
     requestAnimationFrame(() => SkewScrolling());
   }, []);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        document.querySelector(".projectHead"),
+        { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          ease: "expo.inOut",
+          duration: 1.5,
+        }
+      ).from(document.querySelector(".projectTag"), {
+        yPercent: 100,
+        ease: "expo.inOut",
+        duration: 1,
+      });
+    });
+    return () => ctx.revert();
+  }, [location]);
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
@@ -57,6 +77,7 @@ function Project() {
         height={{ xs: "75vh", sm: "88vh" }}
         sx={{ bgcolor: "#ff5908" }}
         position="relative"
+        className="projectHead"
       >
         <Box
           component={"p"}
@@ -70,9 +91,12 @@ function Project() {
             top: "60%",
             right: "50%",
             transform: "translateX(50%)",
+            overflow: "hidden",
           }}
         >
-          {CurrentProject.tag}
+          <Box component={"span"} className="projectTag">
+            {CurrentProject.tag}
+          </Box>
         </Box>
       </Box>
       <Stack
