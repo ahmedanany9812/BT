@@ -53,7 +53,11 @@ function Project() {
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
-      <Box height={{xs:"75vh",sm:"88vh"}} sx={{ bgcolor: "#ff732e" }} position="relative">
+      <Box
+        height={{ xs: "75vh", sm: "88vh" }}
+        sx={{ bgcolor: "#ff5908" }}
+        position="relative"
+      >
         <Box
           component={"p"}
           fontWeight={300}
@@ -87,6 +91,7 @@ function Project() {
           letterSpacing={{ xs: "0px", md: "-1px" }}
           color="white"
           width={{ xs: "100%", md: "60%" }}
+          sx={{ position: "relative" }}
         >
           {CurrentProject.desc}
         </Box>
