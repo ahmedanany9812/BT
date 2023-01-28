@@ -73,7 +73,7 @@ function Project() {
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
       <Box
-        height={{ xs: "70vh", sm: "85vh" }}
+        height={{ xs: "75vh", sm: "85vh" }}
         sx={{ bgcolor: "#ff5908" }}
         position="relative"
         className="projectHead"
