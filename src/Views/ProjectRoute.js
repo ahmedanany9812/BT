@@ -54,9 +54,8 @@ function Project() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.fromTo(
+      tl.to(
         document.querySelector(".projectHead"),
-        { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
         {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           ease: "expo.inOut",
