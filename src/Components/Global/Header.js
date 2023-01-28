@@ -9,7 +9,7 @@ const Header = () => {
       alignItems={"flex-start"}
       marginY="1rem"
     >
-      <Box fontSize={"13px"} fontFamily={fonts.font5}>
+      <Box fontSize={"13px"} fontFamily={fonts.font5} sx={{opacity:0.9}}>
         AHMED
         <br />
         ANANY
@@ -32,7 +32,7 @@ const Header = () => {
       </Box>
       <Stack direction={"column"} alignItems="flex-end">
         <Stack direction={"row"} spacing="6px" alignItems={"center"}>
-          <Box fontSize={"13px"} fontFamily={fonts.font5}>
+          <Box fontSize={"13px"} fontFamily={fonts.font5} sx={{opacity:0.9}}>
             ABOUTME
           </Box>
           <Box
@@ -44,23 +44,6 @@ const Header = () => {
             }}
           />
         </Stack>
-
-        <Box
-          fontSize={"13px"}
-          fontFamily={fonts.font5}
-          display={{ md: "none", xs: "block" }}
-          sx={{ opacity: 0.7 }}
-        >
-          TWITTER
-        </Box>
-        <Box
-          fontSize={"13px"}
-          fontFamily={fonts.font5}
-          display={{ md: "none", xs: "block" }}
-          sx={{ opacity: 0.7 }}
-        >
-          AVALIBLE FOR HIRE
-        </Box>
       </Stack>
     </Stack>
   );

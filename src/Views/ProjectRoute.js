@@ -60,7 +60,7 @@ function Project() {
       >
         <Box
           component={"p"}
-          fontWeight={300}
+          fontWeight={400}
           fontFamily={fonts.font5}
           fontSize={{ xs: "14vw", md: "12vw" }}
           letterSpacing={{ xs: "-1px", md: "-5px" }}
