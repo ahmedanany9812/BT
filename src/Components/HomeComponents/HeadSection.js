@@ -12,7 +12,7 @@ const HeadSection = () => {
     const ctx = gsap.context(() => {
       gsap.from(elm.current, {
         yPercent: 100,
-        duration:0.8
+        duration: 1.3,
       });
     });
     return () => ctx.revert();
@@ -21,46 +21,37 @@ const HeadSection = () => {
     <Box minHeight={"100vh"} position="relative">
       <Header />
       <Box width="100%" marginTop={{ xs: "4rem", sm: "5rem" }}>
-        <Box overflow={"hidden"}>
-          <Stack
-            direction={"row"}
-            alignItems="center"
-            spacing={{ xs: "5px", sm: "22px" }}
-            lineHeight={{ xs: "70px", sm: "170px" }}
-            ref={elm}
+        <Stack
+          direction={"row"}
+          alignItems="center"
+          spacing={{ xs: "5px", sm: "22px" }}
+          lineHeight={{ xs: "70px", sm: "170px" }}
+          ref={elm}
+        >
+          <Box
+            fontSize={"11.5vw"}
+            fontFamily={fonts.font5}
+            fontWeight={300}
+            letterSpacing={{ sm: "-8px", xs: "-3px" }}
           >
-            <Box
-              fontSize={"11.5vw"}
-              fontFamily={fonts.font5}
-              fontWeight={300}
-              letterSpacing={{ sm: "-8px", xs: "-3px" }}
-            >
-              FULL
-            </Box>
-            <Box
-              sx={{
-                width: "100%",
-                overflow: "hidden",
-              }}
-            >
-              <Box
-                sx={{
-                  backgroundColor: "#e2e0e0",
-                  height: { xs: "9px", sm: "30px" },
-                  width: "100%",
-                }}
-              />
-            </Box>
-            <Box
-              fontSize={"11.5vw"}
-              fontFamily={fonts.font5}
-              fontWeight={300}
-              letterSpacing={{ sm: "-8px", xs: "-3px" }}
-            >
-              STACK
-            </Box>
-          </Stack>
-        </Box>
+            FULL
+          </Box>
+          <Box
+            sx={{
+              backgroundColor: "#e2e0e0",
+              height: { xs: "9px", sm: "30px" },
+              width: "100%",
+            }}
+          />
+          <Box
+            fontSize={"11.5vw"}
+            fontFamily={fonts.font5}
+            fontWeight={300}
+            letterSpacing={{ sm: "-8px", xs: "-3px" }}
+          >
+            STACK
+          </Box>
+        </Stack>
         <Box
           fontSize={"11.5vw"}
           fontFamily={fonts.font5}
@@ -69,42 +60,32 @@ const HeadSection = () => {
           lineHeight={{ xs: "70px", sm: "170px" }}
           sx={{ overflow: "hidden" }}
         >
-          <Box component={"span"} display="inline-block">
-            JS
-          </Box>
+          JS
         </Box>
-        <Box overflow={"hidden"}>
-          <Stack
-            direction={"row"}
-            alignItems="center"
-            flexWrap={"nowrap"}
+        <Stack direction={"row"} alignItems="center" flexWrap={"nowrap"}>
+          <Box
+            fontSize={"11.5vw"}
+            fontFamily={fonts.font5}
+            fontWeight={300}
+            letterSpacing={{ sm: "-10px", xs: "-3px" }}
+            lineHeight={{ xs: "70px", sm: "170px" }}
+            sx={{ overflow: "hidden" }}
           >
-            <Box
-              fontSize={"11.5vw"}
-              fontFamily={fonts.font5}
-              fontWeight={300}
-              letterSpacing={{ sm: "-10px", xs: "-3px" }}
-              lineHeight={{ xs: "70px", sm: "170px" }}
-              sx={{ overflow: "hidden" }}
-            >
-              DEVELOPER
-            </Box>
-            <Box
-              component={Lottie}
-              animationData={scrolldown}
-              style={{ width: "160px" }}
-              display={{ xs: "none", md: "block" }}
-            />
-          </Stack>
-        </Box>
-        <Box overflow={"hidden"}>
+            DEVELOPER
+          </Box>
           <Box
             component={Lottie}
             animationData={scrolldown}
-            style={{ width: "135px" }}
-            display={{ xs: "block", md: "none" }}
+            style={{ width: "160px" }}
+            display={{ xs: "none", md: "block" }}
           />
-        </Box>
+        </Stack>
+        <Box
+          component={Lottie}
+          animationData={scrolldown}
+          style={{ width: "135px" }}
+          display={{ xs: "block", md: "none" }}
+        />
       </Box>
       <Box
         fontSize={"14px"}
@@ -116,9 +97,7 @@ const HeadSection = () => {
           overflow: "hidden",
         }}
       >
-        <Box component={"span"} display="inline-block">
-          Selected Projects
-        </Box>
+        Selected Projects
       </Box>
     </Box>
   );

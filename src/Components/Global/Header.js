@@ -26,15 +26,9 @@ const Header = () => {
         fontFamily={fonts.font5}
         sx={{ opacity: 0.9, overflow: "hidden" }}
       >
-        <Box
-          component={"span"}
-          ref={elm}
-          sx={{ display: "inline-block" }}
-        >
-          AHMED
-          <br />
-          ANANY
-        </Box>
+        AHMED
+        <br />
+        ANANY
       </Box>
       <Box
         fontSize={"13px"}
@@ -42,12 +36,7 @@ const Header = () => {
         display={{ xs: "none", md: "block" }}
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
-        <Box
-          component={"span"}
-          sx={{ display: "inline-block" }}
-        >
-          TWITTER
-        </Box>
+        TWITTER
       </Box>
       <Box
         fontSize={"13px"}
@@ -55,36 +44,25 @@ const Header = () => {
         display={{ xs: "none", md: "block" }}
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
+        AVALIBLE FOR HIRE
+      </Box>
+      <Stack direction={"row"} spacing="6px" alignItems={"center"}>
         <Box
-          component={"span"}
-          sx={{ display: "inline-block" }}
+          fontSize={"13px"}
+          fontFamily={fonts.font5}
+          sx={{ opacity: 0.9, overflow: "hidden" }}
         >
-          AVALIBLE FOR HIRE
+          ABOUTME
         </Box>
-      </Box>
-      <Box overflow={"hidden"}>
-        <Stack
-          direction={"row"}
-          spacing="6px"
-          alignItems={"center"}
-        >
-          <Box
-            fontSize={"13px"}
-            fontFamily={fonts.font5}
-            sx={{ opacity: 0.9, overflow: "hidden" }}
-          >
-            ABOUTME
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "#ff5908",
-              borderRadius: "50%",
-              height: "20px",
-              width: "20px",
-            }}
-          />
-        </Stack>
-      </Box>
+        <Box
+          sx={{
+            backgroundColor: "#ff5908",
+            borderRadius: "50%",
+            height: "20px",
+            width: "20px",
+          }}
+        />
+      </Stack>
     </Stack>
   );
 };
