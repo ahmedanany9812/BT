@@ -3,19 +3,8 @@ import Header from "../Global/Header";
 import Lottie from "lottie-react";
 import scrolldown from "../../Utilities/scroll_down.json";
 import { CustomTheme } from "../../Utilities/Theme";
-import { useEffect } from "react";
-import gsap from "gsap";
 const HeadSection = () => {
   const { fonts } = CustomTheme;
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(document.querySelectorAll(".trrra"), {
-        yPercent: 100,
-        duration: 1,
-      });
-    });
-    return () => ctx.revert();
-  });
   return (
     <Box minHeight={"100vh"} position="relative">
       <Header />

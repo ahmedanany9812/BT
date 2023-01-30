@@ -2,28 +2,8 @@ import { Box, Stack } from "@mui/material";
 import { CustomTheme } from "../../Utilities/Theme";
 import { Projects } from "../../Data/ProjectsData";
 import WorkLink from "./WorkLink";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 const WorkSection = () => {
   const { fonts } = CustomTheme;
-  useEffect(() => {
-    const boxes = gsap.utils.toArray(".work");
-    const ctx = gsap.context(() => {
-      boxes.forEach((box) => {
-        gsap.from(box.children[0], {
-          yPercent: 100,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: box,
-            start: "top 70%",
-          },
-        });
-      });
-    });
-    return () => ctx.revert();
-  });
   return (
     <Box>
       <Stack direction={"column"}>
