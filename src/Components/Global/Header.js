@@ -6,7 +6,7 @@ const Header = () => {
   const { fonts } = CustomTheme;
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(document.querySelectorAll(".trad"), {
+      gsap.from(document.querySelector(".trad"), {
         yPercent: 100,
         duration: 1,
       });
@@ -43,7 +43,6 @@ const Header = () => {
       >
         <Box
           component={"span"}
-          className="trad"
           sx={{ display: "inline-block" }}
         >
           TWITTER
@@ -57,7 +56,6 @@ const Header = () => {
       >
         <Box
           component={"span"}
-          className="trad"
           sx={{ display: "inline-block" }}
         >
           AVALIBLE FOR HIRE
@@ -65,7 +63,6 @@ const Header = () => {
       </Box>
       <Box overflow={"hidden"}>
         <Stack
-          className="trad"
           direction={"row"}
           spacing="6px"
           alignItems={"center"}

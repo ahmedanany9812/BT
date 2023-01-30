@@ -13,21 +13,21 @@ function Home() {
     if (first) {
       first = false;
       const ctx = gsap.context(() => {
-        const boxes = gsap.utils.toArray(".work");
-        gsap.from(document.querySelectorAll(".trrra"), {
+        // const boxes = gsap.utils.toArray(".work");
+        gsap.from(document.querySelector(".trrra"), {
           yPercent: 100,
           duration: 1,
         });
-        boxes.forEach((box) => {
-          gsap.from(box.children[0], {
-            yPercent: 100,
-            duration: 0.8,
-            scrollTrigger: {
-              trigger: box,
-              start: "top 70%",
-            },
-          });
-        });
+        // boxes.forEach((box) => {
+        //   gsap.from(box.children[0], {
+        //     yPercent: 100,
+        //     duration: 0.8,
+        //     scrollTrigger: {
+        //       trigger: box,
+        //       start: "top 70%",
+        //     },
+        //   });
+        // });
       });
       return () => ctx.revert();
     }

@@ -57,13 +57,12 @@ const HeadSection = () => {
           lineHeight={{ xs: "70px", sm: "170px" }}
           sx={{ overflow: "hidden" }}
         >
-          <Box component={"span"} display="inline-block" className="trrra">
+          <Box component={"span"} display="inline-block">
             JS
           </Box>
         </Box>
         <Box overflow={"hidden"}>
           <Stack
-            className="trrra"
             direction={"row"}
             alignItems="center"
             flexWrap={"nowrap"}
@@ -92,7 +91,6 @@ const HeadSection = () => {
             animationData={scrolldown}
             style={{ width: "135px" }}
             display={{ xs: "block", md: "none" }}
-            className="trrra"
           />
         </Box>
       </Box>
@@ -106,7 +104,7 @@ const HeadSection = () => {
           overflow: "hidden",
         }}
       >
-        <Box component={"span"} display="inline-block" className="trrra">
+        <Box component={"span"} display="inline-block">
           Selected Projects
         </Box>
       </Box>
