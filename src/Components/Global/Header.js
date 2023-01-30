@@ -1,17 +1,15 @@
 import { Box, Stack } from "@mui/material";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { CustomTheme } from "../../Utilities/Theme";
 const Header = () => {
   const { fonts } = CustomTheme;
+  const elm = useRef();
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(document.querySelector(".trad"), {
-        yPercent: 100,
-        duration: 1,
-      });
+    gsap.from(elm.current, {
+      yPercent: 100,
+      duration: 1,
     });
-    return () => ctx.revert();
   });
   return (
     <Stack
@@ -25,11 +23,7 @@ const Header = () => {
         fontFamily={fonts.font5}
         sx={{ opacity: 0.9, overflow: "hidden" }}
       >
-        <Box
-          component={"span"}
-          className="trad"
-          sx={{ display: "inline-block" }}
-        >
+        <Box component={"span"} ref={elm} sx={{ display: "inline-block" }}>
           AHMED
           <br />
           ANANY
@@ -41,10 +35,7 @@ const Header = () => {
         display={{ xs: "none", md: "block" }}
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
-        <Box
-          component={"span"}
-          sx={{ display: "inline-block" }}
-        >
+        <Box component={"span"} sx={{ display: "inline-block" }}>
           TWITTER
         </Box>
       </Box>
@@ -54,19 +45,12 @@ const Header = () => {
         display={{ xs: "none", md: "block" }}
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
-        <Box
-          component={"span"}
-          sx={{ display: "inline-block" }}
-        >
+        <Box component={"span"} sx={{ display: "inline-block" }}>
           AVALIBLE FOR HIRE
         </Box>
       </Box>
       <Box overflow={"hidden"}>
-        <Stack
-          direction={"row"}
-          spacing="6px"
-          alignItems={"center"}
-        >
+        <Stack direction={"row"} spacing="6px" alignItems={"center"}>
           <Box
             fontSize={"13px"}
             fontFamily={fonts.font5}
