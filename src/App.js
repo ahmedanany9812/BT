@@ -10,7 +10,17 @@ function App() {
     console.log(size.height);
   });
   return (
-    <Box position={"relative"} id="App" paddingX={{ xs: "0.1rem", sm: "2rem" }}>
+    <Box
+      paddingX={{ xs: "0.1rem", sm: "2rem" }}
+      sx={{
+        position: {xs:"relative",sm:"fixed"},
+        top: 0,
+        left: 0,
+        height: "100%",
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
       <TopScroll />
       <Container maxWidth="xl">
         <Outlet />

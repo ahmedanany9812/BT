@@ -13,21 +13,21 @@ function Home() {
     if (first) {
       first = false;
       const ctx = gsap.context(() => {
-        // const boxes = gsap.utils.toArray(".work");
+        const boxes = gsap.utils.toArray(".work");
         gsap.from(document.querySelectorAll(".trrra"), {
           yPercent: 100,
           duration: 1,
         });
-        // boxes.forEach((box) => {
-        //   gsap.from(box.children[0], {
-        //     yPercent: 100,
-        //     duration: 0.8,
-        //     scrollTrigger: {
-        //       trigger: box,
-        //       start: "top 70%",
-        //     },
-        //   });
-        // });
+        boxes.forEach((box) => {
+          gsap.from(box.children[0], {
+            yPercent: 100,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: box,
+              start: "top 70%",
+            },
+          });
+        });
       });
       return () => ctx.revert();
     }
@@ -60,8 +60,6 @@ function Home() {
     const skew = Velocity * 7.5;
     if (Size.width > 800) {
       ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px) skewY(${skew}deg)`;
-    } else {
-      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px)`;
     }
     requestAnimationFrame(() => SkewScrolling());
   };
@@ -69,7 +67,7 @@ function Home() {
     requestAnimationFrame(() => SkewScrolling());
   }, []);
   return (
-    <Box ref={ScrollContainer} className="Scroll">
+    <Box ref={ScrollContainer}>
       <HeadSection />
       <WorkSection />
       <Footer innerHeight={innerHeight} />
