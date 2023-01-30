@@ -8,26 +8,29 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 function Home() {
+  let first = true;
   useEffect(() => {
-    const boxes = gsap.utils.toArray(".work");
-    console.log(boxes);
-    const ctx = gsap.context(() => {
-      gsap.from(document.querySelectorAll(".trrra"), {
-        yPercent: 100,
-        duration: 1,
-      });
-      boxes.forEach((box) => {
-        gsap.from(box.children[0], {
+    if (first) {
+      first = false;
+      const ctx = gsap.context(() => {
+        const boxes = gsap.utils.toArray(".work");
+        gsap.from(document.querySelectorAll(".trrra"), {
           yPercent: 100,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: box,
-            start: "top 70%",
-          },
+          duration: 1,
+        });
+        boxes.forEach((box) => {
+          gsap.from(box.children[0], {
+            yPercent: 100,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: box,
+              start: "top 70%",
+            },
+          });
         });
       });
-    });
-    return () => ctx.revert();
+      return () => ctx.revert();
+    }
   });
   const ScrollContainer = useRef();
   const Size = UseWindowSize();
