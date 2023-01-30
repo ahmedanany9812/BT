@@ -16,7 +16,7 @@ const HeadSection = () => {
       });
     });
     return () => ctx.revert();
-  });
+  }, []);
   return (
     <Box minHeight={"100vh"} position="relative">
       <Header />
