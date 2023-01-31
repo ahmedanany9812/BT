@@ -32,7 +32,6 @@ const HeadSection = () => {
         trigger: trigger,
         start: "top top",
         end: "60% top",
-        markers: true,
       });
     });
     return () => ctx.revert();
