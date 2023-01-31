@@ -3,25 +3,61 @@ import Header from "../Global/Header";
 import Lottie from "lottie-react";
 import scrolldown from "../../Utilities/scroll_down.json";
 import { CustomTheme } from "../../Utilities/Theme";
+import { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const HeadSection = () => {
   const { fonts } = CustomTheme;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const trigger = document.querySelector(".worksectiontrigger");
+      const word1 = document.querySelector(".word1");
+      const word2 = document.querySelector(".word2");
+      const tl = gsap.timeline();
+      tl.to(word1, {
+        xPercent: -100,
+        ease: "expo.inOut",
+      }).to(
+        word2,
+        {
+          xPercent: 100,
+          ease: "expo.inOut",
+        },
+        "<"
+      );
+      ScrollTrigger.create({
+        animation: tl,
+        scrub: 1,
+        trigger: trigger,
+        start: "top top",
+        end: "60% top",
+        markers: true,
+      });
+    });
+    return () => ctx.revert();
+  }, []);
   return (
-    <Box minHeight={"100vh"} position="relative">
+    <Box minHeight={"100vh"} position="relative" className="worksectiontrigger">
       <Header />
       <Box width="100%" marginTop={{ xs: "4rem", sm: "5rem" }}>
         <Box overflow={"hidden"}>
           <Stack
             direction={"row"}
             alignItems="center"
-            spacing={{ xs: "5px", sm: "22px" }}
+            justifyContent={"space-between"}
             lineHeight={{ xs: "70px", sm: "170px" }}
             className="HeadTrr"
+            position={"relative"}
           >
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
               fontWeight={300}
               letterSpacing={{ sm: "-8px", xs: "-3px" }}
+              className="word1"
+              bgcolor={"black"}
+              zIndex="1"
             >
               FULL
             </Box>
@@ -30,6 +66,7 @@ const HeadSection = () => {
                 backgroundColor: "#e2e0e0",
                 height: { xs: "9px", sm: "30px" },
                 width: "100%",
+                position: "absolute",
               }}
             />
             <Box
@@ -37,6 +74,8 @@ const HeadSection = () => {
               fontFamily={fonts.font5}
               fontWeight={300}
               letterSpacing={{ sm: "-8px", xs: "-3px" }}
+              className="word2"
+              bgcolor={"black"}
             >
               STACK
             </Box>
