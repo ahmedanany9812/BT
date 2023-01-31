@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import UseWindowSize from "../Utilities/WindowSize";
 import HeadSection from "../Components/HomeComponents/HeadSection";
 import Footer from "../Components/HomeComponents/Footer";
+import gsap from "gsap";
 function Home() {
   const ScrollContainer = useRef();
   const Size = UseWindowSize();
@@ -40,6 +41,15 @@ function Home() {
   };
   useEffect(() => {
     requestAnimationFrame(() => SkewScrolling());
+  }, []);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(document.querySelectorAll(".HeadTrr"), {
+        yPercent: 100,
+        duration: 1,
+      });
+    });
+    return () => ctx.revert();
   }, []);
   return (
     <Box ref={ScrollContainer}>
