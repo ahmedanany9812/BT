@@ -7,8 +7,9 @@ const Header = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
-        yPercent: 100,
-        duration: 1,
+        yPercent: 150,
+        duration: 1.5,
+        ease: "expo.inOut",
       });
     });
     return () => ctx.revert();
