@@ -10,10 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 const HeadSection = () => {
   const { fonts } = CustomTheme;
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const trigger = document.querySelector(".worksectiontrigger");
-      const word1 = document.querySelector(".word1");
-      const word2 = document.querySelector(".word2");
+    const trigger = document.querySelector(".worksectiontrigger");
+    const word1 = document.querySelector(".word1");
+    const word2 = document.querySelector(".word2");
+    let mm = gsap.matchMedia();
+    mm.add("(min-width:800px)", () => {
       const tl = gsap.timeline();
       tl.to(word1, {
         xPercent: -100,
@@ -31,10 +32,31 @@ const HeadSection = () => {
         scrub: 1,
         trigger: trigger,
         start: "top top",
-        end: "60% top",
+        end: "55% top",
       });
     });
-    return () => ctx.revert();
+    mm.add("(max-width:799px)", () => {
+      const tl = gsap.timeline();
+      tl.to(word1, {
+        xPercent: -50,
+        ease: "expo.inOut",
+      }).to(
+        word2,
+        {
+          xPercent: 50,
+          ease: "expo.inOut",
+        },
+        "<"
+      );
+      ScrollTrigger.create({
+        animation: tl,
+        scrub: 1,
+        trigger: trigger,
+        start: "top top",
+        end: "30% top",
+      });
+    });
+    return () => mm.revert();
   }, []);
   return (
     <Box minHeight={"100vh"} position="relative" className="worksectiontrigger">
