@@ -5,6 +5,8 @@ import UseWindowSize from "../Utilities/WindowSize";
 import HeadSection from "../Components/HomeComponents/HeadSection";
 import Footer from "../Components/HomeComponents/Footer";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 function Home() {
   const ScrollContainer = useRef();
   const Size = UseWindowSize();
@@ -43,11 +45,33 @@ function Home() {
     requestAnimationFrame(() => SkewScrolling());
   }, []);
   useEffect(() => {
+    const boxes = gsap.utils.toArray(".work");
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeadTrr"), {
         yPercent: 150,
         duration: 1.5,
         ease: "expo.inOut",
+      });
+    });
+    boxes.forEach((box) => {
+      const tl = gsap.timeline();
+      tl.from(box.children[0], {
+        yPercent: 100,
+        duration: 1.1,
+        ease: "expo.inOut",
+      }).from(
+        box.children[0].children[0],
+        {
+          xPercent: -100,
+          duration: 1,
+          ease: "expo.inOut",
+        },
+        "-=0.4"
+      );
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: box,
+        start: "top 90%",
       });
     });
     return () => ctx.revert();

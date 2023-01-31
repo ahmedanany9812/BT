@@ -1,5 +1,9 @@
 import { Box, Stack } from "@mui/material";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import { CustomTheme } from "../../Utilities/Theme";
+gsap.registerPlugin(ScrollTrigger);
 const FootLine = ({ innerHeight }) => {
   const { fonts } = CustomTheme;
   const GetScrollPadd = () => {
@@ -9,8 +13,29 @@ const FootLine = ({ innerHeight }) => {
       return "2rem";
     }
   };
+  useEffect(() => {
+    const trigger = document.querySelector(".LineFoot");
+    const ctx = gsap.context(() => {
+      gsap.from(trigger.children[0], {
+        yPercent: 200,
+        duration: 1.5,
+        ease: "expo.inOut",
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top bottom",
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
   return (
-    <Box marginTop={"7rem"} paddingBottom={GetScrollPadd}>
+    <Box
+      marginTop={"7rem"}
+      paddingBottom={GetScrollPadd}
+      overflow="hidden"
+      className="LineFoot"
+    >
       <Stack
         alignItems="center"
         justifyContent={"space-between"}
