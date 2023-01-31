@@ -19,7 +19,8 @@ const Footer = ({ innerHeight }) => {
       types: "words, chars",
     });
     const ctx = gsap.context(() => {
-      gsap.from(Foot1.chars, {
+      const tl = gsap.timeline();
+      tl.from(Foot1.chars, {
         yPercent: 100,
         opacity: 0,
         ease: "expo.inOut",
@@ -27,23 +28,19 @@ const Footer = ({ innerHeight }) => {
           amount: 0.5,
           from: "random",
         },
-        scrollTrigger: {
-          trigger: footelm,
-          start: "top 70%",
+      }).from(Foot2.chars, {
+        yPercent: 100,
+        opacity: 0,
+        ease: "expo.inOut",
+        stagger: {
+          amount: 0.5,
+          from: "random",
         },
       });
-      gsap.from(Foot2.chars, {
-        yPercent: 100,
-        opacity: 0,
-        ease: "expo.inOut",
-        stagger: {
-          amount: 0.5,
-          from: "random",
-        },
-        scrollTrigger: {
-          trigger: foot2elm,
-          start: "top 70%",
-        },
+      ScrollTrigger.create({
+        trigger: footelm,
+        start: "top 90%",
+        animation: tl,
       });
     });
     return () => ctx.revert();
