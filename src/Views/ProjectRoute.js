@@ -43,8 +43,6 @@ function Project() {
     const skew = Velocity * 7.5;
     if (Size.width > 800) {
       ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px) skewY(${skew}deg)`;
-    } else {
-      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.previous}px)`;
     }
     requestAnimationFrame(() => SkewScrolling());
   };
@@ -54,14 +52,11 @@ function Project() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.to(
-        document.querySelector(".projectHead"),
-        {
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          ease: "expo.inOut",
-          duration: 1.5,
-        }
-      ).from(document.querySelector(".projectTag"), {
+      tl.to(document.querySelector(".projectHead"), {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        ease: "expo.inOut",
+        duration: 1.5,
+      }).from(document.querySelector(".projectTag"), {
         yPercent: 100,
         ease: "expo.inOut",
         duration: 1,

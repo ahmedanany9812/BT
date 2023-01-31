@@ -16,7 +16,7 @@ const FootLine = ({ innerHeight }) => {
   useEffect(() => {
     const trigger = document.querySelector(".LineFoot");
     const ctx = gsap.context(() => {
-      gsap.from(trigger.children[0], {
+      gsap.from(trigger.children[0].children[0], {
         yPercent: 200,
         duration: 1.5,
         ease: "expo.inOut",
@@ -30,38 +30,35 @@ const FootLine = ({ innerHeight }) => {
     return () => ctx.revert();
   }, []);
   return (
-    <Box
-      marginTop={"7rem"}
-      paddingBottom={GetScrollPadd}
-      overflow="hidden"
-      className="LineFoot"
-    >
-      <Stack
-        alignItems="center"
-        justifyContent={"space-between"}
-        direction="row"
-      >
-        <Box
-          fontSize={{ xs: "13px", sm: "15px" }}
-          fontFamily={fonts.font5}
-          fontWeight={300}
+    <Box marginTop={"7rem"} paddingBottom={GetScrollPadd} className="LineFoot">
+      <Box overflow={"hidden"}>
+        <Stack
+          alignItems="center"
+          justifyContent={"space-between"}
+          direction="row"
         >
-          Based in{" "}
-          <Box component={"span"} sx={{ opacity: 0.6 }}>
-            EGYPT
+          <Box
+            fontSize={{ xs: "13px", sm: "15px" }}
+            fontFamily={fonts.font5}
+            fontWeight={300}
+          >
+            Based in{" "}
+            <Box component={"span"} sx={{ opacity: 0.6 }}>
+              EGYPT
+            </Box>
           </Box>
-        </Box>
-        <Box
-          fontSize={{ xs: "13px", sm: "15px" }}
-          fontFamily={fonts.font5}
-          fontWeight={300}
-        >
-          <Box component={"span"} sx={{ opacity: 0.6 }}>
-            ©
+          <Box
+            fontSize={{ xs: "13px", sm: "15px" }}
+            fontFamily={fonts.font5}
+            fontWeight={300}
+          >
+            <Box component={"span"} sx={{ opacity: 0.6 }}>
+              ©
+            </Box>
+            2023
           </Box>
-          2023
-        </Box>
-      </Stack>
+        </Stack>
+      </Box>
     </Box>
   );
 };
