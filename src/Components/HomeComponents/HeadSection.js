@@ -53,11 +53,41 @@ const HeadSection = () => {
         scrub: 1,
         trigger: trigger,
         start: "top top",
-        end: "30% top",
+        end: "25% top",
       });
     });
     return () => mm.revert();
   }, []);
+  useEffect(() => {
+    const trigger = document.querySelector(".worksectiontrigger");
+    const item = document.querySelector("#projects-tag");
+    let mm = gsap.matchMedia();
+    mm.add("(min-width:800px)", () => {
+      gsap.to(item, {
+        y: 100,
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top top",
+          end: "10% top",
+          markers: true,
+          scrub: 1,
+        },
+      });
+    });
+    mm.add("(max-width:799px)", () => {
+      gsap.to(item, {
+        y: 40,
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top top",
+          end: "10% top",
+          markers: true,
+          scrub: 1,
+        },
+      });
+    });
+    return () => mm.revert();
+  });
   return (
     <Box minHeight={"100vh"} position="relative" className="worksectiontrigger">
       <Header />
@@ -158,6 +188,7 @@ const HeadSection = () => {
           bottom: { xs: 75, md: 90 },
           overflow: "hidden",
         }}
+        id="projects-tag"
       >
         <Box component={"span"} display="inline-block" className="HeadTrr">
           Selected Projects
