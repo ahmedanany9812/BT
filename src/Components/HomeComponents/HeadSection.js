@@ -69,8 +69,8 @@ const HeadSection = () => {
         scrollTrigger: {
           trigger: trigger,
           start: "top top",
-          end: "10% top",
-          scrub: 1,
+          end: "25% top",
+          toggleActions: "play none none reverse",
         },
       });
     });
@@ -81,8 +81,8 @@ const HeadSection = () => {
         scrollTrigger: {
           trigger: trigger,
           start: "top top",
-          end: "10% top",
-          scrub: 1,
+          end: "20% top",
+          toggleActions: "play none none reverse",
         },
       });
     });
