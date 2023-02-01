@@ -65,11 +65,11 @@ const HeadSection = () => {
     mm.add("(min-width:800px)", () => {
       gsap.to(item, {
         y: 100,
+        ease: "expo.inOut",
         scrollTrigger: {
           trigger: trigger,
           start: "top top",
           end: "10% top",
-          markers: true,
           scrub: 1,
         },
       });
@@ -77,11 +77,11 @@ const HeadSection = () => {
     mm.add("(max-width:799px)", () => {
       gsap.to(item, {
         y: 40,
+        ease: "expo.inOut",
         scrollTrigger: {
           trigger: trigger,
           start: "top top",
           end: "10% top",
-          markers: true,
           scrub: 1,
         },
       });
