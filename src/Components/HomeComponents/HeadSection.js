@@ -87,7 +87,7 @@ const HeadSection = () => {
       });
     });
     return () => mm.revert();
-  });
+  }, []);
   return (
     <Box minHeight={"100vh"} position="relative" className="worksectiontrigger">
       <Header />
