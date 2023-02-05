@@ -18,7 +18,9 @@ const Footer = ({ innerHeight }) => {
     const Foot1 = new SplitType(foot1elm, {
       types: "words, chars",
     });
-    const ctx = gsap.context(() => {
+    let mm = gsap.matchMedia();
+    //large screen
+    mm.add("(min-width:800px)", () => {
       const tl = gsap.timeline();
       tl.from(Foot1.chars, {
         yPercent: 100,
@@ -43,7 +45,7 @@ const Footer = ({ innerHeight }) => {
         animation: tl,
       });
     });
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
   return (
     <Box marginTop={"8rem"} className="foot-main">

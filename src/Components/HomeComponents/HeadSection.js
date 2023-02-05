@@ -62,10 +62,11 @@ const HeadSection = () => {
     const trigger = document.querySelector(".worksectiontrigger");
     const item = document.querySelector("#projects-tag");
     let mm = gsap.matchMedia();
+    //large screen
     mm.add("(min-width:800px)", () => {
       gsap.to(item, {
         y: 100,
-        ease: "expo.inOut",
+        ease: "circ.in",
         scrollTrigger: {
           trigger: trigger,
           start: "top top",
@@ -74,18 +75,19 @@ const HeadSection = () => {
         },
       });
     });
-    mm.add("(max-width:799px)", () => {
-      gsap.to(item, {
-        y: 40,
-        ease: "expo.inOut",
-        scrollTrigger: {
-          trigger: trigger,
-          start: "top top",
-          end: "20% top",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
+    //mobile screen
+    // mm.add("(max-width:799px)", () => {
+    //   gsap.to(item, {
+    //     y: 40,
+    //     ease: "circ.in",
+    //     scrollTrigger: {
+    //       trigger: trigger,
+    //       start: "top top",
+    //       end: "20% top",
+    //       toggleActions: "play none none reverse",
+    //     },
+    //   });
+    // });
     return () => mm.revert();
   }, []);
   return (
