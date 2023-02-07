@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import SplitType from "split-type";
 import { CustomTheme } from "../../Utilities/Theme";
 import FootLine from "../Global/FootLine";
 gsap.registerPlugin(ScrollTrigger);

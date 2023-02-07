@@ -15,10 +15,7 @@ const FootLine = ({ innerHeight }) => {
   };
   useEffect(() => {
     const trigger = document.querySelector(".LineFoot");
-
-    let mm = gsap.matchMedia();
-    //large screen
-    mm.add("(min-width:800px)", () => {
+    const ctx=gsap.context(() => {
       gsap.from(trigger.children[0].children[0], {
         yPercent: 200,
         duration: 1.5,
@@ -30,7 +27,7 @@ const FootLine = ({ innerHeight }) => {
         },
       });
     });
-    return () => mm.revert();
+    return () => ctx.revert();
   }, []);
   return (
     <Box marginTop={"7rem"} paddingBottom={GetScrollPadd} className="LineFoot">
