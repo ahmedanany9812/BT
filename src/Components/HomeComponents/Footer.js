@@ -100,7 +100,7 @@ const Footer = ({ innerHeight }) => {
         overflow={"hidden"}
       >
         <Box component={"span"} display="inline-block" className="foot3">
-          If you`d like to chew the fat catch
+          If you`d like to chew the fat 
         </Box>
       </Box>
       <Box
@@ -110,7 +110,7 @@ const Footer = ({ innerHeight }) => {
         overflow={"hidden"}
       >
         <Box component={"span"} display="inline-block" className="foot4">
-          me on{" "}
+        catch me on{" "}
           <Box component={"span"} sx={{ opacity: 0.6 }}>
             Twitter{" "}
           </Box>
