@@ -18,7 +18,7 @@ const WorkSection = () => {
             />
           );
         })}
-        <Box overflow={"hidden"} className="work">
+        <Box overflow={"hidden"} className="work animatt">
           <Stack
             direction={"row"}
             alignItems="center"

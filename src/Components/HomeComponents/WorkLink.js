@@ -3,7 +3,7 @@ import { CustomTheme } from "../../Utilities/Theme";
 const WorkLink = ({ id, tag, cate, dat }) => {
   const { fonts } = CustomTheme;
   return (
-    <Box overflow={"hidden"} className="work">
+    <Box overflow={"hidden"} className="work animatt">
       <Stack
         direction={"row"}
         alignItems="center"

@@ -10,42 +10,61 @@ const Footer = ({ innerHeight }) => {
   const { fonts } = CustomTheme;
   useEffect(() => {
     const footelm = document.querySelector(".foot-main");
-    const foot2elm = document.querySelector(".foot2");
     const foot1elm = document.querySelector(".foot1");
-    const Foot2 = new SplitType(foot2elm, {
-      types: "words, chars",
-    });
-    const Foot1 = new SplitType(foot1elm, {
-      types: "words, chars",
-    });
-    let mm = gsap.matchMedia();
-    //large screen
-    mm.add("(min-width:800px)", () => {
+    const foot2elm = document.querySelector(".foot2");
+    const foot3elm = document.querySelector(".foot3");
+    const foot4elm = document.querySelector(".foot4");
+    const foot5elm = document.querySelector(".foot5");
+    let ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.from(Foot1.chars, {
-        yPercent: 100,
-        opacity: 0,
+      tl.from(foot1elm, {
+        yPercent: 200,
         ease: "expo.inOut",
-        stagger: {
-          amount: 0.5,
-          from: "random",
-        },
-      }).from(Foot2.chars, {
-        yPercent: 100,
-        opacity: 0,
-        ease: "expo.inOut",
-        stagger: {
-          amount: 0.5,
-          from: "random",
-        },
-      });
+        duration: 2,
+      })
+        .from(
+          foot2elm,
+          {
+            yPercent: 200,
+            ease: "expo.inOut",
+            duration: 2,
+          },
+          "<"
+        )
+        .from(
+          foot3elm,
+          {
+            yPercent: 200,
+            ease: "expo.inOut",
+            duration: 2,
+          },
+          "<"
+        )
+        .from(
+          foot4elm,
+          {
+            yPercent: 200,
+            ease: "expo.inOut",
+            duration: 2,
+          },
+          "<"
+        )
+        .from(
+          foot5elm,
+          {
+            yPercent: 200,
+            ease: "expo.inOut",
+            duration: 2,
+          },
+          "<"
+        );
       ScrollTrigger.create({
         trigger: footelm,
-        start: "top 90%",
+        start: "10% 90%",
         animation: tl,
       });
     });
-    return () => mm.revert();
+    return () => ctx.revert();
   }, []);
   return (
     <Box marginTop={"8rem"} className="foot-main">
@@ -53,11 +72,24 @@ const Footer = ({ innerHeight }) => {
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
-        className="foot1"
+        overflow={"hidden"}
       >
-        Feel free to say Hi!
-        <br />
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
+        <Box component={"span"} display="inline-block" className="foot1">
+          Feel free to say Hi!
+        </Box>
+      </Box>
+      <Box
+        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontFamily={fonts.font5}
+        fontWeight={300}
+        overflow={"hidden"}
+      >
+        <Box
+          component={"span"}
+          sx={{ opacity: 0.6 }}
+          display="inline-block"
+          className="foot2"
+        >
           ahmedenany9812@gmail.com
         </Box>
       </Box>
@@ -66,15 +98,37 @@ const Footer = ({ innerHeight }) => {
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="4rem"
-        className="foot2"
+        overflow={"hidden"}
       >
-        If you`d like to chew the fat catch me on{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
-          Twitter
-        </Box>{" "}
-        or you can check my{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
-          Resume
+        <Box component={"span"} display="inline-block" className="foot3">
+          If you`d like to chew the fat catch
+        </Box>
+      </Box>
+      <Box
+        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontFamily={fonts.font5}
+        fontWeight={300}
+        overflow={"hidden"}
+      >
+        <Box component={"span"} display="inline-block" className="foot4">
+          me on{" "}
+          <Box component={"span"} sx={{ opacity: 0.6 }}>
+            Twitter{" "}
+          </Box>
+          or you can
+        </Box>
+      </Box>
+      <Box
+        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontFamily={fonts.font5}
+        fontWeight={300}
+        overflow={"hidden"}
+      >
+        <Box component={"span"} display="inline-block" className="foot5">
+          check my{" "}
+          <Box component={"span"} sx={{ opacity: 0.6 }}>
+            Resume
+          </Box>
         </Box>
       </Box>
       <FootLine innerHeight={innerHeight} />
