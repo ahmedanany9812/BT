@@ -6,6 +6,7 @@ import HeadSection from "../Components/HomeComponents/HeadSection";
 import Footer from "../Components/HomeComponents/Footer";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import FootLine from "../Components/Global/FootLine";
 gsap.registerPlugin(ScrollTrigger);
 function Home() {
   const ScrollContainer = useRef();
@@ -79,6 +80,7 @@ function Home() {
       <HeadSection />
       <WorkSection />
       <Footer innerHeight={innerHeight} />
+      <FootLine innerHeight={innerHeight} />
     </Box>
   );
 }

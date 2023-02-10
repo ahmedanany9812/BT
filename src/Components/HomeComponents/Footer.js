@@ -3,9 +3,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { CustomTheme } from "../../Utilities/Theme";
-import FootLine from "../Global/FootLine";
 gsap.registerPlugin(ScrollTrigger);
-const Footer = ({ innerHeight }) => {
+const Footer = () => {
   const { fonts } = CustomTheme;
   useEffect(() => {
     const footelm = document.querySelector(".foot-main");
@@ -66,7 +65,7 @@ const Footer = ({ innerHeight }) => {
     return () => ctx.revert();
   }, []);
   return (
-    <Box marginTop={"8rem"} className="foot-main">
+    <Box marginTop={"8rem"} className="foot-main" paddingY={{ xs: "5rem", sm: "2rem" }}>
       <Box
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
@@ -100,7 +99,7 @@ const Footer = ({ innerHeight }) => {
         overflow={"hidden"}
       >
         <Box component={"span"} display="inline-block" className="foot3">
-          If you`d like to chew the fat 
+          If you`d like to chew the fat
         </Box>
       </Box>
       <Box
@@ -110,7 +109,7 @@ const Footer = ({ innerHeight }) => {
         overflow={"hidden"}
       >
         <Box component={"span"} display="inline-block" className="foot4">
-        catch me on{" "}
+          catch me on{" "}
           <Box component={"span"} sx={{ opacity: 0.6 }}>
             Twitter{" "}
           </Box>
@@ -130,7 +129,6 @@ const Footer = ({ innerHeight }) => {
           </Box>
         </Box>
       </Box>
-      <FootLine innerHeight={innerHeight} />
     </Box>
   );
 };
