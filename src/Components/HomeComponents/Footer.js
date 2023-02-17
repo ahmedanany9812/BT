@@ -18,14 +18,14 @@ const Footer = () => {
       tl.from(foot1elm, {
         yPercent: 200,
         ease: "expo.inOut",
-        duration: 2,
+        duration: 1.5,
       })
         .from(
           foot2elm,
           {
             yPercent: 200,
             ease: "expo.inOut",
-            duration: 2,
+            duration: 1.5,
           },
           "<"
         )
@@ -34,7 +34,7 @@ const Footer = () => {
           {
             yPercent: 200,
             ease: "expo.inOut",
-            duration: 2,
+            duration: 1.5,
           },
           "<"
         )
@@ -43,7 +43,7 @@ const Footer = () => {
           {
             yPercent: 200,
             ease: "expo.inOut",
-            duration: 2,
+            duration: 1.5,
           },
           "<"
         )
@@ -52,7 +52,7 @@ const Footer = () => {
           {
             yPercent: 200,
             ease: "expo.inOut",
-            duration: 2,
+            duration: 1.5,
           },
           "<"
         );

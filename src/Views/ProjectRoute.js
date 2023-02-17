@@ -88,7 +88,7 @@ function Project() {
             overflow: "hidden",
           }}
         >
-          <Box component={"span"} className="projectTag">
+          <Box component={"span"} className="projectTag" display={"inline-block"}>
             {CurrentProject.tag}
           </Box>
         </Box>
