@@ -1,7 +1,21 @@
 import { Box } from "@mui/material";
+import gsap from "gsap";
+import { useEffect } from "react";
 import { CustomTheme } from "../../Utilities/Theme";
 const AboutContent = () => {
   const { fonts } = CustomTheme;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const elm = document.querySelector(".boutag");
+      gsap.from(elm, {
+        yPercent: 200,
+        ease: "expo.inOut",
+        duration: 2,
+        delay: 0.5,
+      });
+    });
+    return () => ctx.revert();
+  });
   return (
     <Box marginTop={{ xs: "4rem", sm: "5rem" }}>
       <Box
@@ -9,8 +23,11 @@ const AboutContent = () => {
         fontFamily={fonts.font5}
         fontWeight={300}
         letterSpacing={{ sm: "-8px", xs: "-3px" }}
+        overflow="hidden"
       >
-        Hola!
+        <Box className="boutag" component={"span"} display={"inline-block"}>
+          Hola!
+        </Box>
       </Box>
       <Box
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
@@ -18,7 +35,8 @@ const AboutContent = () => {
         fontWeight={300}
         marginTop="1rem"
       >
-        It`s Ahmed Anany a junior Self-taught fullstack JS developer and problem solver since 2022
+        It`s Ahmed Anany a junior Self-taught fullstack JS developer and problem
+        solver since 2022
       </Box>
       <Box
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
@@ -53,9 +71,18 @@ const AboutContent = () => {
         marginTop="2rem"
       >
         If you got something on your mind you want to share it with me catch me
-        on <Box component={"span"} sx={{ opacity: 0.6 }}>Linked in</Box> ,
-        <Box component={"span"} sx={{ opacity: 0.6 }}>Facebook</Box> or{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>Twitter</Box>
+        on{" "}
+        <Box component={"span"} sx={{ opacity: 0.6 }}>
+          Linked in
+        </Box>{" "}
+        ,
+        <Box component={"span"} sx={{ opacity: 0.6 }}>
+          Facebook
+        </Box>{" "}
+        or{" "}
+        <Box component={"span"} sx={{ opacity: 0.6 }}>
+          Twitter
+        </Box>
       </Box>
       <Box
         fontSize={{ xs: "5vw", sm: "4.5vw" }}
@@ -64,7 +91,10 @@ const AboutContent = () => {
         marginTop="2rem"
       >
         Or you can check my Code skills on my{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>Github</Box> Account
+        <Box component={"span"} sx={{ opacity: 0.6 }}>
+          Github
+        </Box>{" "}
+        Account
       </Box>
     </Box>
   );
