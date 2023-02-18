@@ -12,6 +12,7 @@ export const CustomTheme = {
     font5: "Unbounded, cursive",
     font6: "IBM Plex Mono, monospace",
     hom: "Montserrat, sans-serif",
+    load: "Playfair Display, serif",
   },
   breakpoints: {
     xs: 500,
