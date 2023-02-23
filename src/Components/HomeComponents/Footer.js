@@ -88,7 +88,7 @@ const Footer = () => {
           display="inline-block"
           className="foot2"
         >
-          Email-me
+          Text-me
         </Box>
       </Box>
       <Box
