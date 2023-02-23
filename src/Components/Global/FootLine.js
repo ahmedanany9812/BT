@@ -20,7 +20,6 @@ const FootLine = ({ innerHeight }) => {
         yPercent: 200,
         duration: 1.5,
         ease: "expo.inOut",
-        delay: 0.5,
         scrollTrigger: {
           trigger: trigger,
           start: "top bottom",

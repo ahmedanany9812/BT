@@ -15,7 +15,7 @@ const AboutContent = () => {
       });
     });
     return () => ctx.revert();
-  });
+  },[]);
   return (
     <Box marginTop={{ xs: "4rem", sm: "5rem" }}>
       <Box
