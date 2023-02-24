@@ -56,7 +56,7 @@ function Home() {
       const tl = gsap.timeline();
       tl.from(box, {
         width: 0,
-        duration: 1.2,
+        duration: 1,
       });
       ScrollTrigger.create({
         animation: tl,
