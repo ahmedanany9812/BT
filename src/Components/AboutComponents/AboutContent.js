@@ -41,7 +41,7 @@ const AboutContent = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="1rem"
@@ -50,7 +50,7 @@ const AboutContent = () => {
         solver since 2022
       </Box>
       <Box
-        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="2rem"
@@ -59,7 +59,7 @@ const AboutContent = () => {
         static and dynamic web Applications
       </Box>
       <Box
-        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="2rem"
@@ -67,7 +67,7 @@ const AboutContent = () => {
         I`m also a Data science student at my last year
       </Box>
       <Box
-        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="2rem"
@@ -76,7 +76,7 @@ const AboutContent = () => {
         more experience and make new friends
       </Box>
       <Box
-        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="2rem"
@@ -96,7 +96,7 @@ const AboutContent = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "5vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="2rem"

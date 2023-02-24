@@ -8,9 +8,9 @@ const Footer = () => {
   const { fonts } = CustomTheme;
 
   return (
-    <Box marginTop={"8rem"} className="foot-main" paddingY="2rem">
+    <Box marginTop={"9rem"} className="foot-main" paddingY="2rem">
       <Box
-        fontSize={{ xs: "8vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         overflow={"hidden"}
@@ -22,7 +22,7 @@ const Footer = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "7vw", sm: "4.5vw" }}
+        fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="4rem"
