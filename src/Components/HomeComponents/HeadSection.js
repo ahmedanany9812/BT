@@ -189,10 +189,12 @@ const HeadSection = () => {
           position: "absolute",
           bottom: { xs: 75, md: 90 },
           overflow: "hidden",
+          backgroundColor: "black",
+          zIndex:1
         }}
         id="projects-tag"
       >
-        <Box component={"span"} display="inline-block" className="HeadTrr">
+        <Box component={"span"} display="inline-block" className="HeadTrr" bgcolor={"black"}>
           Selected Projects
         </Box>
       </Box>
