@@ -16,23 +16,12 @@ const AboutContent = () => {
     });
     return () => ctx.revert();
   }, []);
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(document.querySelector(".boucont"), {
-        scale: 0.5,
-        autoAlpha: 0,
-        duration: 0.8,
-        ease: "expo.inOut",
-      });
-    });
-    return () => ctx.revert();
-  }, []);
   return (
-    <Box marginTop={{ xs: "4rem", sm: "5rem" }} className="boucont">
+    <Box marginTop={{ xs: "4rem", sm: "5rem" }}>
       <Box
         fontSize={"11.5vw"}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={500}
         letterSpacing={{ sm: "-8px", xs: "-3px" }}
         overflow="hidden"
       >
@@ -43,7 +32,7 @@ const AboutContent = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="1rem"
       >
         It`s Ahmed Anany a junior Self-taught fullstack JS developer and problem
@@ -52,7 +41,7 @@ const AboutContent = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="2rem"
       >
         I`m introducing myself to the world of web development by creating a
@@ -61,7 +50,7 @@ const AboutContent = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="2rem"
       >
         I`m also a Data science student at my last year
@@ -69,7 +58,7 @@ const AboutContent = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="2rem"
       >
         Currently i`m working as local freelancer so i`m opening for work to get
@@ -78,7 +67,7 @@ const AboutContent = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="2rem"
       >
         If you got something on your mind you want to share it with me catch me
@@ -98,7 +87,7 @@ const AboutContent = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="2rem"
       >
         Or you can check my Code skills on my{" "}

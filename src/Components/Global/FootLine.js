@@ -23,17 +23,17 @@ const FootLine = ({ innerHeight }) => {
           <Box
             fontSize={{ xs: "13px", sm: "15px" }}
             fontFamily={fonts.font5}
-            fontWeight={300}
+            fontWeight={400}
           >
             Based in{" "}
             <Box component={"span"} sx={{ opacity: 0.6 }}>
-              EGYPT
+              EGYPT, Tanta
             </Box>
           </Box>
           <Box
             fontSize={{ xs: "13px", sm: "15px" }}
             fontFamily={fonts.font5}
-            fontWeight={300}
+            fontWeight={400}
           >
             <Box component={"span"} sx={{ opacity: 0.6 }}>
               ©

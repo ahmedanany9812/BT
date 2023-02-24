@@ -12,7 +12,7 @@ const Footer = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         overflow={"hidden"}
       >
         Feel free to say Hi!
@@ -24,7 +24,7 @@ const Footer = () => {
       <Box
         fontSize={{ xs: "6.5vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
-        fontWeight={300}
+        fontWeight={400}
         marginTop="4rem"
         overflow={"hidden"}
       >

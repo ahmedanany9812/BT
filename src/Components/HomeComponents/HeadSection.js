@@ -106,7 +106,7 @@ const HeadSection = () => {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={300}
+              fontWeight={400}
               letterSpacing={{ sm: "-8px", xs: "-3px" }}
               className="word1"
               bgcolor={"black"}
@@ -125,7 +125,7 @@ const HeadSection = () => {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={300}
+              fontWeight={400}
               letterSpacing={{ sm: "-8px", xs: "-3px" }}
               className="word2"
               bgcolor={"black"}
@@ -137,7 +137,7 @@ const HeadSection = () => {
         <Box
           fontSize={"11.5vw"}
           fontFamily={fonts.font5}
-          fontWeight={300}
+          fontWeight={400}
           letterSpacing={{ sm: "-10px", xs: "-3px" }}
           lineHeight={{ xs: "70px", sm: "170px" }}
           sx={{ overflow: "hidden" }}
@@ -156,7 +156,7 @@ const HeadSection = () => {
             <Box
               fontSize={"11.5vw"}
               fontFamily={fonts.font5}
-              fontWeight={300}
+              fontWeight={400}
               letterSpacing={{ sm: "-10px", xs: "-3px" }}
               lineHeight={{ xs: "70px", sm: "170px" }}
               sx={{ overflow: "hidden" }}

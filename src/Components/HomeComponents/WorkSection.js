@@ -58,7 +58,7 @@ const WorkSection = () => {
               <Box
                 fontFamily={fonts.font5}
                 fontSize={{ xs: "10vw", sm: "10.3vw" }}
-                fontWeight={300}
+                fontWeight={400}
                 letterSpacing={{ xs: "-3px", sm: "-10px" }}
               >
                 ROADMATH
