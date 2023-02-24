@@ -77,7 +77,7 @@ const Footer = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "8vw", sm: "4.5vw" }}
+        fontSize={{ xs: "7vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         overflow={"hidden"}
@@ -92,7 +92,7 @@ const Footer = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "8vw", sm: "4.5vw" }}
+        fontSize={{ xs: "7vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         marginTop="4rem"
@@ -103,7 +103,7 @@ const Footer = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "8vw", sm: "4.5vw" }}
+        fontSize={{ xs: "7vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         overflow={"hidden"}
@@ -117,7 +117,7 @@ const Footer = () => {
         </Box>
       </Box>
       <Box
-        fontSize={{ xs: "8vw", sm: "4.5vw" }}
+        fontSize={{ xs: "7vw", sm: "4.5vw" }}
         fontFamily={fonts.font5}
         fontWeight={300}
         overflow={"hidden"}

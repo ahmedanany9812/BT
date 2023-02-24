@@ -29,6 +29,7 @@ const WorkSection = () => {
               backgroundColor: "#777",
               width: "100%",
             }}
+            className="line"
           />
           <Box
             sx={{
@@ -39,11 +40,12 @@ const WorkSection = () => {
               backgroundColor: "#777",
               width: "100%",
             }}
+            className="line"
           />
           <Stack
             direction={"row"}
             alignItems="center"
-            paddingY={{ xs: "1rem", sm: "5rem" }}
+            paddingY={{ xs: "2.5rem", sm: "5rem" }}
             sx={{ position: "relative" }}
             width="100%"
           >
@@ -57,7 +59,7 @@ const WorkSection = () => {
             <Stack direction={"column"} marginLeft="20px">
               <Box
                 fontFamily={fonts.font5}
-                fontSize={{ xs: "11vw", sm: "10.3vw" }}
+                fontSize={{ xs: "10vw", sm: "10.3vw" }}
                 fontWeight={300}
                 letterSpacing={{ xs: "-3px", sm: "-10px" }}
               >

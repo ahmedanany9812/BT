@@ -44,7 +44,7 @@ function Home() {
     requestAnimationFrame(() => SkewScrolling());
   }, []);
   useEffect(() => {
-    const boxes = gsap.utils.toArray(".work");
+    const lines = gsap.utils.toArray(".line");
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeadTrr"), {
         yPercent: 150,
@@ -52,21 +52,13 @@ function Home() {
         ease: "expo.inOut",
       });
     });
-    boxes.forEach((box) => {
+    lines.forEach((box) => {
       const tl = gsap.timeline();
-      tl.from(box.children[0], {
-        yPercent: 100,
-        duration: 1.1,
+      tl.from(box, {
+        width: 0,
+        duration: 0.7,
         ease: "expo.inOut",
-      }).from(
-        box.children[0].children[0],
-        {
-          xPercent: -100,
-          duration: 1,
-          ease: "expo.inOut",
-        },
-        "-=0.4"
-      );
+      });
       ScrollTrigger.create({
         animation: tl,
         trigger: box,
