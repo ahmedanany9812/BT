@@ -69,7 +69,7 @@ function Project() {
       <Header />
       <Box
         height={{ xs: "75vh", sm: "85vh" }}
-        sx={{ bgcolor: "#ff5908" }}
+        sx={{ bgcolor: "#ECDBBA" }}
         position="relative"
         className="projectHead"
       >

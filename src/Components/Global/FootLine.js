@@ -27,7 +27,7 @@ const FootLine = ({ innerHeight }) => {
           >
             Based in{" "}
             <Box component={"span"} sx={{ opacity: 0.6 }}>
-              EGYPT, Tanta
+              EGYPT, TANTA
             </Box>
           </Box>
           <Box
