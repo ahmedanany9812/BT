@@ -15,9 +15,20 @@ const AboutContent = () => {
       });
     });
     return () => ctx.revert();
-  },[]);
+  }, []);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(document.querySelector(".boucont"), {
+        scale: 0.5,
+        autoAlpha: 0,
+        duration: 0.8,
+        ease: "expo.inOut",
+      });
+    });
+    return () => ctx.revert();
+  }, []);
   return (
-    <Box marginTop={{ xs: "4rem", sm: "5rem" }}>
+    <Box marginTop={{ xs: "4rem", sm: "5rem" }} className="boucont">
       <Box
         fontSize={"11.5vw"}
         fontFamily={fonts.font5}

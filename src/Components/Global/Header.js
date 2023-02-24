@@ -8,7 +8,7 @@ const Header = () => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
         yPercent: 150,
-        duration: 1.5,
+        duration: 0.8,
         ease: "expo.inOut",
       });
     });
