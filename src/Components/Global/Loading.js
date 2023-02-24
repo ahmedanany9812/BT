@@ -68,7 +68,7 @@ const Loading = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "50%",
+          top: { xs: "40%", sm: "50%" },
           left: "50%",
           transform: "translate(-50%,-50%)",
           height: "70px",

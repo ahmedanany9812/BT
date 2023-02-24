@@ -25,7 +25,6 @@ const WorkSection = () => {
               position: "absolute",
               top: 0,
               left: 0,
-              height: "2px",
               backgroundColor: "#777",
               width: "100%",
             }}
@@ -36,7 +35,6 @@ const WorkSection = () => {
               position: "absolute",
               bottom: 0,
               left: 0,
-              height: "2px",
               backgroundColor: "#777",
               width: "100%",
             }}
@@ -45,7 +43,7 @@ const WorkSection = () => {
           <Stack
             direction={"row"}
             alignItems="center"
-            paddingY={{ xs: "2.5rem", sm: "5rem" }}
+            paddingY={{ xs: "2rem", sm: "5rem" }}
             sx={{ position: "relative" }}
             width="100%"
           >

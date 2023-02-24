@@ -56,13 +56,13 @@ function Home() {
       const tl = gsap.timeline();
       tl.from(box, {
         width: 0,
-        duration: 0.7,
+        duration: 1.5,
         ease: "expo.inOut",
       });
       ScrollTrigger.create({
         animation: tl,
         trigger: box,
-        start: "top 90%",
+        start: "top 95%",
       });
     });
     return () => ctx.revert();

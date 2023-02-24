@@ -10,7 +10,6 @@ const WorkLink = ({ id, tag, cate, dat }) => {
           position: "absolute",
           top: 0,
           left: 0,
-          height: "2px",
           backgroundColor: "#777",
           width: "100%",
         }}
@@ -19,7 +18,7 @@ const WorkLink = ({ id, tag, cate, dat }) => {
       <Stack
         direction={"row"}
         alignItems="center"
-        paddingY={{ xs: "2.5rem", sm: "5rem" }}
+        paddingY={{ xs: "2rem", sm: "5rem" }}
         sx={{ position: "relative" }}
       >
         <Box
