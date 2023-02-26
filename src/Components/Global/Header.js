@@ -68,7 +68,7 @@ const Header = () => {
           </Box>
           <Box
             sx={{
-              backgroundColor: "#ECDBBA",
+              backgroundColor: "#FFFFFF",
               borderRadius: "50%",
               height: "20px",
               width: "20px",
