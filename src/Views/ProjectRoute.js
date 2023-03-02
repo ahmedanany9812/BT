@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
@@ -22,10 +22,12 @@ function Project() {
   const ScrollContainer = useRef();
   const Size = useWindowSize();
   useEffect(() => {
-    document.body.style.height = `${
-      ScrollContainer.current.getBoundingClientRect().height
-    }px`;
-  }, [Size.height, location]);
+    setTimeout(() => {
+      document.body.style.height = `${
+        ScrollContainer.current.getBoundingClientRect().height
+      }px`;
+    }, 100);
+  });
   const SkewConfigs = {
     ease: 0.1,
     current: 0,
@@ -88,7 +90,11 @@ function Project() {
             overflow: "hidden",
           }}
         >
-          <Box component={"span"} className="projectTag" display={"inline-block"}>
+          <Box
+            component={"span"}
+            className="projectTag"
+            display={"inline-block"}
+          >
             {CurrentProject.tag}
           </Box>
         </Box>
@@ -220,6 +226,14 @@ function Project() {
               {CurrentProject.tag}
             </Box>
           </Stack>
+        </Stack>
+        <Stack>
+          <Box
+            marginY={"4rem"}
+            component="img"
+            src={require(`../Utilities/${CurrentProject.img}.png`)}
+            width="100%"
+          />
         </Stack>
         <Box
           component={"p"}

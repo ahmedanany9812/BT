@@ -8,6 +8,7 @@ export const Projects = [
     date: "October 2022",
     link: "https://ytrouty-app.onrender.com/",
     feauters: "React, Framer Motion, SASS, Lottie Player, Express, MongoDB",
+    img:"Ytrouty"
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const Projects = [
     date: "January 2023",
     link: "https://bt-ot5l.onrender.com",
     feauters: "React, SASS, Framer Motion, GreenSock",
+    img:"BT"
   },
   {
     id: 3,
@@ -28,5 +30,6 @@ export const Projects = [
     date: "March 2022",
     link: "https://bigtunaisyeiling.github.io/Relig-store/#/",
     feauters: "Vue, SASS, Lottie Player",
+    img:"Relig"
   },
 ];

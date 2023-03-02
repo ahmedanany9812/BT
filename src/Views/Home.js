@@ -13,13 +13,15 @@ function Home() {
   const Size = UseWindowSize();
   const [innerHeight, setInnerHeight] = useState(0);
   useEffect(() => {
-    document.body.style.height = `${
-      ScrollContainer.current.getBoundingClientRect().height
-    }px`;
-    setInnerHeight(
-      () => ScrollContainer.current.getBoundingClientRect().height
-    );
-  }, [Size.height]);
+    setTimeout(() => {
+      document.body.style.height = `${
+        ScrollContainer.current.getBoundingClientRect().height
+      }px`;
+      setInnerHeight(
+        () => ScrollContainer.current.getBoundingClientRect().height
+      );
+    }, 100);
+  });
   const SkewConfigs = {
     ease: 0.1,
     current: 0,
