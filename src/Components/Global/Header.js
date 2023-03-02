@@ -10,7 +10,7 @@ const Header = () => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
         yPercent: 150,
-        duration: location.pathname == "/about" ? 0.2 : 1.5,
+        duration: location.pathname === "/about" ? 0.2 : 1.5,
         ease: "expo.inOut",
       });
     });
