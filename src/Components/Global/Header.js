@@ -1,14 +1,16 @@
 import { Box, Stack } from "@mui/material";
 import gsap from "gsap";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { CustomTheme } from "../../Utilities/Theme";
 const Header = () => {
   const { fonts } = CustomTheme;
+  const location = useLocation();
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
         yPercent: 150,
-        duration: 1,
+        duration: location.pathname == "/about" ? 0.2 : 1.5,
         ease: "expo.inOut",
       });
     });

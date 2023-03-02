@@ -13,7 +13,12 @@ const Loading = () => {
     const nam1 = document.querySelector(".ahmed");
     const nam2 = document.querySelector(".anan");
     const ctx = gsap.context(() => {
-      let tl = gsap.timeline({ delay: 0.6 });
+      let tl = gsap.timeline({
+        delay: 0.2,
+        defaults: {
+          duration: 0.4,
+        },
+      });
       tl.to(elm.current, {
         yPercent: -100,
       })

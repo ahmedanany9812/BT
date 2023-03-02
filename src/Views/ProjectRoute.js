@@ -25,7 +25,7 @@ function Project() {
     document.body.style.height = `${
       ScrollContainer.current.getBoundingClientRect().height
     }px`;
-  }, [Size.height,location.pathname]);
+  }, [Size.height, location.pathname]);
   const SkewConfigs = {
     ease: 0.1,
     current: 0,
@@ -107,12 +107,12 @@ function Project() {
       >
         <Box
           component={"p"}
-          fontWeight={300}
+          fontSize={{ xs: "4vw", sm: "4vw" }}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "5vw", md: "2vw" }}
-          letterSpacing={{ xs: "0px", md: "-1px" }}
+          fontWeight={400}
+          marginTop="1rem"
           color="white"
-          width={{ xs: "100%", md: "60%" }}
+          width={{ xs: "100%", md: "70%" }}
           sx={{ position: "relative" }}
         >
           {CurrentProject.desc}

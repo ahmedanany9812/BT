@@ -15,7 +15,7 @@ export const Projects = [
     tag: "PROFILE",
     cate: "Web Design",
     nam: "BT",
-    desc: "BT is a personal portfolio to introduce my self to the world of Web Development seeking to find new opportunities rasing my chances",
+    desc: "Personal portfolio to introduce my self to the world of Web Development",
     date: "January 2023",
     link: "https://bt-ot5l.onrender.com",
     feauters: "React, SASS, Framer Motion, GreenSock",
