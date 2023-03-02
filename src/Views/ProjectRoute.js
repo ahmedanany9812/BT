@@ -22,12 +22,10 @@ function Project() {
   const ScrollContainer = useRef();
   const Size = useWindowSize();
   useEffect(() => {
-    setTimeout(() => {
-      document.body.style.height = `${
-        ScrollContainer.current.getBoundingClientRect().height
-      }px`;
-    }, 100);
-  });
+    document.body.style.height = `${
+      ScrollContainer.current.getBoundingClientRect().height
+    }px`;
+  }, [Size.height,location.pathname]);
   const SkewConfigs = {
     ease: 0.1,
     current: 0,
@@ -226,14 +224,6 @@ function Project() {
               {CurrentProject.tag}
             </Box>
           </Stack>
-        </Stack>
-        <Stack>
-          <Box
-            marginY={"4rem"}
-            component="img"
-            src={require(`../Utilities/${CurrentProject.img}.png`)}
-            width="100%"
-          />
         </Stack>
         <Box
           component={"p"}
