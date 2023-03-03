@@ -12,7 +12,7 @@ function Project() {
   const { project } = useParams();
   const CurrentProject = Projects.find((pro) => pro.nam === project);
   const nextProject = () => {
-    if (CurrentProject.id === 3) {
+    if (CurrentProject.id === 4) {
       return Projects[0].nam;
     }
     let index = CurrentProject.id + 1;
@@ -55,7 +55,7 @@ function Project() {
       tl.to(document.querySelector(".projectHead"), {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         ease: "expo.inOut",
-        duration: 1.5,
+        duration: 0.8,
       }).from(document.querySelector(".projectTag"), {
         yPercent: 100,
         ease: "expo.inOut",
@@ -77,7 +77,10 @@ function Project() {
           component={"p"}
           fontWeight={400}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "15vw", md: "12vw" }}
+          fontSize={{
+            xs: CurrentProject.link === "" ? "12vw" : "15vw",
+            md: "12vw",
+          }}
           letterSpacing={{ xs: "-1px", md: "-5px" }}
           color="black"
           sx={{
@@ -107,15 +110,16 @@ function Project() {
       >
         <Box
           component={"p"}
-          fontSize={{ xs: "4vw", sm: "4vw" }}
+          fontSize={{ xs: "4vw", sm: "3vw" }}
           fontFamily={fonts.font5}
           fontWeight={400}
           marginTop="1rem"
           color="white"
-          width={{ xs: "100%", md: "70%" }}
+          width={{ xs: "100%", md: "60%" }}
           sx={{ position: "relative" }}
+          paddingRight={{ xs: "3rem", md: "0rem" }}
         >
-          {CurrentProject.desc}
+          {CurrentProject.desc}.
         </Box>
         <Stack
           direction={{ xs: "column", md: "row" }}
@@ -201,7 +205,7 @@ function Project() {
               position={"relative"}
               maxWidth="40px"
             >
-              URL
+              DATE
               <Box
                 position={"absolute"}
                 sx={{
@@ -221,7 +225,7 @@ function Project() {
               lineHeight={"1.9em"}
               letterSpacing="0.5px"
             >
-              {CurrentProject.tag}
+              {CurrentProject.date}
             </Box>
           </Stack>
         </Stack>
@@ -229,16 +233,102 @@ function Project() {
           component={"p"}
           fontWeight={300}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "11vw", md: "5vw" }}
-          letterSpacing={{ xs: "-1px", md: "-1px" }}
-          color="white"
-          width={"60%"}
-          textAlign="center"
-          marginTop={"7rem"}
-          onClick={() => navigate(`/work/${nextProject()}`, { replace: true })}
+          fontSize={{ xs: "17px", sm: "18px" }}
+          position={"relative"}
+          width={{ xs: "100%", md: "60%" }}
+          marginTop="10rem"
+          letterSpacing={"0.4px"}
         >
-          Next Project
+          {CurrentProject.qt1}.
         </Box>
+        <Box
+          component={"p"}
+          fontWeight={300}
+          fontFamily={fonts.font5}
+          fontSize={{ xs: "17px", sm: "18px" }}
+          position={"relative"}
+          width={{ xs: "100%", md: "60%" }}
+          marginY="4rem"
+          letterSpacing={"0.4px"}
+        >
+          {CurrentProject.qt2}.
+        </Box>
+        <Stack alignItems={"center"} justifyContent="center" marginY={"5rem"}>
+          <Stack direction={"column"} alignItems="center" spacing={"2rem"}>
+            <Box
+              component={"p"}
+              fontWeight={400}
+              fontFamily={fonts.font5}
+              fontSize={{ xs: "5vw", sm: "2vw" }}
+            >
+              Check This Out.
+            </Box>
+            <Box
+              component={"a"}
+              bgcolor="white"
+              padding={"20px 60px"}
+              borderRadius="50px"
+              href={CurrentProject.link !== "" && CurrentProject.link}
+              target="_blank"
+              sx={{ textDecoration: "none" }}
+            >
+              <Box
+                component={"p"}
+                fontWeight={500}
+                fontFamily={fonts.font5}
+                fontSize={"16px"}
+                letterSpacing={"0.4px"}
+                color="black"
+              >
+                {CurrentProject.link === ""
+                  ? "Soon"
+                  : `${CurrentProject.link.substring(0, 20)}...`}
+              </Box>
+            </Box>
+          </Stack>
+        </Stack>
+        <Stack alignItems={"center"} justifyContent="center">
+          <Stack
+            onClick={() =>
+              navigate(`/work/${nextProject()}`, { replace: true })
+            }
+            direction={"column"}
+            alignItems="center"
+            marginTop={"7rem"}
+            position="relative"
+          >
+            <Box
+              component={"p"}
+              fontWeight={300}
+              fontFamily={fonts.font5}
+              fontSize={{ xs: "11vw", md: "5vw" }}
+              letterSpacing={{ xs: "-1px", md: "-1px" }}
+              color="white"
+            >
+              Next
+            </Box>
+            <Box
+              component={"p"}
+              fontWeight={300}
+              fontFamily={fonts.font5}
+              letterSpacing={{ xs: "-1px", md: "-1px" }}
+              fontSize={{ xs: "11vw", md: "5vw" }}
+              color="white"
+            >
+              Project
+            </Box>
+            <Box
+              component={"span"}
+              fontSize={{ xs: "14px", sm: "17px" }}
+              letterSpacing="0px"
+              fontWeight={300}
+              fontFamily={fonts.font5}
+              sx={{ position: "absolute", top: 0, left: "80%" }}
+            >
+              {nextProject()}
+            </Box>
+          </Stack>
+        </Stack>
       </Stack>
     </Box>
   );

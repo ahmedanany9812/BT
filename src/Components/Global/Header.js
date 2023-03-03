@@ -10,7 +10,7 @@ const Header = () => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
         yPercent: 150,
-        duration: location.pathname === "/about" ? 0.2 : 1.5,
+        duration: location.pathname === "/about" ? 0.3 : 1.5,
         ease: "expo.inOut",
       });
     });
@@ -66,7 +66,7 @@ const Header = () => {
             fontFamily={fonts.font5}
             sx={{ opacity: 0.9, overflow: "hidden" }}
           >
-            ABOUTME
+            {location.pathname !== "/" ? "HOME" : "ABOUTME"}
           </Box>
           <Box
             sx={{

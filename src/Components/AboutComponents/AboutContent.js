@@ -10,7 +10,7 @@ const AboutContent = () => {
       gsap.from(elm, {
         yPercent: 200,
         ease: "expo.inOut",
-        duration: 2,
+        duration: 1.5,
         delay: 0.5,
       });
     });
