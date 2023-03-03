@@ -1,8 +1,10 @@
 import { Box, Stack } from "@mui/material";
 import { CustomTheme } from "../../Utilities/Theme";
 import { BsArrow90DegRight } from "react-icons/bs";
-const WorkLink = ({ id, tag, cate, dat }) => {
+import { useNavigate } from "react-router-dom";
+const WorkLink = ({ id, tag, cate, dat, nam }) => {
   const { fonts } = CustomTheme;
+  const navigate = useNavigate();
   return (
     <Box overflow={"hidden"} className="work animatt" position={"relative"}>
       <Box
@@ -15,6 +17,18 @@ const WorkLink = ({ id, tag, cate, dat }) => {
         }}
         className="line"
       />
+      {id === 4 && (
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            backgroundColor: "#777",
+            width: "100%",
+          }}
+          className="line"
+        />
+      )}
       <Stack
         direction={"row"}
         alignItems="center"
@@ -42,6 +56,7 @@ const WorkLink = ({ id, tag, cate, dat }) => {
           component={BsArrow90DegRight}
           sx={{ marginLeft: "auto", fontSize: "5vw" }}
           color="whitesmoke"
+          onClick={() => navigate(`work/${nam}`)}
         />
       </Stack>
     </Box>

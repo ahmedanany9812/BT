@@ -110,14 +110,13 @@ function Project() {
       >
         <Box
           component={"p"}
-          fontSize={{ xs: "4vw", sm: "3vw" }}
+          fontSize={{ xs: "5vw", sm: "3vw" }}
           fontFamily={fonts.font5}
           fontWeight={400}
           marginTop="1rem"
           color="white"
           width={{ xs: "100%", md: "60%" }}
           sx={{ position: "relative" }}
-          paddingRight={{ xs: "3rem", md: "0rem" }}
         >
           {CurrentProject.desc}.
         </Box>
@@ -231,9 +230,9 @@ function Project() {
         </Stack>
         <Box
           component={"p"}
-          fontWeight={300}
+          fontWeight={400}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "17px", sm: "18px" }}
+          fontSize={{ xs: "3.7vw", sm: "18px" }}
           position={"relative"}
           width={{ xs: "100%", md: "60%" }}
           marginTop="10rem"
@@ -243,9 +242,9 @@ function Project() {
         </Box>
         <Box
           component={"p"}
-          fontWeight={300}
+          fontWeight={400}
           fontFamily={fonts.font5}
-          fontSize={{ xs: "17px", sm: "18px" }}
+          fontSize={{ xs: "3.7vw", sm: "18px" }}
           position={"relative"}
           width={{ xs: "100%", md: "60%" }}
           marginY="4rem"
