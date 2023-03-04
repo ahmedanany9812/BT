@@ -6,6 +6,8 @@ import { CustomTheme } from "../Utilities/Theme";
 import useWindowSize from "../Utilities/WindowSize";
 import Header from "../Components/Global/Header";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 function Project() {
   const location = useLocation();
   const { fonts } = CustomTheme;
@@ -64,6 +66,23 @@ function Project() {
     });
     return () => ctx.revert();
   }, [location]);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const project = document.querySelector(".projcv");
+      const projecttag = document.querySelector(".projcv1");
+      gsap.to(projecttag, {
+        yPercent: -100,
+        scrollTrigger: {
+          trigger: project,
+          start: "top 80%",
+          end: "top 50%",
+          markers: true,
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
@@ -298,16 +317,36 @@ function Project() {
             spacing={"1.5rem"}
             marginBottom="5rem"
           >
-            <Box
-              component={"p"}
-              fontWeight={400}
-              fontFamily={fonts.font5}
-              fontSize={"15px"}
-              color="white"
-              letterSpacing={"1px"}
+            <Stack
+              direction={"column"}
+              alignItems="center"
+              className="projcv"
+              maxHeight={"20px"}
+              overflow="hidden"
             >
-              Next project
-            </Box>
+              <Box height={"20px"} className="projcv1">
+                <Box
+                  component={"p"}
+                  fontWeight={400}
+                  fontFamily={fonts.font5}
+                  fontSize={"15px"}
+                  color="white"
+                  letterSpacing={"1px"}
+                >
+                  Next project
+                </Box>
+                <Box
+                  component={"p"}
+                  fontWeight={400}
+                  fontFamily={fonts.font5}
+                  fontSize={"15px"}
+                  color="white"
+                  letterSpacing={"1px"}
+                >
+                  Click here
+                </Box>
+              </Box>
+            </Stack>
             <Box
               component={"p"}
               fontWeight={300}
