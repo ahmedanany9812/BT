@@ -295,16 +295,18 @@ function Project() {
             alignItems="center"
             marginTop={"7rem"}
             position="relative"
+            spacing={"1.5rem"}
+            marginBottom="5rem"
           >
             <Box
               component={"p"}
-              fontWeight={300}
+              fontWeight={400}
               fontFamily={fonts.font5}
-              fontSize={{ xs: "11vw", md: "5vw" }}
-              letterSpacing={{ xs: "-1px", md: "-1px" }}
+              fontSize={"15px"}
               color="white"
+              letterSpacing={"1px"}
             >
-              Next
+              Next project
             </Box>
             <Box
               component={"p"}
@@ -313,16 +315,6 @@ function Project() {
               letterSpacing={{ xs: "-1px", md: "-1px" }}
               fontSize={{ xs: "11vw", md: "5vw" }}
               color="white"
-            >
-              Project
-            </Box>
-            <Box
-              component={"span"}
-              fontSize={{ xs: "14px", sm: "17px" }}
-              letterSpacing="0px"
-              fontWeight={300}
-              fontFamily={fonts.font5}
-              sx={{ position: "absolute", top: 0, left: "80%" }}
             >
               {nextProject()}
             </Box>
