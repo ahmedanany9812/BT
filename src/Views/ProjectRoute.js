@@ -1,11 +1,12 @@
 import { Box, Stack } from "@mui/material";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
 import useWindowSize from "../Utilities/WindowSize";
 import Header from "../Components/Global/Header";
 import gsap from "gsap";
+import { HiOutlineArrowNarrowDown } from "react-icons/hi";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 function Project() {
@@ -332,6 +333,7 @@ function Project() {
                   fontSize={"15px"}
                   color="white"
                   letterSpacing={"1px"}
+                  textAlign="center"
                 >
                   Next project
                 </Box>
@@ -342,8 +344,9 @@ function Project() {
                   fontSize={"15px"}
                   color="white"
                   letterSpacing={"1px"}
+                  textAlign="center"
                 >
-                  Click here
+                  Click here<HiOutlineArrowNarrowDown/>
                 </Box>
               </Box>
             </Stack>
