@@ -1,57 +1,52 @@
-// import { Box } from "@mui/material";
-// import { useEffect, useRef, useState } from "react";
-// const Cursor = () => {
-//   const [coords, setcoords] = useState({
-//     x: 0,
-//     y: 0,
-//   });
-//   const AnimateCircles = () => {
-//     let x = coords.x;
-//     let y = coords.y;
-//     const circles = document.querySelectorAll(".corsa");
-//     circles.forEach(function (circle, index) {
-//       circle.style.left = x - 12 + "px";
-//       circle.style.top = y - 12 + "px";
-//       circle.style.scale = (circles.length - index) / circles.length;
-//       circle.x = x;
-//       circle.y = y;
-//       const nextCircle = circles[index + 1] || circles[0];
-//       x += (nextCircle.x - x) * 0.3;
-//       y += (nextCircle.y - y) * 0.3;
-//     });
+import { Box } from "@mui/material";
+import { useEffect } from "react";
+const Cursor = () => {
+  useEffect(() => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    document.addEventListener("mousemove", function (e) {
+      cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+    });
 
-//     requestAnimationFrame(AnimateCircles);
-//   };
-//   useEffect(() => {
-//     requestAnimationFrame(AnimateCircles);
-//   });
-//   useEffect(() => {
-//     window.addEventListener("mousemove", (e) => {
-//       setcoords((prev) => {
-//         return { x: e.clientX, y: e.clientY };
-//       });
-//     });
-//   });
-//   return (
-//     <>
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//       <Box className="corsa" />
-//     </>
-//   );
-// };
-// export default Cursor;
+    document.addEventListener("mousemove", function (e) {
+      var x = e.clientX;
+      var y = e.clientY;
+      cursorinner.style.left = x + "px";
+      cursorinner.style.top = y + "px";
+    });
+
+    document.addEventListener("mousedown", function () {
+      cursor.classList.add("click");
+      cursorinner.classList.add("cursorinnerhover");
+    });
+    document.addEventListener("mousedown", function () {
+      cursor.classList.add("click");
+      cursor.classList.add("cursoroutterhover");
+    });
+
+    document.addEventListener("mouseup", function () {
+      cursor.classList.remove("click");
+      cursorinner.classList.remove("cursorinnerhover");
+    });
+
+    document.addEventListener("mouseup", function () {
+      cursor.classList.remove("click");
+      cursor.classList.remove("cursoroutterhover");
+    });
+    document.addEventListener("mouseleave", () => {
+      cursor.classList.add("cursorLeave");
+      cursorinner.classList.add("cursorLeave");
+    });
+    document.addEventListener("mouseenter", () => {
+      cursor.classList.remove("cursorLeave");
+      cursorinner.classList.remove("cursorLeave");
+    });
+  });
+  return (
+    <>
+      <Box className="corsa" />
+      <Box className="corsadot" />
+    </>
+  );
+};
+export default Cursor;

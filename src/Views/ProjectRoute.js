@@ -71,19 +71,24 @@ function Project() {
     const ctx = gsap.context(() => {
       const project = document.querySelector(".projcv");
       const projecttag = document.querySelector(".projcv1");
-      gsap.to(projecttag, {
+      const tl = gsap.timeline({ defaults: { duration: 0.4 } });
+      tl.to(projecttag, {
         yPercent: -100,
-        scrollTrigger: {
-          trigger: project,
-          start: "top 80%",
-          end: "top 50%",
-          markers: true,
-          toggleActions: "play none none reverse",
-        },
+      });
+      ScrollTrigger.create({
+        trigger: project,
+        start: "top 80%",
+        end: "top 50%",
+        toggleActions: "play resume resume reverse",
+        animation: tl,
+      });
+      var timeout = gsap.delayedCall(0.5, function () {
+        ScrollTrigger.refresh();
+        console.log("update points");
       });
     });
     return () => ctx.revert();
-  }, []);
+  }, [location.pathname]);
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
@@ -308,9 +313,6 @@ function Project() {
         </Stack>
         <Stack alignItems={"center"} justifyContent="center">
           <Stack
-            onClick={() =>
-              navigate(`/work/${nextProject()}`, { replace: true })
-            }
             direction={"column"}
             alignItems="center"
             marginTop={"7rem"}
@@ -346,7 +348,8 @@ function Project() {
                   letterSpacing={"1px"}
                   textAlign="center"
                 >
-                  Click here<HiOutlineArrowNarrowDown/>
+                  Click here
+                  <HiOutlineArrowNarrowDown />
                 </Box>
               </Box>
             </Stack>
@@ -357,6 +360,7 @@ function Project() {
               letterSpacing={{ xs: "-1px", md: "-1px" }}
               fontSize={{ xs: "11vw", md: "5vw" }}
               color="white"
+              onClick={() => navigate(`/work/${nextProject()}`)}
             >
               {nextProject()}
             </Box>
