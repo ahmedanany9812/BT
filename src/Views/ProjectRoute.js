@@ -134,7 +134,7 @@ function Project() {
       >
         <Box
           component={"p"}
-          fontSize={{ xs: "40px", sm: "3vw" }}
+          fontSize={{ xs: "35px", sm: "3vw" }}
           fontFamily={fonts.font5}
           fontWeight={400}
           marginTop="1rem"

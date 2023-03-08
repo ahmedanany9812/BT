@@ -1,11 +1,12 @@
 import { Box, Stack } from "@mui/material";
 import gsap from "gsap";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { CustomTheme } from "../../Utilities/Theme";
 const Header = () => {
   const { fonts } = CustomTheme;
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
@@ -77,6 +78,9 @@ const Header = () => {
           component={"div"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
+          onClick={() => {
+            location.pathname !== "/" ? navigate("/") : navigate("/about");
+          }}
         >
           <Box
             fontSize={"13px"}
