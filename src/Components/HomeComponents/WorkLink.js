@@ -5,6 +5,20 @@ import { useNavigate } from "react-router-dom";
 const WorkLink = ({ id, tag, cate, dat, nam }) => {
   const { fonts } = CustomTheme;
   const navigate = useNavigate();
+  const cursoron = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.add("click");
+    cursor.classList.add("cursorLinkoutterhover");
+    cursorinner.classList.add("cursorLinkinnerhover");
+  };
+  const cursorout = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.remove("click");
+    cursor.classList.remove("cursorLinkoutterhover");
+    cursorinner.classList.remove("cursorLinkinnerhover");
+  };
   return (
     <Box overflow={"hidden"} className="work animatt" position={"relative"}>
       <Box
@@ -56,7 +70,12 @@ const WorkLink = ({ id, tag, cate, dat, nam }) => {
           component={BsArrow90DegRight}
           sx={{ marginLeft: "auto", fontSize: "5vw" }}
           color="whitesmoke"
-          onClick={() => navigate(`work/${nam}`)}
+          onClick={() => {
+            cursorout();
+            navigate(`work/${nam}`);
+          }}
+          onMouseEnter={cursoron}
+          onMouseLeave={cursorout}
         />
       </Stack>
     </Box>

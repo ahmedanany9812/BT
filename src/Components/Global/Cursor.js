@@ -17,21 +17,14 @@ const Cursor = () => {
 
     document.addEventListener("mousedown", function () {
       cursor.classList.add("click");
-      cursorinner.classList.add("cursorinnerhover");
-    });
-    document.addEventListener("mousedown", function () {
-      cursor.classList.add("click");
       cursor.classList.add("cursoroutterhover");
-    });
-
-    document.addEventListener("mouseup", function () {
-      cursor.classList.remove("click");
-      cursorinner.classList.remove("cursorinnerhover");
+      cursorinner.classList.add("cursorinnerhover");
     });
 
     document.addEventListener("mouseup", function () {
       cursor.classList.remove("click");
       cursor.classList.remove("cursoroutterhover");
+      cursorinner.classList.remove("cursorinnerhover");
     });
     document.addEventListener("mouseleave", () => {
       cursor.classList.add("cursorLeave");
@@ -44,8 +37,8 @@ const Cursor = () => {
   });
   return (
     <>
-      <Box className="corsa" />
-      <Box className="corsadot" />
+      <Box className="corsa" display={{xs:"none",md:"block"}} />
+      <Box className="corsadot" display={{xs:"none",md:"block"}} />
     </>
   );
 };

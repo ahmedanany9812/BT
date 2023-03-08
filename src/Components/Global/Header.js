@@ -16,6 +16,20 @@ const Header = () => {
     });
     return () => ctx.revert();
   }, []);
+  const cursoron = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.add("click");
+    cursor.classList.add("cursorLinkoutterhover");
+    cursorinner.classList.add("cursorLinkinnerhover");
+  };
+  const cursorout = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.remove("click");
+    cursor.classList.remove("cursorLinkoutterhover");
+    cursorinner.classList.remove("cursorLinkinnerhover");
+  };
   return (
     <Stack
       direction={"row"}
@@ -60,6 +74,9 @@ const Header = () => {
           spacing="6px"
           alignItems={"center"}
           className="HeaderTrr"
+          component={"div"}
+          onMouseEnter={cursoron}
+          onMouseLeave={cursorout}
         >
           <Box
             fontSize={"13px"}

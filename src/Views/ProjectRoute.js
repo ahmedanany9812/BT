@@ -84,7 +84,6 @@ function Project() {
       });
       var timeout = gsap.delayedCall(0.5, function () {
         ScrollTrigger.refresh();
-        console.log("update points");
       });
     });
     return () => ctx.revert();
@@ -135,13 +134,14 @@ function Project() {
       >
         <Box
           component={"p"}
-          fontSize={{ xs: "5vw", sm: "3vw" }}
+          fontSize={{ xs: "40px", sm: "3vw" }}
           fontFamily={fonts.font5}
           fontWeight={400}
           marginTop="1rem"
           color="white"
           width={{ xs: "100%", md: "60%" }}
           sx={{ position: "relative" }}
+          lineHeight="1.3em"
         >
           {CurrentProject.desc}.
         </Box>
@@ -256,24 +256,26 @@ function Project() {
         <Box
           component={"p"}
           fontWeight={400}
-          fontFamily={fonts.font5}
-          fontSize={{ xs: "3.7vw", sm: "18px" }}
+          fontFamily={fonts.hom}
+          fontSize={{ xs: "14px", sm: "17px" }}
           position={"relative"}
           width={{ xs: "100%", md: "60%" }}
           marginTop="10rem"
-          letterSpacing={"0.4px"}
+          letterSpacing={"0.5px"}
+          lineHeight="2em"
         >
           {CurrentProject.qt1}.
         </Box>
         <Box
+          marginY="4rem"
           component={"p"}
           fontWeight={400}
-          fontFamily={fonts.font5}
-          fontSize={{ xs: "3.7vw", sm: "18px" }}
+          fontFamily={fonts.hom}
+          fontSize={{ xs: "14px", sm: "17px" }}
           position={"relative"}
           width={{ xs: "100%", md: "60%" }}
-          marginY="4rem"
-          letterSpacing={"0.4px"}
+          letterSpacing={"0.5px"}
+          lineHeight="2em"
         >
           {CurrentProject.qt2}.
         </Box>

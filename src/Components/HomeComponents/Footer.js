@@ -6,7 +6,6 @@ import { CustomTheme } from "../../Utilities/Theme";
 gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
   const { fonts } = CustomTheme;
-
   return (
     <Box marginTop={"9rem"} className="foot-main" paddingY="2rem">
       <Box
