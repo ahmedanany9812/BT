@@ -24,7 +24,7 @@ const AboutContent = () => {
           filter: "blur(23px)",
           opacity: 0,
           ease: "expo.inOut",
-          duration: 1.2,
+          duration: 0.9,
         });
       });
     });
