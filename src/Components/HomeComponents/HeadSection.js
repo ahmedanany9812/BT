@@ -61,33 +61,25 @@ const HeadSection = () => {
   useEffect(() => {
     const trigger = document.querySelector(".worksectiontrigger");
     const item = document.querySelector("#projects-tag");
+    const num = document.querySelector(".spannum");
     let mm = gsap.matchMedia();
+    const tl = gsap.timeline();
     //large screen
     mm.add("(min-width:800px)", () => {
-      gsap.to(item, {
+      tl.to(item, {
         y: 100,
         ease: "circ.in",
-        scrollTrigger: {
-          trigger: trigger,
-          start: "top top",
-          end: "25% top",
-          toggleActions: "play none none reverse",
-        },
+      }).from(num, {
+        autoAlpha: 0,
+      });
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: trigger,
+        start: "top top",
+        end: "25% top",
+        toggleActions: "play none none reverse",
       });
     });
-    //mobile screen
-    // mm.add("(max-width:799px)", () => {
-    //   gsap.to(item, {
-    //     y: 40,
-    //     ease: "circ.in",
-    //     scrollTrigger: {
-    //       trigger: trigger,
-    //       start: "top top",
-    //       end: "20% top",
-    //       toggleActions: "play none none reverse",
-    //     },
-    //   });
-    // });
     return () => mm.revert();
   }, []);
   return (
@@ -190,12 +182,20 @@ const HeadSection = () => {
           bottom: { xs: 75, md: 90 },
           overflow: "hidden",
           backgroundColor: "black",
-          zIndex:1
+          zIndex: 1,
         }}
         id="projects-tag"
       >
-        <Box component={"span"} display="inline-block" className="HeadTrr" bgcolor={"black"}>
-          Selected Projects
+        <Box
+          component={"span"}
+          display="inline-block"
+          className="HeadTrr"
+          bgcolor={"black"}
+        >
+          Selected Projects{" "}
+          <Box component={"span"} className="spannum">
+            (4)
+          </Box>
         </Box>
       </Box>
     </Box>

@@ -11,7 +11,7 @@ const Header = () => {
     const ctx = gsap.context(() => {
       gsap.from(document.querySelectorAll(".HeaderTrr"), {
         yPercent: 150,
-        duration: location.pathname === "/about" ? 0.3 : 1.5,
+        duration: 1.5,
         ease: "expo.inOut",
       });
     });
@@ -79,6 +79,7 @@ const Header = () => {
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
           onClick={() => {
+            cursorout();
             location.pathname !== "/" ? navigate("/") : navigate("/about");
           }}
         >
