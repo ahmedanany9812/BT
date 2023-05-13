@@ -1,12 +1,11 @@
 import { Box, Stack } from "@mui/material";
 import { useEffect, useRef } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation,useParams } from "react-router-dom";
 import { Projects } from "../Data/ProjectsData";
 import { CustomTheme } from "../Utilities/Theme";
 import useWindowSize from "../Utilities/WindowSize";
 import Header from "../Components/Global/Header";
 import gsap from "gsap";
-import { HiOutlineArrowNarrowDown } from "react-icons/hi";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 function Project() {
@@ -14,14 +13,6 @@ function Project() {
   const { fonts } = CustomTheme;
   const { project } = useParams();
   const CurrentProject = Projects.find((pro) => pro.nam === project);
-  const nextProject = () => {
-    if (CurrentProject.id === 5) {
-      return Projects[0].nam;
-    }
-    let index = CurrentProject.id + 1;
-    return Projects[index - 1].nam;
-  };
-  const navigate = useNavigate();
   const ScrollContainer = useRef();
   const Size = useWindowSize();
   useEffect(() => {
@@ -47,7 +38,7 @@ function Project() {
   };
   useEffect(() => {
     requestAnimationFrame(() => SkewScrolling());
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -64,29 +55,6 @@ function Project() {
     });
     return () => ctx.revert();
   }, [location]);
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const project = document.querySelector(".projcv");
-      const projecttag = document.querySelector(".projcv1");
-      const tl = gsap.timeline({ defaults: { duration: 0.4 } });
-      tl.to(projecttag, {
-        yPercent: -100,
-      });
-      ScrollTrigger.create({
-        trigger: project,
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play resume resume reverse",
-        animation: tl,
-      });
-      // eslint-disable-next-line
-      var timeout = gsap.delayedCall(0.5, function () {
-        ScrollTrigger.refresh();
-      });
-    });
-    return () => ctx.revert();
-  }, [location.pathname]);
-
   const cursoron = () => {
     var cursor = document.querySelector(".corsa");
     var cursorinner = document.querySelector(".corsadot");
@@ -326,66 +294,6 @@ function Project() {
                   ? "Soon"
                   : `${CurrentProject.link.substring(0, 20)}...`}
               </Box>
-            </Box>
-          </Stack>
-        </Stack>
-        <Stack alignItems={"center"} justifyContent="center">
-          <Stack
-            direction={"column"}
-            alignItems="center"
-            marginTop={"7rem"}
-            position="relative"
-            spacing={"1.5rem"}
-            marginBottom="5rem"
-          >
-            <Stack
-              direction={"column"}
-              alignItems="center"
-              className="projcv"
-              maxHeight={"20px"}
-              overflow="hidden"
-            >
-              <Box height={"20px"} className="projcv1">
-                <Box
-                  component={"p"}
-                  fontWeight={400}
-                  fontFamily={fonts.font5}
-                  fontSize={"15px"}
-                  color="white"
-                  letterSpacing={"1px"}
-                  textAlign="center"
-                >
-                  Next project
-                </Box>
-                <Box
-                  component={"p"}
-                  fontWeight={400}
-                  fontFamily={fonts.font5}
-                  fontSize={"15px"}
-                  color="white"
-                  letterSpacing={"1px"}
-                  textAlign="center"
-                >
-                  Click here
-                  <HiOutlineArrowNarrowDown />
-                </Box>
-              </Box>
-            </Stack>
-            <Box
-              component={"p"}
-              fontWeight={300}
-              fontFamily={fonts.font5}
-              letterSpacing={{ xs: "-1px", md: "-1px" }}
-              fontSize={{ xs: "11vw", md: "5vw" }}
-              color="white"
-              onMouseEnter={cursoron}
-              onMouseLeave={cursorout}
-              onClick={() => {
-                cursorout();
-                navigate(`/work/${nextProject()}`);
-              }}
-            >
-              {nextProject()}
             </Box>
           </Stack>
         </Stack>
