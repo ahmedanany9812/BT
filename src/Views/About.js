@@ -4,9 +4,11 @@ import AboutContent from "../Components/AboutComponents/AboutContent";
 import FootLine from "../Components/Global/FootLine";
 import Header from "../Components/Global/Header";
 import useWindowSize from "../Utilities/WindowSize";
+import { useLocation } from "react-router-dom";
 const About = () => {
   const ScrollContainer = useRef();
   const Size = useWindowSize();
+  const location = useLocation();
   const [innerHeight, setInnerHeight] = useState(0);
   useEffect(() => {
     document.body.style.height = `${
@@ -15,7 +17,7 @@ const About = () => {
     setInnerHeight(
       () => ScrollContainer.current.getBoundingClientRect().height
     );
-  }, [Size.height]);
+  }, [Size.height, location.pathname]);
   const SkewConfigs = {
     ease: 0.1,
     current: 0,

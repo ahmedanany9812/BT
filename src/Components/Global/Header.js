@@ -55,7 +55,13 @@ const Header = () => {
         display={{ xs: "none", md: "block" }}
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
-        <Box component={"span"} className="HeaderTrr" display={"inline-block"}>
+        <Box
+          component={"span"}
+          className="HeaderTrr"
+          display={"inline-block"}
+          onMouseEnter={cursoron}
+          onMouseLeave={cursorout}
+        >
           TWITTER
         </Box>
       </Box>
@@ -66,7 +72,7 @@ const Header = () => {
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
         <Box component={"span"} className="HeaderTrr" display={"inline-block"}>
-          AVALIBLE FOR HIRE
+          AVALIBLE FOR HIRING
         </Box>
       </Box>
       <Box overflow={"hidden"}>
@@ -92,7 +98,7 @@ const Header = () => {
           </Box>
           <Box
             sx={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: "#Fe6601",
               borderRadius: "50%",
               height: "20px",
               width: "20px",

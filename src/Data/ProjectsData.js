@@ -2,7 +2,7 @@ export const Projects = [
   {
     id: 1,
     tag: "YTROUTY",
-    cate: "Web Fullstack Application",
+    cate: "Full-Stack Developer",
     nam: "Ytrouty",
     desc: "Social App with elegant design and responsive layout fully connected with Backend system",
     date: "October 2022",
@@ -15,7 +15,7 @@ export const Projects = [
   {
     id: 2,
     tag: "PROFILE",
-    cate: "Web Design",
+    cate: "Front-End Developer",
     nam: "BT",
     desc: "Personal portfolio to introduce myself to the world of Web Development",
     date: "January 2023",
@@ -28,7 +28,7 @@ export const Projects = [
   {
     id: 3,
     tag: "RELIG",
-    cate: "Static Web Template",
+    cate: "Front-End Developer",
     nam: "Relig",
     desc: "Store built in Vue framework not connected with real database",
     date: "March 2022",
@@ -40,8 +40,20 @@ export const Projects = [
   },
   {
     id: 4,
+    tag: "CHAT BT",
+    cate: "Full-stack Developer",
+    nam: "Chatting",
+    desc: "Real-Time Chatting App with MERN stack and socket.io",
+    date: "April 2023",
+    link: "https://btchatting.onrender.com",
+    feauters: "React, Express, Mongo, Socket.io",
+    qt1: "Chatting is an unexisted app i named it that ,it's a real-time chatting app with real database and socket.io to communicate with my friends ",
+    qt2: "This Web Application Fully developed by MERN stack and socket.io. Also has some great features like real time notification and as soon as possible I'll add a new feature to it like sending Files inside the chat and create rooms , I've got inspired by Discord ",
+  },
+  {
+    id: 5,
     tag: "ROADMATH",
-    cate: "Fullstack Application",
+    cate: "Front-End Developer",
     nam: "Roadmath",
     desc: "An educational site for the Mathematics students integerated with Faculty of Science, Tanta University",
     date: "Soon",

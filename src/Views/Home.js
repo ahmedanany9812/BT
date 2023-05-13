@@ -7,10 +7,12 @@ import Footer from "../Components/HomeComponents/Footer";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import FootLine from "../Components/Global/FootLine";
+import { useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 function Home() {
   const ScrollContainer = useRef();
   const Size = UseWindowSize();
+  const location=useLocation()
   const [innerHeight, setInnerHeight] = useState(0);
   useEffect(() => {
     document.body.style.height = `${
@@ -19,7 +21,7 @@ function Home() {
     setInnerHeight(
       () => ScrollContainer.current.getBoundingClientRect().height
     );
-  }, [Size.height]);
+  }, [Size.height,location.pathname]);
   const SkewConfigs = {
     ease: 0.1,
     current: 0,

@@ -30,6 +30,20 @@ const AboutContent = () => {
     });
     return () => ctx.revert();
   }, []);
+  const cursoron = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.add("click");
+    cursor.classList.add("cursorLinkoutterhover");
+    cursorinner.classList.add("cursorLinkinnerhover");
+  };
+  const cursorout = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.remove("click");
+    cursor.classList.remove("cursorLinkoutterhover");
+    cursorinner.classList.remove("cursorLinkinnerhover");
+  };
   return (
     <Box marginTop={{ xs: "4rem", sm: "5rem" }}>
       <Box
@@ -65,46 +79,62 @@ const AboutContent = () => {
         className="boutcontaaaa"
         maxWidth={{ xs: "90%", sm: "65%" }}
       >
-        I`m introducing myself to the world of web development by creating a
-        static and dynamic web Applications also fullstack Applications and
-        fully managment system I`m also a Data science student at my last year
-        Currently i`m working as local freelancer so i`m opening for work to get
-        more experience and make new friends.
+        Hi, I'm Ahmed, a full-stack JavaScript developer and a student at the
+        Faculty of Science, Data Science department. I'm expected to graduate
+        this year and I'm currently working as a freelancer.
+        <br />
+        <br />I have experience in React, Vue, Strapi, Prisma, Greensock, latex,
+        TypeScript, SQL, NoSQL, and Express.
+        <br />
+        I'm passionate about using technology to solve real problems. I'm always
+        looking for new challenges and I'm eager to learn new things. I'm also a
+        highly skilled communicator and collaborator. I'm confident that I can
+        be a valuable asset to your team
         <br />
         <br />
-        What excites me most about working in Web development is being able to
-        design and create things that have purpose and solve real problems.
-        Leaning into customer research and insight, finding the right problems
-        to solve, delivering that value as quickly as possible, learning from it
-        and then iterating and improving that value over time is the key to
-        great design.
+        I've experience in system's management, web development, web design,
+        software development, and data science. I'm also a skilled writer and
+        editor. I have experience writing technical documentation, blog posts,
+        and marketing materials. In addition to my technical skills, I'm also a
+        team player and I'm always willing to go the extra mile. I'm confident
+        that I can make a significant contribution to your team and help you
+        achieve your goals and objectives. I'm also a problem solver and I'm
+        confident that I have the skills and experience that you're looking for
+        in a full-stack JavaScript developer
         <br />
         <br />
-        I've started with HTML with CSS at the end of 2021 then at the begining
-        of 2022 i've started learning JS and the usage of JS's libraries till
-        march i've been starting doing Vue projects then React and solving some of it's problems.
-        At the end of the past year As i've done with redux and other React's
-        packages i've started learning Backend by Node and Express with mongoDB then i developed Ytrouty fullstack App
+        I would love to hear from you! If you have any questions or would like
+        to get in touch, please feel free to reach out to me I look forward to
+        hearing from you!
         <br />
         <br />
-        If you got something on your mind you want to share it with me catch me
-        on{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
-          Linked in
-        </Box>{" "}
-        ,
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
-          Facebook
-        </Box>{" "}
-        or{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
-          Twitter{" "}
+        <Box
+          component={"a"}
+          onMouseEnter={cursoron}
+          onMouseLeave={cursorout}
+          sx={{ opacity: 0.6 }}
+        >
+          +(20) 120 3951 753
         </Box>
-        Or you can check my Code skills on my{" "}
-        <Box component={"span"} sx={{ opacity: 0.6 }}>
-          Github
-        </Box>{" "}
-        Account
+        <br />
+        <Box
+          component={"a"}
+          onMouseEnter={cursoron}
+          onMouseLeave={cursorout}
+          sx={{ opacity: 0.6 }}
+        >
+          Linked in
+        </Box>
+        <br />
+        <Box
+          component={"a"}
+          onMouseEnter={cursoron}
+          onMouseLeave={cursorout}
+          sx={{ opacity: 0.6 }}
+        >
+          Twitter
+        </Box>
+        <br />
       </Box>
     </Box>
   );

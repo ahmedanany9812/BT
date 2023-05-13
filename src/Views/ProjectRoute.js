@@ -15,7 +15,7 @@ function Project() {
   const { project } = useParams();
   const CurrentProject = Projects.find((pro) => pro.nam === project);
   const nextProject = () => {
-    if (CurrentProject.id === 4) {
+    if (CurrentProject.id === 5) {
       return Projects[0].nam;
     }
     let index = CurrentProject.id + 1;
@@ -40,17 +40,14 @@ function Project() {
     SkewConfigs.previous +=
       (SkewConfigs.current - SkewConfigs.previous) * SkewConfigs.ease;
     SkewConfigs.rounded = Math.round(SkewConfigs.previous * 100) / 100;
-    const Diff = SkewConfigs.current - SkewConfigs.rounded;
-    const acce = Diff / Size.width;
-    const Velocity = +acce;
-    const skew = Velocity * 7.5;
     if (Size.width > 800) {
-      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px) skewY(${skew}deg)`;
+      ScrollContainer.current.style.transform = `translateY(-${SkewConfigs.rounded}px)`;
     }
     requestAnimationFrame(() => SkewScrolling());
   };
   useEffect(() => {
     requestAnimationFrame(() => SkewScrolling());
+    // eslint-disable-next-line 
   }, []);
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -82,18 +79,34 @@ function Project() {
         toggleActions: "play resume resume reverse",
         animation: tl,
       });
+      // eslint-disable-next-line
       var timeout = gsap.delayedCall(0.5, function () {
         ScrollTrigger.refresh();
       });
     });
     return () => ctx.revert();
   }, [location.pathname]);
+
+  const cursoron = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.add("click");
+    cursor.classList.add("cursorLinkoutterhover");
+    cursorinner.classList.add("cursorLinkinnerhover");
+  };
+  const cursorout = () => {
+    var cursor = document.querySelector(".corsa");
+    var cursorinner = document.querySelector(".corsadot");
+    cursor.classList.remove("click");
+    cursor.classList.remove("cursorLinkoutterhover");
+    cursorinner.classList.remove("cursorLinkinnerhover");
+  };
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
       <Box
         height={{ xs: "75vh", sm: "85vh" }}
-        sx={{ bgcolor: "#FFFFFF" }}
+        sx={{ bgcolor: "#Fe6601" }}
         position="relative"
         className="projectHead"
       >
@@ -106,7 +119,7 @@ function Project() {
             md: "12vw",
           }}
           letterSpacing={{ xs: "-1px", md: "-5px" }}
-          color="black"
+          color="white"
           sx={{
             position: "absolute",
             top: "60%",
@@ -119,6 +132,7 @@ function Project() {
             component={"span"}
             className="projectTag"
             display={"inline-block"}
+            whiteSpace={"nowrap"}
           >
             {CurrentProject.tag}
           </Box>
@@ -161,7 +175,7 @@ function Project() {
               fontSize="15px"
               letterSpacing="2px"
               position={"relative"}
-              maxWidth="50px"
+              maxWidth="48px"
             >
               ROLE
               <Box
@@ -194,9 +208,9 @@ function Project() {
               fontSize="15px"
               letterSpacing="2px"
               position={"relative"}
-              maxWidth={"100px"}
+              maxWidth={"145px"}
             >
-              FEATURES
+              TECHNOLOGIES
               <Box
                 position={"absolute"}
                 sx={{
@@ -227,7 +241,7 @@ function Project() {
               fontSize="15px"
               letterSpacing="2px"
               position={"relative"}
-              maxWidth="40px"
+              maxWidth="47px"
             >
               DATE
               <Box
@@ -291,12 +305,14 @@ function Project() {
             </Box>
             <Box
               component={"a"}
-              bgcolor="white"
+              bgcolor="#Fe6601"
               padding={"20px 60px"}
               borderRadius="50px"
               href={CurrentProject.link !== "" && CurrentProject.link}
               target="_blank"
               sx={{ textDecoration: "none" }}
+              onMouseEnter={cursoron}
+              onMouseLeave={cursorout}
             >
               <Box
                 component={"p"}
@@ -304,7 +320,7 @@ function Project() {
                 fontFamily={fonts.font5}
                 fontSize={"16px"}
                 letterSpacing={"0.4px"}
-                color="black"
+                color="white"
               >
                 {CurrentProject.link === ""
                   ? "Soon"
@@ -362,7 +378,12 @@ function Project() {
               letterSpacing={{ xs: "-1px", md: "-1px" }}
               fontSize={{ xs: "11vw", md: "5vw" }}
               color="white"
-              onClick={() => navigate(`/work/${nextProject()}`)}
+              onMouseEnter={cursoron}
+              onMouseLeave={cursorout}
+              onClick={() => {
+                cursorout();
+                navigate(`/work/${nextProject()}`);
+              }}
             >
               {nextProject()}
             </Box>
