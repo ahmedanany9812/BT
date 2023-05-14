@@ -30,10 +30,12 @@ const Footer = () => {
         Feel free to say Hi!
         <br />
         <Box
-          component={"span"}
+          component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6 }}
+          sx={{ opacity: 0.6, color: "white", }}
+          href="https://wa.link/3htz6p"
+          target="_blank"
         >
           Text-me
         </Box>
@@ -49,18 +51,28 @@ const Footer = () => {
         <Box
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          component={"span"}
-          sx={{ opacity: 0.6 }}
+          component={"a"}
+          href="https://twitter.com/Tamkt69"
+          target="_blank"
+          sx={{
+            color: "white",
+            opacity: 0.6,
+          }}
         >
           {" "}
           Twitter
         </Box>{" "}
         or you can check my
         <Box
-          component={"span"}
+          component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6 }}
+          download
+          href={require("../../Ahmed.pdf")}
+          sx={{
+            color: "white",
+            opacity: 0.6,
+          }}
         >
           {" "}
           Resume

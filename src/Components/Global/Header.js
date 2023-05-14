@@ -56,11 +56,17 @@ const Header = () => {
         sx={{ opacity: 0.7, overflow: "hidden" }}
       >
         <Box
-          component={"span"}
+          component={"a"}
           className="HeaderTrr"
           display={"inline-block"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
+          href="https://twitter.com/Tamkt69"
+          target="_blank"
+          sx={{
+            color: "white",
+            textDecoration: "none",
+          }}
         >
           TWITTER
         </Box>

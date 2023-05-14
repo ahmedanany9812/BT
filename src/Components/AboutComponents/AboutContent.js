@@ -112,16 +112,24 @@ const AboutContent = () => {
           component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6 }}
+          sx={{ opacity: 0.6, color: "white", textDecoration: "none" }}
+          href="https://wa.link/3htz6p"
+          target="_blank"
         >
           +(20) 120 3951 753
         </Box>
         <br />
         <Box
-          component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6 }}
+          component={"a"}
+          href="https://www.linkedin.com/in/ahmed-anany-0b728b234/"
+          target="_blank"
+          sx={{
+            color: "white",
+            textDecoration: "none",
+            opacity: 0.6,
+          }}
         >
           Linked in
         </Box>
@@ -130,7 +138,13 @@ const AboutContent = () => {
           component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6 }}
+          href="https://twitter.com/Tamkt69"
+          target="_blank"
+          sx={{
+            color: "white",
+            textDecoration: "none",
+            opacity: 0.6,
+          }}
         >
           Twitter
         </Box>
