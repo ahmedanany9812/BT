@@ -123,7 +123,7 @@ const AboutContent = () => {
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
           component={"a"}
-          href="https://www.linkedin.com/in/ahmed-anany-0b728b234/"
+          href="https://www.linkedin.com/in/ahm-anany/"
           target="_blank"
           sx={{
             color: "white",
