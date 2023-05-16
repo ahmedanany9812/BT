@@ -52,6 +52,18 @@ export const Projects = [
   },
   {
     id: 5,
+    tag: "HIFLY",
+    cate: "Front-End Developer",
+    nam: "HiFly",
+    desc: "A System managed by CSS team for HiFly inistitutional website",
+    date: "May 2023",
+    link: "https://hifly.onrender.com/",
+    feauters: "React, Redux, SASS",
+    qt1: "HiFly is a system's management by CSS team for privite HiFly inistitutional website. Developed by CSS team (Computer Science Squad)",
+    qt2: "This site is also integration between react and django i've worked in and fully states managing with react redux. it's not on the service yet but the owners discussing the matter of domains",
+  },
+  {
+    id: 6,
     tag: "ROADMATH",
     cate: "Front-End Developer",
     nam: "Roadmath",

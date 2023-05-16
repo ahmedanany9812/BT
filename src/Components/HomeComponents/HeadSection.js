@@ -194,7 +194,7 @@ const HeadSection = () => {
         >
           Selected Projects{" "}
           <Box component={"span"} className="spannum">
-            (5)
+            (6)
           </Box>
         </Box>
       </Box>
