@@ -25,7 +25,7 @@ const FootLine = ({ innerHeight }) => {
             fontFamily={fonts.font5}
             fontWeight={400}
           >
-            <Box component={"span"} sx={{ opacity: 0.6 }}>
+            <Box component={"span"} sx={{ opacity: 0.5 }}>
               TANTA,{" "}
             </Box>
             EG
@@ -35,7 +35,7 @@ const FootLine = ({ innerHeight }) => {
             fontFamily={fonts.font5}
             fontWeight={400}
           >
-            <Box component={"span"} sx={{ opacity: 0.6 }}>
+            <Box component={"span"} sx={{ opacity: 0.5 }}>
               ©
             </Box>
             2023

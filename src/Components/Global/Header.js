@@ -53,7 +53,7 @@ const Header = () => {
         fontSize={"13px"}
         fontFamily={fonts.font5}
         display={{ xs: "none", md: "block" }}
-        sx={{ opacity: 0.7, overflow: "hidden" }}
+        sx={{ opacity: 0.5, overflow: "hidden" }}
       >
         <Box
           component={"a"}
@@ -75,7 +75,7 @@ const Header = () => {
         fontSize={"13px"}
         fontFamily={fonts.font5}
         display={{ xs: "none", md: "block" }}
-        sx={{ opacity: 0.7, overflow: "hidden" }}
+        sx={{ opacity: 0.5, overflow: "hidden" }}
       >
         <Box component={"span"} className="HeaderTrr" display={"inline-block"}>
           AVALIBLE FOR HIRING
@@ -104,7 +104,7 @@ const Header = () => {
           </Box>
           <Box
             sx={{
-              backgroundColor: "# ",
+              backgroundColor: "#Fe6601",
               borderRadius: "50%",
               height: "20px",
               width: "20px",

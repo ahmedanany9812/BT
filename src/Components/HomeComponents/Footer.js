@@ -33,7 +33,7 @@ const Footer = () => {
           component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6, color: "white", }}
+          sx={{ opacity: 0.5, color: "white", textDecoration: "none" }}
           href="https://wa.link/3htz6p"
           target="_blank"
         >
@@ -56,7 +56,8 @@ const Footer = () => {
           target="_blank"
           sx={{
             color: "white",
-            opacity: 0.6,
+            opacity: 0.5,
+            textDecoration: "none",
           }}
         >
           {" "}
@@ -71,7 +72,8 @@ const Footer = () => {
           href={require("../../Ahmed.pdf")}
           sx={{
             color: "white",
-            opacity: 0.6,
+            opacity: 0.5,
+            textDecoration: "none",
           }}
         >
           {" "}

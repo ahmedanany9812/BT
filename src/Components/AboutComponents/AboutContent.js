@@ -112,7 +112,7 @@ const AboutContent = () => {
           component={"a"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          sx={{ opacity: 0.6, color: "white", textDecoration: "none" }}
+          sx={{ opacity: 0.5, color: "white", textDecoration: "none" }}
           href="https://wa.link/3htz6p"
           target="_blank"
         >
@@ -128,7 +128,7 @@ const AboutContent = () => {
           sx={{
             color: "white",
             textDecoration: "none",
-            opacity: 0.6,
+            opacity: 0.5,
           }}
         >
           Linked in
@@ -143,7 +143,7 @@ const AboutContent = () => {
           sx={{
             color: "white",
             textDecoration: "none",
-            opacity: 0.6,
+            opacity: 0.5,
           }}
         >
           Twitter
