@@ -31,7 +31,7 @@ const WorkLink = ({ id, tag, cate, dat, nam }) => {
         }}
         className="line"
       />
-      {id === 5 && (
+      {id === 6 && (
         <Box
           sx={{
             position: "absolute",
