@@ -14,9 +14,9 @@ const Loading = () => {
     const nam2 = document.querySelector(".anan");
     const ctx = gsap.context(() => {
       let tl = gsap.timeline({
-        delay: 0.2,
+        delay: 0,
         defaults: {
-          duration: 0.4,
+          duration: 0.38,
         },
       });
       tl.to(elm.current, {
