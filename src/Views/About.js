@@ -45,7 +45,6 @@ const About = () => {
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
       <AboutContent />
-      <FootLine innerHeight={innerHeight} />
     </Box>
   );
 };
