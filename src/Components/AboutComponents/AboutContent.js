@@ -134,21 +134,6 @@ const AboutContent = () => {
           Linked in
         </Box>
         <br />
-        <Box
-          component={"a"}
-          onMouseEnter={cursoron}
-          onMouseLeave={cursorout}
-          href="https://twitter.com/Tamkt69"
-          target="_blank"
-          sx={{
-            color: "white",
-            textDecoration: "none",
-            opacity: 0.5,
-          }}
-        >
-          Twitter
-        </Box>
-        <br />
       </Box>
     </Box>
   );

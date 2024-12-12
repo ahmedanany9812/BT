@@ -61,7 +61,6 @@ const Header = () => {
           display={"inline-block"}
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
-          href="https://twitter.com/Tamkt69"
           target="_blank"
           sx={{
             color: "white",

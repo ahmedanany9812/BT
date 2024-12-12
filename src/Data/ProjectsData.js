@@ -1,18 +1,5 @@
 export const Projects = [
   {
-    id: 1,
-    tag: "YTROUTY",
-    cate: "Full-Stack Developer",
-    nam: "Ytrouty",
-    desc: "Social App with elegant design and responsive layout fully connected with Backend system",
-    date: "October 2022",
-    link: "https://ytrouty-app.onrender.com/",
-    feauters: "React, Framer Motion, SASS, Lottie Player, Express, MongoDB",
-    qt1: "Ytrouty (Means Nothing i just made it up) the first fullstack app i made After i learned Express with MongoDB and the first dynamic website i've ever made with framer motion js library",
-    qt2: "I Used also a lot of js libraries and packages at both sides that helps me along the project so it tooks about 2 months to came out as it looks like . I used material ui for components and responsiveness also connected with cloudinary account to save all photos and videos that users added in their posts with multer configrations. with validators system to validate signing inputs and cookie parser to Authenticate user existence on the site",
-    img: "Ytrouty",
-  },
-  {
     id: 2,
     tag: "PROFILE",
     cate: "Front-End Developer",

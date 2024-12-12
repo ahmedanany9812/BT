@@ -47,23 +47,8 @@ const Footer = () => {
         marginTop="4rem"
         overflow={"hidden"}
       >
-        If you`d like to chew the fat catch me on
-        <Box
-          onMouseEnter={cursoron}
-          onMouseLeave={cursorout}
-          component={"a"}
-          href="https://twitter.com/Tamkt69"
-          target="_blank"
-          sx={{
-            color: "white",
-            opacity: 0.5,
-            textDecoration: "none",
-          }}
-        >
-          {" "}
-          Twitter
-        </Box>{" "}
-        or you can check my
+        If you`d like to chew the fat
+        check my
         <Box
           component={"a"}
           onMouseEnter={cursoron}
