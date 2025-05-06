@@ -113,10 +113,10 @@ const AboutContent = () => {
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
           sx={{ opacity: 0.5, color: "white", textDecoration: "none" }}
-          href="https://wa.link/3htz6p"
+          href="https://wa.link/gto20p"
           target="_blank"
         >
-          +(20) 120 3951 753
+          +(20) 122 3502 118
         </Box>
         <br />
         <Box

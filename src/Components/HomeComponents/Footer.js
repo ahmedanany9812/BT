@@ -34,7 +34,7 @@ const Footer = () => {
           onMouseEnter={cursoron}
           onMouseLeave={cursorout}
           sx={{ opacity: 0.5, color: "white", textDecoration: "none" }}
-          href="https://wa.link/3htz6p"
+          href="https://wa.link/gto20p"
           target="_blank"
         >
           Text-me
