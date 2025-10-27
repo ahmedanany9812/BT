@@ -26,7 +26,7 @@ const FootLine = ({ innerHeight }) => {
             fontWeight={400}
           >
             <Box component={"span"} sx={{ opacity: 0.5 }}>
-              TANTA,{" "}
+              CAIRO,{" "}
             </Box>
             EG
           </Box>
