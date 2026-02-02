@@ -40,7 +40,7 @@ const About = () => {
   };
   useEffect(() => {
     requestAnimationFrame(() => SkewScrolling());
-  }, []);
+  });
   return (
     <Box ref={ScrollContainer} className="Scroll">
       <Header />
