@@ -44,7 +44,7 @@ function Home() {
   };
   useEffect(() => {
     requestAnimationFrame(() => SkewScrolling());
-  }, []);
+  });
   useEffect(() => {
     const lines = gsap.utils.toArray(".line");
     const ctx = gsap.context(() => {
