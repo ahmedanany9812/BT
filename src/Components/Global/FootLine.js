@@ -38,7 +38,7 @@ const FootLine = ({ innerHeight }) => {
             <Box component={"span"} sx={{ opacity: 0.5 }}>
               ©
             </Box>
-            2023
+            2026
           </Box>
         </Stack>
       </Box>

@@ -9,15 +9,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overscroll-behavior-y: none;
   cursor: none;
 }
+
+html, body {
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
 body {
   background-color: black;
   color: #e2e0e0;
-  height: 100%;
   width: 100%;
+  position: relative;
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
@@ -31,9 +37,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 .projectHead {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -59,11 +63,14 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: #Fe6601;
+  background-color: #fe6601;
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  transition:
+    width 0.3s,
+    height 0.3s,
+    opacity 0.3s;
   mix-blend-mode: difference;
   z-index: 999999;
 }
@@ -91,4 +98,49 @@ body {
 .cursorLinkoutterhover {
   border: 1px solid black;
   opacity: 0.2;
+}
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(254, 102, 1, 0.3);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff 0%, #Fe6601 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.skill-chip {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0.25rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.7);
+  &:hover {
+    background: #Fe6601;
+    color: white;
+    transform: translateY(-2px);
+    border-color: #Fe6601;
+  }
+}
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
 }
